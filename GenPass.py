@@ -69,7 +69,7 @@ def getHashString(string):
 def isLUKfile():
 	return os.path.exists("LUK")
 
-def getHashLUK(lenLUK):
+def getHashLUK():
 	# Получаем хэш строки из файла
 	with open("LUK",'r') as f:  
 		return getHashString(f.read())
