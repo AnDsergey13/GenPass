@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GenPass</string>
+    <string name="Generate">Generate</string>
+    <string name="Clear">Clear</string>
+    <string name="Enter_the_private_key">Enter the private key:</string>
+    <string name="Enter_reference_word">Enter reference word:</string>
+    <string name="e">" "</string>
+    <string name="Enter_the_length_of_the_LUK_file">Enter the length of the LUK file</string>
+</resources>
