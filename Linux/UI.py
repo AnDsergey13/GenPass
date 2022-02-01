@@ -24,9 +24,10 @@ from PyQt5.QtWidgets import (
 )
 
 class UIGP:
-	def __init__(self, typeOS):
-
-		self.typeOS = typeOS
+	# def __init__(self, typeOS):
+	def __init__(self):
+		pass
+		# self.typeOS = typeOS
 
 	def createWindow(self):
 
@@ -39,11 +40,11 @@ class UIGP:
 		w.show()
 
 		sys.exit(app.exec_())
-		# Arch
-		if self.typeOS[0] == 0:
-			pass
+		# # Arch
+		# if self.typeOS[0] == 0:
+		# 	pass
 
-		elif self.typeOS[0] == 1: # Android
-			pass
-		elif self.typeOS[0] == 2: # Windows
-			pass
+		# elif self.typeOS[0] == 1: # Android
+		# 	pass
+		# elif self.typeOS[0] == 2: # Windows
+		# 	pass
