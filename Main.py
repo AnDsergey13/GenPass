@@ -1,4 +1,7 @@
 import GenPass as gp
+import UI
+
+import sysconfig
 
 def processingNumLUK(number):
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
@@ -31,18 +34,35 @@ def getNumLUKsymbols():
 			return numberLUKsymbols
 
 
-
 list_messages = ["Введите количество символов в LUK файле. Число должно быть больше 1000. По умолчанию задано число 5000: ",
 				"\n=================================================================",
 				"*** Error. Слишком маленькое число. Число должно быть больше 1000",
 				"*** Error. Не верный ввод. Используйте только числа."]
 
-# По умолчанию True - использует вариант с интерфейсом. Если False, то работает в консольном режиме
-UI = False
+# Тип ОС
+TYPE_OS = [
+	[0, "Arch"],
+	[1, "Android"],
+	[2, "Windows"]
+]
+
+# По умолчанию Arch Linux
+CURRENT_OS = TYPE_OS[0]
+
+if sysconfig.get_platform() == "linux-x86_64": 
+	CURRENT_OS = TYPE_OS[0]
+elif sysconfig.get_platform() == "linux-aarch64": 
+	CURRENT_OS = TYPE_OS[1]
 
 
-if UI:
-	pass
+# По умолчанию True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
+useUserInterface = True
+
+
+
+if useUserInterface:
+	ui = UI.UIGP(CURRENT_OS)
+	ui.createWindow()
 else:
 	privateKey = input("Введите приватный ключ: ")
 	referenceWord = input("Введите слово-ориентир: ")
