@@ -56,7 +56,7 @@ elif sysconfig.get_platform() == "linux-aarch64":
 
 
 # По умолчанию True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
-useUserInterface = True
+useUserInterface = False
 
 
 
