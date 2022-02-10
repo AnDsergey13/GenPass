@@ -44,14 +44,7 @@ class UIGP:
 		self.w.show()
 
 		sys.exit(app.exec_())
-		# # Arch
-		# if self.typeOS[0] == 0:
-		# 	pass
 
-		# elif self.typeOS[0] == 1: # Android
-		# 	pass
-		# elif self.typeOS[0] == 2: # Windows
-		# 	pass	def createElements(self):
 	def createElements(self):
 		createButton = QPushButton('Create', self.w)
 		createButton.resize(100,32)
