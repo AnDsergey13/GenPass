@@ -71,7 +71,7 @@ else:
 	encryptedPoluPublicKey = gp.getHashString(referenceWord)
 
 	# Инверсируем элемнеты, так как при операции XOR, одинаковые числа не должны превращатся ноль.
-	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)#[::-1]
+	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
 	UnicodePoluPublicKey = gp.convertToUnicode(encryptedPoluPublicKey)
 
 	A = gp.encryptionXOR(UnicodePoluPublicKey, UnicodePrivateKey)
