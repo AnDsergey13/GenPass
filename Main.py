@@ -1,8 +1,6 @@
 import GenPass as gp
 import UI
 
-import sysconfig
-
 def processingNumLUK(number):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
@@ -16,9 +14,11 @@ def processingNumLUK(number):
 			# Ошибка ввода. Значения должны быть меньше 1000
 			print(list_messages[4])
 			print(list_messages[3])
+
 			# The signal that the data entered did not pass conditions 
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
+
 		elif int(number) > 1000:
 			return int(number)
 	except:
@@ -30,7 +30,6 @@ def processingNumLUK(number):
 		# The signal that the data entered did not pass conditions 
 		# Сигнал о том, что вводимые данные не прошли условия
 		return -1
-
 
 def getNumLUKsymbols():
 	while True:
@@ -66,9 +65,10 @@ USE_USER_INTERFACE = False
 
 list_messages = getMessages()
 
-	ui = UI.UIGP(CURRENT_OS)
-	ui.createWindow()
 if USE_USER_INTERFACE:
+	pass
+	# ui = UI.UIGP()
+	# ui.createWindow()
 else:
 	privateKey = input(list_messages[0])
 	landmarkPhrase = input(list_messages[1])
