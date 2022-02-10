@@ -1,5 +1,5 @@
 import GenPass as gp
-import UI
+# import UI
 
 def processingNumLUK(number):
 	# If you press Enter, the default values are set to 5000.
