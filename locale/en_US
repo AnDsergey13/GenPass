@@ -1,0 +1,6 @@
+Enter private key: 
+Enter landmark phrase: 
+Enter the number of characters in the LUK-file. The number must be greater than 1000. The default is 5000: 
+| 
+*** Error. Too small number. The number must be greater than 1000 
+*** Error. Invalid input. Use only numbers 
