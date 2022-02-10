@@ -41,35 +41,28 @@ def getNumLUKsymbols():
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
 
+def getLanguageOS():
+	import locale
 
-list_messages = ["Введите количество символов в LUK файле. Число должно быть больше 1000. По умолчанию задано число 5000: ",
-				"\n=================================================================",
-				"*** Error. Слишком маленькое число. Число должно быть больше 1000",
-				"*** Error. Не верный ввод. Используйте только числа."]
+	if locale.getdefaultlocale()[0] == "ru_RU":
+		return "ru_RU"
+	else:
+		return "en_US"
 
-# Тип ОС
-TYPE_OS = [
-	[0, "Arch"],
-	[1, "Android"],
-	[2, "Windows"]
-]
-
-# По умолчанию Arch Linux
-CURRENT_OS = TYPE_OS[0]
-
-if sysconfig.get_platform() == "linux-x86_64": 
-	CURRENT_OS = TYPE_OS[0]
-elif sysconfig.get_platform() == "linux-aarch64": 
-	CURRENT_OS = TYPE_OS[1]
-
+def getMessages():
+	messages = []
+	with open(f"locale/{getLanguageOS()}",'r') as f:
+		for line in f.readlines():
 			# [:-1] Cut a new line symbol. He's not needed 
 			# [:-1] Отрезаем символ новой строки. Он не нужен
+			messages.append(line[:-1])
 
 useUserInterface = False
 
 # If True is used by the interface option. If False, it works in console mode
 # Если True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
 
+list_messages = getMessages()
 
 if useUserInterface:
 	ui = UI.UIGP(CURRENT_OS)
