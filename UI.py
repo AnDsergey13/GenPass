@@ -1,4 +1,5 @@
 import sys
+from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (
 	QApplication,
@@ -33,11 +34,14 @@ class UIGP:
 
 		app = QApplication(sys.argv)
 
-		w = QWidget()
-		w.resize(250, 150)
-		w.move(300, 300)
-		w.setWindowTitle('Simple')
-		w.show()
+		self.w = QWidget()
+		self.w.resize(450, 450)
+		self.w.move(300, 300)
+		self.w.setWindowTitle('GenPass')
+		self.w.setWindowIcon(QtGui.QIcon('icon/Panel.png'))
+		
+		self.createElements()
+		self.w.show()
 
 		sys.exit(app.exec_())
 		# # Arch
@@ -47,4 +51,10 @@ class UIGP:
 		# elif self.typeOS[0] == 1: # Android
 		# 	pass
 		# elif self.typeOS[0] == 2: # Windows
-		# 	pass
+		# 	pass	def createElements(self):
+	def createElements(self):
+		createButton = QPushButton('Create', self.w)
+		createButton.resize(100,32)
+		createButton.move(30, 380)        
+		# pybutton.clicked.connect(self.clickMethod)
+		pass
