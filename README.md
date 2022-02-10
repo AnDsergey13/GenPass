@@ -1,30 +1,30 @@
 # GenPass
 
-### Программа для генерации сложных паролей
+### Program for generating complex passwords
 
-#### Описание и рекомендации
-Скрипт генерирует уникальный пароль, на основе трёх ключей: Приватный ключ(_ПК_), Фраза ориентир(_ФО_), Локальный уникальный ключ(_ЛУК-файл_).
+#### Description and recommendations
+The script generates a unique password based on three keys: a private key (_PK_), a landmark phrase (_LP_), a local unique key (_LUK-file_).
 
-_ПК_ - это секретное слово или несколько слов, которые никому не должны сообщаться. Придумайте такой _ПК_, который точно никогда не забудете. Держите их в голове и никому не сообщайте. Хорошая практика, для каждого ресурса придумывайте свой _ПК_.
-**При потере/повреждении _ПК_, восстановить пароль будет невозможно. Даже если остальные ключи известны**
+_PK_ is a secret word or several words that should not be shared with anyone. Come up with a _PK_ that you will definitely never forget. Keep it in your head and don't tell anyone. Good practice, come up with your own _PK_ for each resource.
+**If the _PK_ is lost/damaged, it will be impossible to recover the password. Even if other keys are known** 
 
-_ФО_ - это фраза/слово/набор_символов, которая прямо или косвенно, относится к ресурсу для  генерации пароля. Это может быть название сайта, шуточное название компании, фамилия директора компании, абстракция связанная с сайтом, и другое. 
-**При потере/повреждении _ФО_, восстановить пароль будет невозможно. Даже если остальные ключи известны**
+_LP_ is a phrase/word/character_set that directly or indirectly refers to a resource for generating a password. For example: the name of the site, the comic name of the company, the name of the director of the company, the abstraction associated with the site, and more. 
+**If the _LP_ is lost/damaged, it will be impossible to recover the password. Even if other keys are known** 
 
-_ЛУК-файл_ - это файл со случайными символами внутри. _ЛУК-файл_ создан на случай, если недоброжелатель захочет завладеть вашими паролями, применив к вам силу. В случае угрозы безопасности, удалите или измените _ЛУК-файл_. 
-**При потере/повреждении _ЛУК-файла_, восстановить пароль будет невозможно. Даже если остальные ключи известны**
+_LUK-file_ is a file with random characters inside. _LUK-file_ was created in case an ill-wisher wants to take possession of your passwords by using force on you. If there is enough time, delete or modify the _LUK-file_. And then your password can no longer be generated.
+**If the _LUK-file_ is lost/damaged, it will be impossible to recover the password. Even if other keys are known** 
 
-> При первой генерации пароля, программа потребует указать, сколько символов будет в _ЛУК-файле_. Чем большее число вы укажете, тем выше энтропия ключа.
+> When you first generate a password, the program will require you to specify how many characters will be in the _LUK-file_. The higher the number you specify, the higher the entropy of the key. 
 
-**❗❗❗ Рекомедую, при первой генерации, сохранить копию _ЛУК-файла_ в надёжном месте.**
+**❗❗❗ I recommend, at the first generation, to save a copy of the _LUK-file_ in a safe place.**
 
-#### Загрузка
+#### Download
 ```sh
 git clone https://github.com/AnDsergey13/GenPass.git
 ```
 
-#### Запуск в Linux
-Перейдите в папку с проектом и запустите в терминале команду
+#### Running on Linux 
+Go to the project folder and run the command in the terminal.
 ```sh
 python Main.py
 ```
