@@ -12,10 +12,10 @@ def processingNumLUK(number):
 
 	try:
 		if int(number) < 1001:
-			print(list_messages[2])
-			print(list_messages[1])
 			# Input Error. Values should be less than 1000 
 			# Ошибка ввода. Значения должны быть меньше 1000
+			print(list_messages[4])
+			print(list_messages[3])
 			# The signal that the data entered did not pass conditions 
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
@@ -24,8 +24,9 @@ def processingNumLUK(number):
 	except:
 		# Input Error. Symbols should not be used 
 		# Ошибка ввода. Не должны использоваться символы
+		print(list_messages[5])
 		print(list_messages[3])
-		print(list_messages[1])
+
 		# The signal that the data entered did not pass conditions 
 		# Сигнал о том, что вводимые данные не прошли условия
 		return -1
@@ -33,9 +34,9 @@ def processingNumLUK(number):
 
 def getNumLUKsymbols():
 	while True:
-		numberLUKsymbols = input(list_messages[0])
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
+		numberLUKsymbols = input(list_messages[2])
 		
 		numberLUKsymbols = processingNumLUK(numberLUKsymbols)
 		if numberLUKsymbols != -1:
@@ -57,29 +58,30 @@ def getMessages():
 			# [:-1] Отрезаем символ новой строки. Он не нужен
 			messages.append(line[:-1])
 
-useUserInterface = False
+	return messages
 
 # If True is used by the interface option. If False, it works in console mode
 # Если True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
+USE_USER_INTERFACE = False
 
 list_messages = getMessages()
 
-if useUserInterface:
 	ui = UI.UIGP(CURRENT_OS)
 	ui.createWindow()
+if USE_USER_INTERFACE:
 else:
-	privateKey = input("Введите приватный ключ: ")
-	referenceWord = input("Введите слово-ориентир: ")
+	privateKey = input(list_messages[0])
+	landmarkPhrase = input(list_messages[1])
 
 	encryptedPrivateKey = gp.getHashString(privateKey)
-	encryptedPoluPublicKey = gp.getHashString(referenceWord)
+	encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
 
 	# Invert the elements, since during the XOR operation, the same keys should not turn zero. And when the keys were swapped, the same password was not created.
 	# Инверсируем элемнеты, так как при операции XOR, одинаковые ключи не должны превращатся ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
 	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
-	UnicodePoluPublicKey = gp.convertToUnicode(encryptedPoluPublicKey)
+	UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
 
-	A = gp.encryptionXOR(UnicodePoluPublicKey, UnicodePrivateKey)
+	A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
