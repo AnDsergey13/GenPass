@@ -9,8 +9,8 @@ def processingNumLUK(number):
 
 	try:
 		if int(number) < 1001:
-			# Input Error. Values should be less than 1000 
-			# Ошибка ввода. Значения должны быть меньше 1000
+			# Input Error. The values must be greater than 1000
+			# Ошибка ввода. Значения должны быть больше 1000
 			print(localization[4])
 			print(localization[3])
 
@@ -18,8 +18,17 @@ def processingNumLUK(number):
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 
-		elif int(number) > 1000:
-			return int(number)
+		elif int(string) > 1000 and int(string) < 1000000:
+			return int(string)
+		elif int(string) >= 1000000:
+			# If the number is more than a million
+			# Если число больше миллиона
+			print(localization[12])
+			print(localization[3])
+
+			# The signal that the data entered did not pass conditions 
+			# Сигнал о том, что вводимые данные не прошли условия
+			return -1
 	except:
 		# Input Error. Symbols should not be used 
 		# Ошибка ввода. Не должны использоваться символы

@@ -3,6 +3,8 @@ from PyQt5 import QtGui
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
+import GenPass as gp
+
 
 class UIGP:
 	def __init__(self, localization):
@@ -10,11 +12,11 @@ class UIGP:
 		self.privateKey = ""
 		self.landmarkPhrase = ""
 		self.password = ""
-		self.numberSymbolsLUK = 5000
+		self.numberSymbolsLUK = ""
 
 	# Private key
 	def setPrivateKey(self, string):
-		print("PK = ", string)
+		# print("PK = ", string)
 		self.privateKey = string
 		
 	def getPrivateKey(self):
@@ -22,7 +24,7 @@ class UIGP:
 
 	# Landmark phrase
 	def setLandmarkPhrase(self, string):
-		print("LP = ", string)
+		# print("LP = ", string)
 		self.landmarkPhrase = string
 		
 	def getLandmarkPhrase(self):
@@ -30,16 +32,11 @@ class UIGP:
 
 	# Number symbols LUK
 	def setNumberSymbolsLUK(self, number):
-		print("LUK = ", number)
+		# print("LUK = ", number)
 		self.numberSymbolsLUK = number
 		
 	def getNumberSymbolsLUK(self):
 		return self.numberSymbolsLUK
-
-	# Password
-	def setPassword(self, string):
-		print("Password = ", string)
-		self.password = string
 
 
 	def setVisiblePrivateKey(self, value):
@@ -133,25 +130,97 @@ class UIGP:
 		# Bottom buttons
 		y_offset_from_btn = 45
 		self.lbl_message = QLabel(self.w)
+		self.lbl_message.resize(435, h_components)
 		self.lbl_message.move(left_offset_from_window, y_btn - y_offset_from_btn)
-		self.lbl_message.resize(300, h_components)
 
 		btn_Create = QPushButton(self.localization[8], self.w)
 		btn_Create.resize(w_btn, h_components)
 		btn_Create.move(left_offset_from_window, y_btn)
-		btn_Create.clicked.connect(self.CopyPassInClipboard)
+		btn_Create.clicked.connect(self.createPassword)
 
 		btn_Clear = QPushButton(self.localization[9], self.w)
 		btn_Clear.resize(w_btn + 100, h_components)
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
-		btn_Clear.clicked.connect(self.ClearAll)
+		btn_Clear.clicked.connect(self.clearAll)
 
-	def CopyPassInClipboard(self):
+	def processingNumLUK(self, string):
+		# If you press Enter, the default values are set to 5000.
+		# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
+		if string == "":
+			string = 5000
+			return int(string)
+
+		try:
+			if int(string) < 1001:
+				message = self.localization[4].partition('.')[2]
+				self.lbl_message.setText(message)
+
+				# The signal that the data entered did not pass conditions 
+				# Сигнал о том, что вводимые данные не прошли условия
+				return -1
+
+			elif int(string) > 1000 and int(string) < 1000000:
+				return int(string)
+			elif int(string) >= 1000000:
+				# If the number is more than a million
+				# Если число больше миллиона
+				message = self.localization[12].partition('.')[2]
+				self.lbl_message.setText(message)
+
+				# The signal that the data entered did not pass conditions 
+				# Сигнал о том, что вводимые данные не прошли условия
+				return -1
+		except:
+			# Input Error. Symbols should not be used 
+			# Ошибка ввода. Не должны использоваться символы
+			message = self.localization[5].partition('.')[2]
+			self.lbl_message.setText(message)
+
+			# The signal that the data entered did not pass conditions 
+			# Сигнал о том, что вводимые данные не прошли условия
+			return -1
+
+	def getNumSymbolsLUK(self):
+		# The greater the number of characters specified, the greater the entropy of the LUK-file
+		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
+		numberLUKsymbols = self.getNumberSymbolsLUK()
+		
+		numberLUKsymbols = self.processingNumLUK(numberLUKsymbols)
+		if numberLUKsymbols != -1:
+			return numberLUKsymbols
+		else:
+			return -1
+
+	def createPassword(self):
+		privateKey = self.getPrivateKey()
+		landmarkPhrase = self.getLandmarkPhrase()
+
+		encryptedPrivateKey = gp.getHashString(privateKey)
+		encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
+
+		UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
+		UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
+
+		A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
+
+		if not gp.isLUKfile():
+			numberLUKsymbols = self.getNumSymbolsLUK()
+			if numberLUKsymbols != -1:
+				gp.createLUK(numberLUKsymbols)
+		
+		if gp.isLUKfile():
+			hashLUK = gp.getHashLUK().upper()
+			B = gp.convertToUnicode(hashLUK)
+			result = gp.convertToString(gp.encryptionXOR(A, B))
+			self.copyPassInClipboard(result)
+
+	def copyPassInClipboard(self, password):
 		clipboard = QApplication.clipboard()
-		clipboard.setText(self.password)
+		clipboard.setText(password)
+		# Вывод сообщения. Пароль успешно создан и скопирован
 		self.lbl_message.setText(self.localization[11])
 
-	def ClearAll(self):
+	def clearAll(self):
 		# Clearing the clipboard
 		# Очистка буфера
 		clipboard = QApplication.clipboard()
@@ -163,28 +232,3 @@ class UIGP:
 		self.edt_LP.clear()
 		self.edt_LUK.clear()
 		self.lbl_message.clear()
-
-
-
-
-# privateKey = ui.getPrivateKey()
-# landmarkPhrase = ui.getLandmarkPhrase()
-
-# encryptedPrivateKey = gp.getHashString(privateKey)
-# encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
-
-# UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
-# UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
-
-# A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
-
-# if not gp.isLUKfile():
-# 	numberLUKsymbols = getNumLUKsymbols()
-# 	gp.createLUK(numberLUKsymbols)
-
-# hashLUK = gp.getHashLUK().upper()
-
-# B = gp.convertToUnicode(hashLUK)
-
-# result = gp.convertToString(gp.encryptionXOR(A, B))
-# ui.setPassword(result)
