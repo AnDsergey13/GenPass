@@ -1,5 +1,5 @@
 import Terminal
-import Logic_Linux_UI as llui
+import Linux_UI as lui
 
 import sysconfig
 
@@ -44,7 +44,10 @@ CURRENT_OS = getCurrentOS()
 
 if USE_USER_INTERFACE:
 	if CURRENT_OS[0] == 0:
-		llui.Main(LANGUAGE_LOCALIZATION) # Arch linux
+		# Arch linux
+		ui = lui.UIGP(LANGUAGE_LOCALIZATION)
+		ui.createWindow()
+
 	elif CURRENT_OS[0] == 1:
 		pass # Android
 	elif CURRENT_OS[0] == 2:
