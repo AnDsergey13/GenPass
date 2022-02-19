@@ -1,6 +1,6 @@
 import GenPass as gp
 
-def processingNumLUK(number):
+def processingNumLUK(number, localization):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
 	if number == "":
@@ -39,13 +39,13 @@ def processingNumLUK(number):
 		# Сигнал о том, что вводимые данные не прошли условия
 		return -1
 
-def getNumLUKsymbols():
+def getNumLUKsymbols(localization):
 	while True:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = input(localization[2])
 		
-		numberLUKsymbols = processingNumLUK(numberLUKsymbols)
+		numberLUKsymbols = processingNumLUK(numberLUKsymbols, localization)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
 
@@ -66,7 +66,7 @@ def Main(localization):
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
 	if not gp.isLUKfile():
-		numberLUKsymbols = getNumLUKsymbols()
+		numberLUKsymbols = getNumLUKsymbols(localization)
 		gp.createLUK(numberLUKsymbols)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
