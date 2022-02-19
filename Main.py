@@ -25,19 +25,23 @@ def getCurrentOS():
 	TYPE_OS = [
 		[0, "Arch"],
 		[1, "Android"],
-		[2, "Windows"]
+		[2, "Windows"],
+		[3, "Other"]
 	]
 
-	if sysconfig.get_platform() == "linux-x86_64": 
+	OS = sysconfig.get_platform()
+	if OS == "linux-x86_64": # Arch Linux
 		return TYPE_OS[0]
-	elif sysconfig.get_platform() == "linux-aarch64": 
+	elif OS == "linux-aarch64": # Android
 		return TYPE_OS[1]
-	else:
-		return TYPE_OS[2] # Windows and other
+	elif OS == "win-amd64": # Windows
+		return TYPE_OS[2] 
+	else: # Оther
+		return TYPE_OS[3]
 
 # If True is used by the interface option. If False, it works in console mode
 # Если True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
-USE_USER_INTERFACE = False
+USE_USER_INTERFACE = True
 
 LANGUAGE_LOCALIZATION = getLocalization()
 CURRENT_OS = getCurrentOS()
@@ -50,7 +54,10 @@ if USE_USER_INTERFACE:
 
 	elif CURRENT_OS[0] == 1:
 		pass # Android
+		
 	elif CURRENT_OS[0] == 2:
+		ui = lui.UIGP(LANGUAGE_LOCALIZATION)
+		ui.createWindow()
 		pass # Windows
 else:
 	Terminal.Main(LANGUAGE_LOCALIZATION)
