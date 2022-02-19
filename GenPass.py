@@ -46,7 +46,7 @@ def createLUKstring(lenString):
 	return string
 
 def createLUK(lenLUK):
-	with open("LUK",'w') as f:  
+	with open("LUK",'w', encoding="utf-8") as f:  
 		f.write(createLUKstring(lenLUK))
 
 def getHashString(string):
@@ -59,7 +59,7 @@ def isLUKfile():
 def getHashLUK():
 	# Get a hash string from the file
 	# Получаем хэш строки из файла
-	with open("LUK",'r') as f:  
+	with open("LUK",'r', encoding="utf-8") as f:  
 		return getHashString(f.read())
 
 def convertToString(listUnicode):
