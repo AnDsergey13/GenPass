@@ -37,7 +37,7 @@ def getCurrentOS():
 
 # If True is used by the interface option. If False, it works in console mode
 # Если True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
-USE_USER_INTERFACE = True
+USE_USER_INTERFACE = False
 
 LANGUAGE_LOCALIZATION = getLocalization()
 CURRENT_OS = getCurrentOS()
