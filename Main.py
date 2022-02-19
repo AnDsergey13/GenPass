@@ -13,7 +13,7 @@ def getLanguageOS():
 
 def getLocalization():
 	localization = []
-	with open(f"locale/{getLanguageOS()}",'r') as f:
+	with open(f"locale/{getLanguageOS()}",'r', encoding="utf-8") as f:
 		for line in f.readlines():
 			# [:-1] Cut a new line symbol. He's not needed 
 			# [:-1] Отрезаем символ новой строки. Он не нужен
