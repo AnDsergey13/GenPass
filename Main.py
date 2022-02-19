@@ -1,5 +1,5 @@
 import Terminal
-import Linux_UI as lui
+import UI as ui
 
 import sysconfig
 
@@ -49,14 +49,14 @@ CURRENT_OS = getCurrentOS()
 if USE_USER_INTERFACE:
 	if CURRENT_OS[0] == 0:
 		# Arch linux
-		ui = lui.UIGP(LANGUAGE_LOCALIZATION)
+		ui = ui.UIGP(LANGUAGE_LOCALIZATION)
 		ui.createWindow()
 
 	elif CURRENT_OS[0] == 1:
 		pass # Android
-		
+
 	elif CURRENT_OS[0] == 2:
-		ui = lui.UIGP(LANGUAGE_LOCALIZATION)
+		ui = ui.UIGP(LANGUAGE_LOCALIZATION)
 		ui.createWindow()
 		pass # Windows
 else:
