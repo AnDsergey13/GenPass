@@ -30,7 +30,7 @@ def getCurrentOS():
 	]
 
 	OS = sysconfig.get_platform()
-	if OS == "linux-x86_64": # Arch Linux
+	if OS == "linux-x86_64": # Arch Linux and other?
 		return TYPE_OS[0]
 	elif OS == "linux-aarch64": # Android
 		return TYPE_OS[1]
@@ -48,7 +48,7 @@ CURRENT_OS = getCurrentOS()
 
 if USE_USER_INTERFACE:
 	if CURRENT_OS[0] == 0:
-		# Arch linux
+		# Arch linux and other?
 		ui = ui.UIGP(LANGUAGE_LOCALIZATION)
 		ui.createWindow()
 
@@ -59,5 +59,8 @@ if USE_USER_INTERFACE:
 		ui = ui.UIGP(LANGUAGE_LOCALIZATION)
 		ui.createWindow()
 		pass # Windows
+	else:
+		pass # Оther
+		print("Unknown operating system")
 else:
 	Terminal.Main(LANGUAGE_LOCALIZATION)
