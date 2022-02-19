@@ -13,12 +13,16 @@ class UIGP:
 		self.landmarkPhrase = ""
 		self.password = ""
 		self.numberSymbolsLUK = ""
+
+		self.updateСheckLUKfile()
+
 	# Private key
 	def setPrivateKey(self, string):
 		# print("PK = ", string)
 		self.privateKey = string
 		
 	def getPrivateKey(self):
+		pass
 		return self.privateKey
 
 	# Landmark phrase
@@ -27,6 +31,7 @@ class UIGP:
 		self.landmarkPhrase = string
 		
 	def getLandmarkPhrase(self):
+		pass
 		return self.landmarkPhrase
 
 	# Number symbols LUK
@@ -35,6 +40,7 @@ class UIGP:
 		self.numberSymbolsLUK = number
 		
 	def getNumberSymbolsLUK(self):
+		pass
 		return self.numberSymbolsLUK
 
 
@@ -49,6 +55,10 @@ class UIGP:
 			self.edt_LP.setEchoMode(QLineEdit.Password)
 		else:
 			self.edt_LP.setEchoMode(QLineEdit.Normal)
+
+	def updateСheckLUKfile(self):
+		self.isVisibleEdtLUK = gp.isLUKfile()
+
 	def createWindow(self, width=450, height=450, pos_x=300, pos_y=300):
 		app = QApplication(sys.argv)
 
@@ -117,10 +127,14 @@ class UIGP:
 		self.edt_LUK.resize(200, h_components)
 		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
 		self.edt_LUK.textChanged[str].connect(self.setNumberSymbolsLUK)
+
+		self.setVisibleEdtLUK()
+
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.localization[10], self.w)
 		btn_Gen.resize(w_btn + 50, h_components)
 		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
+		btn_Gen.clicked.connect(self.createNewLUKfile)
 
 
 		# Bottom buttons
@@ -138,6 +152,45 @@ class UIGP:
 		btn_Clear.resize(w_btn + 100, h_components)
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
 		btn_Clear.clicked.connect(self.clearAll)
+
+	def getAvailabilityLUKfile(self):
+		return self.isVisibleEdtLUK
+
+	def setVisibleEdtLUK(self):
+		if self.getAvailabilityLUKfile():
+			self.edt_LUK.setEnabled(False)
+		else:
+			self.edt_LUK.setEnabled(True)
+
+	def deleteLUKfile(self):
+		import os
+		os.remove("LUK")
+
+	def createNewLUKfile(self):
+		# msg = QMessageBox.question(self.w, 'PyQt5 message', "Do you like PyQt5?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+		
+
+		msg = QMessageBox()
+		# msg.setText("The document has been modified.")
+		
+		msg.setWindowTitle(self.localization[13])
+		msg.setText(self.localization[14])
+		msg.setIcon(QMessageBox.Warning)
+		msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+		msg.setDefaultButton(QMessageBox.Cancel)
+		msg.exec()
+
+		print(msg)
+		print(QMessageBox.Yes, QMessageBox.No)
+		if msg == QMessageBox.Yes:
+			print("yes")
+			self.deleteLUKfile()
+			self.updateСheckLUKfile()
+			self.setVisibleEdtLUK()
+		else:
+			print("no")
+			pass
+
 
 	def processingNumLUK(self, string):
 		# If you press Enter, the default values are set to 5000.
