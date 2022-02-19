@@ -8,6 +8,8 @@ The size of the LUK-file. Enter a number:
 Visible 
 Create 
 Clear 
-Generate 
+Create a LUK-file 
 Password copied! 
 *** Error. The number must be less than 1000000 
+Danger!!! 
+If you overwrite the LUK file, it will be impossible to restore the old passwords. Continue? 
