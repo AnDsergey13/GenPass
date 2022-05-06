@@ -20,7 +20,7 @@ _ЛУК-файл_ - это файл со случайными символами
 
 #### Загрузка
 ```sh
-git clone https://github.com/AnDsergey13/GenPass.git
+git clone https://codeberg.org/femto/GenPass.git
 ```
 
 #### Запуск в Linux
