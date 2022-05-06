@@ -20,7 +20,7 @@ _LUK-file_ is a file with random characters inside. _LUK-file_ was created in ca
 
 #### Download
 ```sh
-git clone https://github.com/AnDsergey13/GenPass.git
+git clone https://codeberg.org/femto/GenPass.git
 ```
 
 #### Running on Linux 
