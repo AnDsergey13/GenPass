@@ -3,3 +3,8 @@ LUK
 temp
 *.kra~
 *.png~
+
+.venv/
+temp/
+*.db
+*.json
