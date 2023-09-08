@@ -1,6 +1,6 @@
 import sysconfig
 
-TYPE_OS = ["Arch", "Android", "Windows", "Other"]
+TYPE_OS = ["Linux", "Android", "Windows", "Other"]
 
 def getLanguageOS():
 	import locale
@@ -23,7 +23,7 @@ def getLocalization():
 
 def getCurrentOS():
 	OS = sysconfig.get_platform()
-	if OS == "linux-x86_64": # Arch Linux and other?
+	if OS == "linux-x86_64": # Linux
 		return TYPE_OS[0]
 	elif OS == "linux-aarch64": # Android
 		return TYPE_OS[1]

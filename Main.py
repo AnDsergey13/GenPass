@@ -10,8 +10,7 @@ LANGUAGE_LOCALIZATION = System.getLocalization()
 CURRENT_OS = System.getCurrentOS()
 
 if USE_USER_INTERFACE:
-	if CURRENT_OS == "Arch" or CURRENT_OS == "Windows":
-		# Arch изменить на Linux?
+	if CURRENT_OS == "Linux" or CURRENT_OS == "Windows":
 		ui = ui.UIGP(LANGUAGE_LOCALIZATION)
 		ui.createWindow()
 
