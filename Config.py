@@ -39,9 +39,6 @@ class ConfigManager:
 		}
 	}
 
-	# def __init__(self, nameFile="Config.json"):
-	# 	__class__.nameFile = nameFile
-
 	# Нужен ли этот метод???
 	# Получаем название файла настроек
 	@staticmethod
