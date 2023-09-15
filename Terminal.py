@@ -1,5 +1,6 @@
 import GenPass as gp
 
+
 def processingNumLUK(number, localization):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
@@ -14,7 +15,7 @@ def processingNumLUK(number, localization):
 			print(localization[4])
 			print(localization[3])
 
-			# The signal that the data entered did not pass conditions 
+			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 
@@ -26,28 +27,30 @@ def processingNumLUK(number, localization):
 			print(localization[12])
 			print(localization[3])
 
-			# The signal that the data entered did not pass conditions 
+			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 	except:
-		# Input Error. Symbols should not be used 
+		# Input Error. Symbols should not be used
 		# Ошибка ввода. Не должны использоваться символы
 		print(localization[5])
 		print(localization[3])
 
-		# The signal that the data entered did not pass conditions 
+		# The signal that the data entered did not pass conditions
 		# Сигнал о том, что вводимые данные не прошли условия
 		return -1
+
 
 def getNumLUKsymbols(localization):
 	while True:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = input(localization[2])
-		
+
 		numberLUKsymbols = processingNumLUK(numberLUKsymbols, localization)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
+
 
 def Main(localization):
 	privateKey = input(localization[0])
@@ -70,11 +73,10 @@ def Main(localization):
 		gp.createLUK(numberLUKsymbols)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
-	# Если не изменять Хэш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля. 
+	# Если не изменять Хэш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
 	hashLUK = gp.getHashLUK().upper()
 
 	B = gp.convertToUnicode(hashLUK)
 
 	result = gp.convertToString(gp.encryptionXOR(A, B))
 	print(result)
-	

@@ -14,13 +14,13 @@ class UIGP:
 		self.password = ""
 		self.numberSymbolsLUK = ""
 
-		self.updateСheckLUKfile()
+		self.updateCheckLUKfile()
 
 	# Private key
 	def setPrivateKey(self, string):
 		# print("PK = ", string)
 		self.privateKey = string
-		
+
 	def getPrivateKey(self):
 		pass
 		return self.privateKey
@@ -29,7 +29,7 @@ class UIGP:
 	def setLandmarkPhrase(self, string):
 		# print("LP = ", string)
 		self.landmarkPhrase = string
-		
+
 	def getLandmarkPhrase(self):
 		pass
 		return self.landmarkPhrase
@@ -38,7 +38,7 @@ class UIGP:
 	def setNumberSymbolsLUK(self, number):
 		# print("LUK = ", number)
 		self.numberSymbolsLUK = number
-		
+
 	def getNumberSymbolsLUK(self):
 		pass
 		return self.numberSymbolsLUK
@@ -56,7 +56,7 @@ class UIGP:
 		else:
 			self.edt_LP.setEchoMode(QLineEdit.Normal)
 
-	def updateСheckLUKfile(self):
+	def updateCheckLUKfile(self):
 		self.isVisibleEdtLUK = gp.isLUKfile()
 
 	def createWindow(self, width=450, height=450, pos_x=300, pos_y=300):
@@ -67,7 +67,7 @@ class UIGP:
 		self.w.move(pos_x, pos_y)
 		self.w.setWindowTitle('GenPass')
 		self.w.setWindowIcon(QtGui.QIcon('icon/Panel.png'))
-		
+
 		self.createComponents()
 
 		self.w.show()
@@ -85,7 +85,7 @@ class UIGP:
 		x_offset_cb = 315
 
 		y_btn = 400
-		
+
 		# PrivateKey
 		lbl_PK = QLabel(self.w)
 		lbl_PK.move(left_offset_from_window, y_lbl_1)
@@ -122,7 +122,7 @@ class UIGP:
 		lbl_LUK = QLabel(self.w)
 		lbl_LUK.move(left_offset_from_window, y_lbl_3)
 		lbl_LUK.setText(self.localization[6])
-		
+
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, h_components)
 		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
@@ -168,11 +168,10 @@ class UIGP:
 
 	def createNewLUKfile(self):
 		# msg = QMessageBox.question(self.w, 'PyQt5 message', "Do you like PyQt5?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-		
 
 		msg = QMessageBox()
 		# msg.setText("The document has been modified.")
-		
+
 		msg.setWindowTitle(self.localization[13])
 		msg.setText(self.localization[14])
 		msg.setIcon(QMessageBox.Warning)
@@ -185,7 +184,7 @@ class UIGP:
 		if msg == QMessageBox.Yes:
 			print("yes")
 			self.deleteLUKfile()
-			self.updateСheckLUKfile()
+			self.updateCheckLUKfile()
 			self.setVisibleEdtLUK()
 		else:
 			print("no")
@@ -204,7 +203,7 @@ class UIGP:
 				message = self.localization[4].partition('.')[2]
 				self.lbl_message.setText(message)
 
-				# The signal that the data entered did not pass conditions 
+				# The signal that the data entered did not pass conditions
 				# Сигнал о том, что вводимые данные не прошли условия
 				return -1
 
@@ -216,16 +215,16 @@ class UIGP:
 				message = self.localization[12].partition('.')[2]
 				self.lbl_message.setText(message)
 
-				# The signal that the data entered did not pass conditions 
+				# The signal that the data entered did not pass conditions
 				# Сигнал о том, что вводимые данные не прошли условия
 				return -1
 		except:
-			# Input Error. Symbols should not be used 
+			# Input Error. Symbols should not be used
 			# Ошибка ввода. Не должны использоваться символы
 			message = self.localization[5].partition('.')[2]
 			self.lbl_message.setText(message)
 
-			# The signal that the data entered did not pass conditions 
+			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 
@@ -233,7 +232,7 @@ class UIGP:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = self.getNumberSymbolsLUK()
-		
+
 		numberLUKsymbols = self.processingNumLUK(numberLUKsymbols)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
@@ -256,7 +255,7 @@ class UIGP:
 			numberLUKsymbols = self.getNumSymbolsLUK()
 			if numberLUKsymbols != -1:
 				gp.createLUK(numberLUKsymbols)
-		
+
 		if gp.isLUKfile():
 			hashLUK = gp.getHashLUK().upper()
 			B = gp.convertToUnicode(hashLUK)

@@ -14,50 +14,57 @@ def getLanguageOS():
 	else:
 		return "en_US"
 
+
 def getLocalization():
 	""" !!!!! переделать!!!! на json формат"""
 	localization = []
-	with open(f"locale/{getLanguageOS()}",'r', encoding="utf-8") as f:
+	with open(f"locale/{getLanguageOS()}", 'r', encoding="utf-8") as f:
 		for line in f.readlines():
-			# [:-1] Cut a new line symbol. He's not needed 
+			# [:-1] Cut a new line symbol. He's not needed
 			# [:-1] Отрезаем символ новой строки. Он не нужен
 			localization.append(line[:-1])
 
 	return localization
 
+
 def getCurrentOS():
 	# Использовать case?
 	OS = sysconfig.get_platform()
-	if OS == "linux-x86_64": # Linux
+	if OS == "linux-x86_64":  # Linux
 		return TYPE_OS[0]
-	elif OS == "linux-aarch64": # Android
+	elif OS == "linux-aarch64":  # Android
 		return TYPE_OS[1]
-	elif OS == "win-amd64": # Windows
-		return TYPE_OS[2] 
-	else: # Оther
+	elif OS == "win-amd64":  # Windows
+		return TYPE_OS[2]
+	else:  # Оther
 		return TYPE_OS[3]
+
 
 def getNameUser():
 	return None
 
 ######################## Переделать выше
 
+
 def is_file(name_file, path_file=""):
 	""" """
 	if path_file == "":
 		path_file = get_standart_path()
 
-	# Проверить. Будет ли косая черта работать для Windows 
+	# Проверить. Будет ли косая черта работать для Windows
 	full_path_with_name = path_file + "/" + name_file
 	return os.path.isfile(full_path_with_name)
+
 
 def is_path(path):
 	""" """
 	return os.path.isdir(path)
 
+
 def get_standart_path():
 	""" """
 	return os.getcwd()
+
 
 def get_file_names(folder_path="locale", remove_extensions=True):
 	""" """
@@ -71,6 +78,7 @@ def get_data_from_file(json_file_name):
 	"""Получаем данные из конфигурационного json файла"""
 	with open(json_file_name) as f:
 		return json.load(f)
+
 
 def set_data_to_file(data, json_file_name):
 	"""Перезаписываем данные в конфигурационный json файл"""
