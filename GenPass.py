@@ -14,10 +14,10 @@ def convertToUnicode(string):
 
 def encryptionXOR(number, key):
 	# Due to the fact that the ZIP function cuts off the resulting list if two incoming list of different lengths are long, and we do not need this, we write their implementation.
-	# В связи с тем, что функция zip обрезает результиующий список, если два входящих списка разной длинны, а нам такого не надо, то пишем свою реализацию.
+	# В связи с тем, что функция zip обрезает результирующий список, если два входящих списка разной длинны, а нам такого не надо, то пишем свою реализацию.
 
 	# This code block defines which of the incoming lists is longer, and writes in and the longest. This check is necessary to simplify the XOR block.
-	# Данный блок кода определяет какой из входящих списков длинее, и записывает в А самый длинный. Это проверка необходима для упрощения блока XOR
+	# Данный блок кода определяет какой из входящих списков длиннее, и записывает в А самый длинный. Это проверка необходима для упрощения блока XOR
 	A = []
 	B = []
 	if len(number) > len(key) or len(number) == len(key):
@@ -67,7 +67,7 @@ def isLUKfile():
 
 def getHashLUK():
 	# Get a hash string from the file
-	# Получаем хэш строки из файла
+	# Получаем хеш строки из файла
 	with open(cm.getPath("LUK"), 'r', encoding="utf-8") as f:
 		return getHashString(f.read())
 
@@ -77,7 +77,7 @@ def convertToString(listUnicode):
 	step = 8
 	for elementList in listUnicode:
 		# With an XOR operation, symbols outside 33 and 127 may appear. To avoid this, we make two cycles with autocorrect number
-		# При операции XOR, могут появлятся символы за пределами 33 и 127. Чтобы это избежать, делаем два цикла с автокоррекцией числа
+		# При операции XOR, могут появляться символы за пределами 33 и 127. Чтобы это избежать, делаем два цикла с автокоррекцией числа
 		while elementList < 33: elementList += step
 		while elementList > 127: elementList -= step
 

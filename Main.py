@@ -18,7 +18,7 @@ if USE_USER_INTERFACE:
 		pass
 
 	else:
-		# Оther
+		# Other
 		print("Unknown operating system")
 else:
 	Terminal.Main(LANGUAGE_LOCALIZATION)

@@ -36,7 +36,7 @@ def getCurrentOS():
 		return TYPE_OS[1]
 	elif OS == "win-amd64":  # Windows
 		return TYPE_OS[2]
-	else:  # Оther
+	else:  # Other
 		return TYPE_OS[3]
 
 

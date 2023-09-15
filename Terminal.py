@@ -60,7 +60,7 @@ def Main(localization):
 	encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
 
 	# Invert the elements, since during the XOR operation, the same keys should not turn zero. And when the keys were swapped, the same password was not created.
-	# Инверсируем элемнеты, так как при операции XOR, одинаковые ключи не должны превращатся ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
+	# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращатся ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
 	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
 	UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
 
@@ -73,7 +73,7 @@ def Main(localization):
 		gp.createLUK(numberLUKsymbols)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
-	# Если не изменять Хэш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
+	# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
 	hashLUK = gp.getHashLUK().upper()
 
 	B = gp.convertToUnicode(hashLUK)
