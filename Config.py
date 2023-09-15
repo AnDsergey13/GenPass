@@ -5,6 +5,11 @@ import subprocess
 import System
 
 
+# TODO 
+# Использовать многоязычный docstrings(PEP 257? Sphinx? docutils?), не в функции а отдельным файлом
+# 	https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
+# нужна ли генерирация html документации? https://youtu.be/BWIrhgCAae0
+
 def in_key(func):
 	def wrapper(key, *args):
 		""" Проверяем, содержится ли введённый ключ в списке ключей"""
