@@ -7,4 +7,4 @@ temp
 .venv/
 temp/
 *.db
-*.json
+Config.json
