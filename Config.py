@@ -1,7 +1,3 @@
-import json
-import os
-import subprocess
-
 import System
 
 
@@ -12,166 +8,141 @@ import System
 
 def in_key(func):
 	def wrapper(key, *args):
-		""" Проверяем, содержится ли введённый ключ в списке ключей"""
-		if key in ConfigManager.getListAvailableKeys():
+		""" Проверяем, содержится ли введённый ключ в файле конфигураций"""
+		data = System.get_data_from_file(json_file_name=ConfigFile.get_file_name())
+		if key in data:
 			return func(key, *args)
 		else:
-			print(f"Параметр KEY, указан не верно! Допустимые значения = {ConfigManager.getListAvailableKeys()}")
+			print(f"Параметр KEY, указан не верно! Допустимые значения = {list(data.keys())}")
 	return wrapper
 
-# Декоратор для запуска необходимой команды из списка команд
-def run_command(commandName):
-	def decorator(func):
-		def wrapper():
-			CurrentOS = System.getCurrentOS()
-			allCommands = ConfigManager.OS_Conmands.get(CurrentOS)
-			command = allCommands.get(commandName)
-			# Возвращаем результат лямбда-функции из списка команд
-			return command()
-		return wrapper
-	return decorator
 
+class ConfigFile:
+	""" """
 
-class ConfigManager:
-	nameFile = "Config.json"
+	settings_file_name = "Config.json"
 
-	listAvailableKeys = ["Database", "LANG", "LUK", "GUI"]
-
-	OS_Conmands = {
-		"Linux": {
-			"isFile": lambda: os.path.exists(__class__.nameFile),
-			"getStandartPath": lambda: subprocess.check_output("pwd").decode("utf-8").strip() + "/",
-			# Пример: полученную строку с названиями файлов "en_US\nes_ES.json\nru_RU" преобразуем в ["en_US", "es_ES.json", "ru_RU"]
-			"getFileNames": lambda: subprocess.check_output(["ls", "locale"]).decode("utf-8").split("\n")[:-1]
-		},
-		"Windows": {
-			# Проверить команды для Windows
-			"isFile": None,
-			"getStandartPath": None,
-			"getFileNames": None
-		},
-		"Android": {
-			# Проверить команды для Android
-			"isFile": None,
-			"getStandartPath": None,
-			"getFileNames": None
-		}
+	template_for_creating_file = {
+		"use_GUI": "", 
+		"LANG": "", 
+		"path_LUK": "", 
+		"path_Database": ""
 	}
 
-	# Нужен ли этот метод???
 	@staticmethod
-	def getNameFile():
-		# Получаем название файла настроек
-		return __class__.nameFile
+	def __get_template():
+		"""Получаем шаблон для создания конфигурационного файла"""
+		return __class__.template_for_creating_file
 
-	# Нужен ли этот метод???
-	@staticmethod
-	def setNameFile(newName):
-		# Изменяем название файла настроек
-		__class__.nameFile = newName
-
-
-	@run_command("isFile")
-	def __isFile():
-		pass
-
-	@run_command("getStandartPath")
-	def __getStandartPath():
-		pass
-
-	@run_command("getFileNames")
-	def __getFileNames():
-		pass
-	
 
 	@staticmethod
-	def __get_formated_list_file_names(list_file_names):
-		# Удаляем расширение .json в именах файлов, чтобы проще было потом проверять
-		return [nameFile.replace(".json", "") for nameFile in list_file_names]
-	
-	@staticmethod
-	def check_language_in_list(language, list_file_names):
-		return language in list_file_names
+	def get_file_name():
+		"""Получаем название конфигурационного файла"""
+		return __class__.settings_file_name
 
-
-	def __getDataInFile(nameFile="Config.json"):
-		""" Получаем все данные из конфигурационного файла"""
-		with open(nameFile) as f:
-			return json.load(f)
-
-	def __setDataInFile(data, nameFile="Config.json"):
-		""" Перезаписываем данные из конфигурационного файла"""
-		with open(nameFile, "w") as f:
-			json.dump(data, f)
-	
-	# todo Сделать проверку на правильность введённых путей(pathLUK, pathDatabase)
-	# todo Сделать проверку на правильность введённого (use_GUI)
-	@staticmethod
-	def createFile(use_GUI=True, LANG="", pathLUK="", pathDatabase=""):
-		""" Создаёт конфигурационный файл с базовыми настройками
-			Пример вызова.
-			createFile(True, "es_ES", "/", "/home")
-			ConfigManager.createFile(LANG="en_EN")
-		"""
-		# Существует ли такой файл? Проверка сделана с целью защиты от перезаписи файла при повторном запуске функции
-		if not __class__.__isFile():
-
-			# Устанавливаем значния по умолчанию, если язык не был введён
-			if LANG == "":
-				LANG = System.getLanguageOS()
-			# Проверяем введённый язык на правильность ввода
-			elif not __class__.check_language_in_list(
-				LANG, 
-				__class__.__get_formated_list_file_names(__class__.__getFileNames())
-				):
-				# И если он не правильный, то автоматически выбираем язык по умолчанию
-				LANG = System.getLanguageOS()
-				print(f"Указанного языка не существует. Выбран {LANG} по умолчанию")
-			
-			# Устанавливаем значния по умолчанию, если путь не был задан
-			if pathLUK == "":
-				pathLUK = __class__.__getStandartPath()
-			if pathDatabase == "":
-				pathDatabase = __class__.__getStandartPath()
-
-			# Cоздать файл хранения настроек
-			data = {}
-			data["use_GUI"] = str(use_GUI)
-			data["LANG"] = LANG
-			data["pathLUK"] = pathLUK
-			data["pathDatabase"] = pathDatabase
-
-			__class__.__setDataInFile(data)
 
 	@staticmethod
-	def getListAvailableKeys():
-		""" Получаем список доступных ключей для файла конфигураций"""
-		return __class__.listAvailableKeys
+	def set_file_name(new_name):
+		"""Изменяем название конфигурационного файла"""
+		# TODO
+		# Сделать проверку корректности введённого имени
+		__class__.settings_file_name = new_name
+
+
+	@staticmethod
+	def __check_language_in_list(language, list_of_languages):
+		"""Существует ли указанный язык в списке языков"""
+		return language in list_of_languages
+
 
 	@staticmethod
 	@in_key
-	def getValue(key):
-		""" Пример вызова.
-			getValue("pathDatabase")
+	def get_value_by_key(key):
+		""" Извлекаем данные из файла, по ключу
+		
+			Пример вызова.
+			get_value_by_key("path_Database")
 			Вывод:
 			/home/user/GenPass/Database.json
 		"""
 		# Получаем данные
-		data = __class__.__getDataInFile()
+		data = System.get_data_from_file(json_file_name=__class__.get_file_name())
 		return data[key]
+
 
 	@staticmethod
 	@in_key
-	def changeValue(key, newValue):
-		""" Пример вызова.
-			ConfigManager.changeValue("pathLUK", "/home/Work/Python/")
-			ConfigManager.changeValue("LANG", "en_US")
+	def change_value_by_key(key, new_value):
+		""" Изменяем данные в файле по ключу
+
+			Пример вызова.
+			ConfigFile.change_value_by_key("path_LUK", "/home/Work/Python/")
 		"""
 		# Получаем данные
-		data = __class__.__getDataInFile()
+		data = System.get_data_from_file(json_file_name=__class__.get_file_name())
 		# Изменяем на новые
-		data[key] = newValue
+		data[key] = new_value
 		# Записываем в файл конфигурации
-		__class__.__setDataInFile(data)
+		System.set_data_to_file(data=data, json_file_name=__class__.get_file_name())
 
-# ConfigManager.createFile()
+
+	@staticmethod
+	def create_file():
+		""" Создаёт конфигурационный файл с отсутвтующими настройками"""
+
+		# Проверка сделана с целью защиты от перезаписи файла при повторном запуске функции
+		if not System.is_file(__class__.get_file_name()):
+			# Получаем шаблон
+			data = __class__.__get_template()
+			# Создаём новый конфигурационный файл по шаблону
+			System.set_data_to_file(data=data, json_file_name=__class__.get_file_name())
+			
+			# Устанавливаем значения по умолчанию
+			__class__.__write_down_basic_settings()
+
+
+	@staticmethod
+	def __write_down_basic_settings():
+		""" """
+		__class__.change_value_by_key("use_GUI", __class__.__get_basic_GUI_settings())
+		__class__.change_value_by_key("LANG", __class__.__get_basic_language())
+
+		standart_path = System.get_standart_path()
+		if System.is_path(standart_path):
+			__class__.change_value_by_key("path_LUK", standart_path)
+			__class__.change_value_by_key("path_Database", standart_path)
+		else:
+			print(f"Указанный путь {standart_path} - не корректен! Оставляем пустые значения")
+
+
+	# TODO
+	# Сделать проверку try/except для типа вводимого сообщения
+	@staticmethod
+	def __get_basic_language(language=""):
+		""" """
+		if language == "":
+			# Если предпочтительный язык не был введён, то выбираем язык текущей операционной системы
+			return System.getLanguageOS()
+		elif not __class__.__check_language_in_list(language, System.get_file_names()):
+			# Проверяем введённый язык на правильность ввода
+			# И если он не правильный, то автоматически выбираем язык по умолчанию
+			languageOS = System.getLanguageOS()
+			print(f"Указанного языка не существует. Выбран {languageOS} по умолчанию")
+			return languageOS
+		else:
+			# Если указанный язык был введён правильно, то возвращаем его для дальнейших операций
+			return language
+
+
+	@staticmethod
+	def __get_basic_GUI_settings(use_GUI=False):
+		""" """
+		default_value = "False"
+		try:
+			convert_use_GUI = bool(use_GUI)
+		except (ValueError, TypeError) as err:
+			print(err)
+			print(f"GUI. Config. Установлено значение по умолчанию = {default_value}")
+			return default_value
+		else:
+			return str(convert_use_GUI)

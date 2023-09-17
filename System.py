@@ -1,7 +1,11 @@
+import json
+import os
 import sysconfig
 
 TYPE_OS = ["Linux", "Android", "Windows", "Other"]
 
+
+######################## Переделать ниже
 def getLanguageOS():
 	import locale
 
@@ -22,6 +26,7 @@ def getLocalization():
 	return localization
 
 def getCurrentOS():
+	# Использовать case?
 	OS = sysconfig.get_platform()
 	if OS == "linux-x86_64": # Linux
 		return TYPE_OS[0]
@@ -34,3 +39,40 @@ def getCurrentOS():
 
 def getNameUser():
 	return None
+
+######################## Переделать выше
+
+def is_file(name_file, path_file=""):
+	""" """
+	if path_file == "":
+		path_file = get_standart_path()
+
+	# Проверить. Будет ли косая черта работать для Windows 
+	full_path_with_name = path_file + "/" + name_file
+	return os.path.isfile(full_path_with_name)
+
+def is_path(path):
+	""" """
+	return os.path.isdir(path)
+
+def get_standart_path():
+	""" """
+	return os.getcwd()
+
+def get_file_names(folder_path="locale", remove_extensions=True):
+	""" """
+	if remove_extensions:
+		return [nameFile.replace(".json", "") for nameFile in os.listdir(folder_path)]
+	else:
+		return os.listdir(folder_path)
+
+
+def get_data_from_file(json_file_name):
+	"""Получаем данные из конфигурационного json файла"""
+	with open(json_file_name) as f:
+		return json.load(f)
+
+def set_data_to_file(data, json_file_name):
+	"""Перезаписываем данные в конфигурационный json файл"""
+	with open(json_file_name, "w") as f:
+		json.dump(data, f)
