@@ -1,12 +1,17 @@
 [Main]
 disable =
-;     missing-module-docstring,
+    missing-module-docstring,
 ;     missing-class-docstring,
     missing-function-docstring,
-;     empty-docstring,
+    empty-docstring,
     line-too-long,
 ;     import-error,
     invalid-name,
+    ; using OOP incorrectly
+    unused-private-member,
+    protected-access,
+    ; do not show TODO, FIXME comments
+    fixme,
 
 [Format]
 indent-string = \t
