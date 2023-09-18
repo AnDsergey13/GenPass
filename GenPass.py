@@ -78,8 +78,10 @@ def convertToString(listUnicode):
 	for elementList in listUnicode:
 		# With an XOR operation, symbols outside 33 and 127 may appear. To avoid this, we make two cycles with autocorrect number
 		# При операции XOR, могут появляться символы за пределами 33 и 127. Чтобы это избежать, делаем два цикла с автокоррекцией числа
-		while elementList < 33: elementList += step
-		while elementList > 127: elementList -= step
+		while elementList < 33:
+			elementList += step
+		while elementList > 127:
+			elementList -= step
 
 		string += chr(elementList)
 	return string
