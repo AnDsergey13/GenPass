@@ -1,14 +1,13 @@
 import json
+import locale
 import os
 import sysconfig
 
 TYPE_OS = ["Linux", "Android", "Windows", "Other"]
 
 
-######################## Переделать ниже
+# FIXME: Переделать ниже
 def getLanguageOS():
-	import locale
-
 	if locale.getlocale()[0] == "ru_RU":
 		return "ru_RU"
 	else:
@@ -43,7 +42,7 @@ def getCurrentOS():
 def getNameUser():
 	return None
 
-######################## Переделать выше
+# FIXME: Переделать выше
 
 
 def is_file(name_file, path_file=""):
