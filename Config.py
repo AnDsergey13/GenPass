@@ -1,7 +1,7 @@
 import System
 
 
-# TODO 
+# TODO
 # Использовать многоязычный docstrings(PEP 257? Sphinx? docutils?), не в функции а отдельным файлом
 # 	https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
 # нужна ли генерирация html документации? https://youtu.be/BWIrhgCAae0
@@ -34,12 +34,10 @@ class ConfigFile:
 		"""Получаем шаблон для создания конфигурационного файла"""
 		return __class__.template_for_creating_file
 
-
 	@staticmethod
 	def get_file_name():
 		"""Получаем название конфигурационного файла"""
 		return __class__.settings_file_name
-
 
 	@staticmethod
 	def set_file_name(new_name):
@@ -48,12 +46,10 @@ class ConfigFile:
 		# Сделать проверку корректности введённого имени
 		__class__.settings_file_name = new_name
 
-
 	@staticmethod
 	def __check_language_in_list(language, list_of_languages):
 		"""Существует ли указанный язык в списке языков"""
 		return language in list_of_languages
-
 
 	@staticmethod
 	@in_key
@@ -68,7 +64,6 @@ class ConfigFile:
 		# Получаем данные
 		data = System.get_data_from_file(json_file_name=__class__.get_file_name())
 		return data[key]
-
 
 	@staticmethod
 	@in_key
@@ -85,7 +80,6 @@ class ConfigFile:
 		# Записываем в файл конфигурации
 		System.set_data_to_file(data=data, json_file_name=__class__.get_file_name())
 
-
 	@staticmethod
 	def create_file():
 		""" Создаёт конфигурационный файл с отсутвтующими настройками"""
@@ -100,7 +94,6 @@ class ConfigFile:
 			# Устанавливаем значения по умолчанию
 			__class__.__write_down_basic_settings()
 
-
 	@staticmethod
 	def __write_down_basic_settings():
 		""" """
@@ -113,7 +106,6 @@ class ConfigFile:
 			__class__.change_value_by_key("path_Database", standart_path)
 		else:
 			print(f"Указанный путь {standart_path} - не корректен! Оставляем пустые значения")
-
 
 	# TODO
 	# Сделать проверку try/except для типа вводимого сообщения
@@ -132,7 +124,6 @@ class ConfigFile:
 		else:
 			# Если указанный язык был введён правильно, то возвращаем его для дальнейших операций
 			return language
-
 
 	@staticmethod
 	def __get_basic_GUI_settings(use_GUI=False):
