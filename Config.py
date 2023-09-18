@@ -23,9 +23,9 @@ class ConfigFile:
 	settings_file_name = "Config.json"
 
 	template_for_creating_file = {
-		"use_GUI": "", 
-		"LANG": "", 
-		"path_LUK": "", 
+		"use_GUI": "",
+		"LANG": "",
+		"path_LUK": "",
 		"path_Database": ""
 	}
 
@@ -55,7 +55,7 @@ class ConfigFile:
 	@in_key
 	def get_value_by_key(key):
 		""" Извлекаем данные из файла, по ключу
-		
+
 			Пример вызова.
 			get_value_by_key("path_Database")
 			Вывод:
@@ -90,7 +90,7 @@ class ConfigFile:
 			data = __class__.__get_template()
 			# Создаём новый конфигурационный файл по шаблону
 			System.set_data_to_file(data=data, json_file_name=__class__.get_file_name())
-			
+
 			# Устанавливаем значения по умолчанию
 			__class__.__write_down_basic_settings()
 
