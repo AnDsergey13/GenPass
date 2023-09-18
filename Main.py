@@ -1,10 +1,10 @@
 import Terminal
 import UI as ui
+from Config import ConfigFile as cf
 import System
 
-# If True is used by the interface option. If False, it works in console mode
-# Если True - используется вариант с интерфейсом. Если False, то работает в консольном режиме
-USE_USER_INTERFACE = False
+
+USE_USER_INTERFACE = cf.get_value_by_key("use_GUI")
 
 LANGUAGE_LOCALIZATION = System.getLocalization()
 CURRENT_OS = System.getCurrentOS()

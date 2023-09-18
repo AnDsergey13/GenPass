@@ -2,7 +2,7 @@ import os
 import hashlib
 import secrets
 
-from Config import ConfigManager as cm
+from Config import ConfigFile as cf
 
 
 def convertToUnicode(string):
@@ -52,7 +52,7 @@ def createLUKstring(lenString):
 
 
 def createLUK(lenLUK):
-	with open(cm.getPath("LUK"), 'w', encoding="utf-8") as f:
+	with open(cf.get_value_by_key("LUK"), 'w', encoding="utf-8") as f:
 		f.write(createLUKstring(lenLUK))
 
 
@@ -62,13 +62,13 @@ def getHashString(string):
 
 
 def isLUKfile():
-	return os.path.exists(cm.getPath("LUK"))
+	return os.path.exists(cf.get_value_by_key("LUK"))
 
 
 def getHashLUK():
 	# Get a hash string from the file
 	# Получаем хеш строки из файла
-	with open(cm.getPath("LUK"), 'r', encoding="utf-8") as f:
+	with open(cf.get_value_by_key("LUK"), 'r', encoding="utf-8") as f:
 		return getHashString(f.read())
 
 
