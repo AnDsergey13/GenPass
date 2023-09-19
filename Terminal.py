@@ -1,7 +1,10 @@
 import GenPass as gp
+from localization import LanguageManager as lm
+import System
+from Config import ConfigFile as cf
 
 
-def processingNumLUK(number, localization):
+def processingNumLUK(number, _):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
 	if number == "":
@@ -12,49 +15,49 @@ def processingNumLUK(number, localization):
 		if int(number) < 1001:
 			# Input Error. The values must be greater than 1000
 			# Ошибка ввода. Значения должны быть больше 1000
-			print(localization[4])
-			print(localization[3])
+			print(_("Err. LUK-file. Greater than 1000"))
+			# print(localization[3])
 
 			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 
-		elif int(string) > 1000 and int(string) < 1000000:
-			return int(string)
-		elif int(string) >= 1000000:
+		elif int(number) > 1000 and int(number) < 1000000:
+			return int(number)
+		elif int(number) >= 1000000:
 			# If the number is more than a million
 			# Если число больше миллиона
-			print(localization[12])
-			print(localization[3])
+			print(_("Err. LUK-file. Less than 1000000"))
 
 			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
-	except:
+
+	except ValueError:
 		# Input Error. Symbols should not be used
 		# Ошибка ввода. Не должны использоваться символы
-		print(localization[5])
-		print(localization[3])
+		print(_("Err. Invalid input"))
 
 		# The signal that the data entered did not pass conditions
 		# Сигнал о том, что вводимые данные не прошли условия
 		return -1
 
 
-def getNumLUKsymbols(localization):
+def getNumLUKsymbols(_):
 	while True:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
-		numberLUKsymbols = input(localization[2])
+		numberLUKsymbols = input(_("Enter. LUK-file. Default is 5000"))
 
-		numberLUKsymbols = processingNumLUK(numberLUKsymbols, localization)
+		numberLUKsymbols = processingNumLUK(numberLUKsymbols, _)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
 
 
-def Main(localization):
-	privateKey = input(localization[0])
-	landmarkPhrase = input(localization[1])
+def Main():
+	_ = lm.get_text
+	privateKey = input(_("Enter. Private key"))
+	landmarkPhrase = input(_("Enter. Landmark phrase"))
 
 	encryptedPrivateKey = gp.getHashString(privateKey)
 	encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
@@ -68,8 +71,8 @@ def Main(localization):
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
-	if not gp.isLUKfile():
-		numberLUKsymbols = getNumLUKsymbols(localization)
+	if not System.is_file("LUK", cf.get_value_by_key("path_LUK")):
+		numberLUKsymbols = getNumLUKsymbols(_)
 		gp.createLUK(numberLUKsymbols)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.

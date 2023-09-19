@@ -1,4 +1,3 @@
-import os
 import hashlib
 import secrets
 
@@ -52,7 +51,9 @@ def createLUKstring(lenString):
 
 
 def createLUK(lenLUK):
-	with open(cf.get_value_by_key("LUK"), 'w', encoding="utf-8") as f:
+	name_file = "LUK"
+	path = cf.get_value_by_key("path_LUK")
+	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
 		f.write(createLUKstring(lenLUK))
 
 
@@ -61,14 +62,12 @@ def getHashString(string):
 	return hashObject.hexdigest()
 
 
-def isLUKfile():
-	return os.path.exists(cf.get_value_by_key("LUK"))
-
-
 def getHashLUK():
 	# Get a hash string from the file
 	# Получаем хеш строки из файла
-	with open(cf.get_value_by_key("LUK"), 'r', encoding="utf-8") as f:
+	name_file = "LUK"
+	path = cf.get_value_by_key("path_LUK")
+	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:
 		return getHashString(f.read())
 
 

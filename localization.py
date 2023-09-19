@@ -18,9 +18,11 @@ class LanguageManager:
 		return System.get_data_from_file(json_file_name=full_name)
 
 	@staticmethod
-	def get_value_by_key(key):
-		""" Пример использования:
-			_ = LanguageManager.get_value_by_key
+	def get_text(key):
+		""" Получить текст по ключу
+
+			Пример использования:
+			_ = LanguageManager.get_text
 			print(_("Err. Invalid input"))
 		"""
 		name_file = __class__.__get_language_from_config_file()
