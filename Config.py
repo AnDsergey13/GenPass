@@ -23,7 +23,7 @@ class ConfigFile:
 	settings_file_name = "Config.json"
 
 	template_for_creating_file = {
-		"use_GUI": "",
+		"use_GUI": None,
 		"LANG": "",
 		"path_LUK": "",
 		"path_Database": ""
@@ -128,7 +128,7 @@ class ConfigFile:
 	@staticmethod
 	def __get_basic_GUI_settings(use_GUI=False):
 		""" """
-		default_value = "False"
+		default_value = False
 		try:
 			convert_use_GUI = bool(use_GUI)
 		except (ValueError, TypeError) as err:
@@ -136,4 +136,4 @@ class ConfigFile:
 			print(f"GUI. Config. Установлено значение по умолчанию = {default_value}")
 			return default_value
 		else:
-			return str(convert_use_GUI)
+			return convert_use_GUI
