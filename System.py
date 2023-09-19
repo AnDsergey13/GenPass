@@ -74,12 +74,12 @@ def get_file_names(folder_path="locale", remove_extensions=True):
 
 
 def get_data_from_file(json_file_name):
-	"""Получаем данные из конфигурационного json файла"""
+	"""Получаем данные из json файла"""
 	with open(json_file_name, encoding="UTF-8") as f:
 		return json.load(f)
 
 
 def set_data_to_file(data, json_file_name):
-	"""Перезаписываем данные в конфигурационный json файл"""
+	"""Перезаписываем данные в json файл"""
 	with open(json_file_name, "w", encoding="UTF-8") as f:
 		json.dump(data, f, ensure_ascii=False)
