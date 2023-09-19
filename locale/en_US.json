@@ -1,15 +1,1 @@
-Enter private key: 
-Enter landmark phrase: 
-Enter the number of characters in the LUK-file. The number must be greater than 1000. The default is 5000: 
-| 
-*** Error. The number must be greater than 1000 
-*** Error. Invalid input. Use only numbers 
-The size of the LUK-file. Enter a number: 
-Visible 
-Create 
-Clear 
-Create a LUK-file 
-Password copied! 
-*** Error. The number must be less than 1000000 
-Danger!!! 
-If you overwrite the LUK file, it will be impossible to restore the old passwords. Continue? 
+{"Enter. Private key": "Enter private key: ", "Enter. Landmark phrase": "Enter landmark phrase: ", "Enter. LUK-file. Default is 5000": "Enter the number of characters in the LUK-file. The number must be greater than 1000. The default is 5000: ", "Err. LUK-file. Greater than 1000": "*** Error. The number must be greater than 1000 ", "Err. Invalid input": "*** Error. Invalid input. Use only numbers ", "Enter. Size LUK-file": "The size of the LUK-file. Enter a number: ", "Visible": "Visible ", "Create": "Create ", "Clear": "Clear ", "Create. LUK-file": "Create a LUK-file ", "Password copied": "Password copied! ", "Err. LUK-file. Less than 1000000": "*** Error. The number must be less than 1000000 ", "Danger": "Danger!!! ", "Attention. LUK-file. Overwrite": "If you overwrite the LUK file, it will be impossible to restore the old passwords. Continue? "}
