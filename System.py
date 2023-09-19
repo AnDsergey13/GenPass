@@ -82,4 +82,4 @@ def get_data_from_file(json_file_name):
 def set_data_to_file(data, json_file_name):
 	"""Перезаписываем данные в конфигурационный json файл"""
 	with open(json_file_name, "w", encoding="UTF-8") as f:
-		json.dump(data, f)
+		json.dump(data, f, ensure_ascii=False)
