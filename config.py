@@ -23,7 +23,7 @@ template_for_creating_file = {
 	"use_gui": None,
 	"LANG": "",
 	"path_LUK": "",
-	"path_Database": ""
+	"path_Templates": ""
 }
 
 
@@ -54,7 +54,7 @@ def get_value_by_key(key):
 	""" Извлекаем данные из файла, по ключу
 
 		Пример вызова.
-		get_value_by_key("path_Database")
+		get_value_by_key("path_Templates")
 		Вывод:
 		/home/user/GenPass/Database.json
 	"""
@@ -100,7 +100,7 @@ def __write_down_basic_settings():
 	standard_path = system.get_standard_path()
 	if system.is_path(standard_path):
 		change_value_by_key("path_LUK", standard_path)
-		change_value_by_key("path_Database", standard_path)
+		change_value_by_key("path_Templates", standard_path)
 	else:
 		# TODO: Предусмотреть локализацию
 		print(f"Указанный путь {standard_path} - не корректен! Оставляем пустые значения")
