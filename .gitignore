@@ -8,3 +8,5 @@ temp
 temp/
 *.db
 Config.json
+
+.idea/
