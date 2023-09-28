@@ -22,7 +22,6 @@ class UIGP:
 		self.privateKey = string
 
 	def getPrivateKey(self):
-		pass
 		return self.privateKey
 
 	# Landmark phrase
@@ -31,7 +30,6 @@ class UIGP:
 		self.landmarkPhrase = string
 
 	def getLandmarkPhrase(self):
-		pass
 		return self.landmarkPhrase
 
 	# Number symbols LUK
@@ -40,7 +38,6 @@ class UIGP:
 		self.numberSymbolsLUK = number
 
 	def getNumberSymbolsLUK(self):
-		pass
 		return self.numberSymbolsLUK
 
 
@@ -188,7 +185,6 @@ class UIGP:
 			self.setVisibleEdtLUK()
 		else:
 			print("no")
-			pass
 
 
 	def processingNumLUK(self, string):
