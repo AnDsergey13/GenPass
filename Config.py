@@ -2,9 +2,9 @@ import System
 
 
 # TODO
-# Использовать многоязычный docstrings(PEP 257? Sphinx? docutils?), не в функции а отдельным файлом
+# Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
 # 	https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
-# нужна ли генерирация html документации? https://youtu.be/BWIrhgCAae0
+# нужна ли генерация html документации? https://youtu.be/BWIrhgCAae0
 
 def in_key(func):
 	def wrapper(key, *args):
@@ -82,7 +82,7 @@ class ConfigFile:
 
 	@staticmethod
 	def create_file():
-		""" Создаёт конфигурационный файл с отсутвтующими настройками"""
+		""" Создаёт конфигурационный файл с отсутствующими настройками"""
 
 		# Проверка сделана с целью защиты от перезаписи файла при повторном запуске функции
 		if not System.is_file(__class__.get_file_name()):
