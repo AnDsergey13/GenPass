@@ -1,15 +1,15 @@
 [Main]
 disable =
+    line-too-long,
     missing-module-docstring,
-;     missing-class-docstring,
+    ; missing-class-docstring,
     missing-function-docstring,
     empty-docstring,
-    line-too-long,
-;     import-error,
     invalid-name,
+    ; import-error,
     ; using OOP incorrectly
-    unused-private-member,
-    protected-access,
+    ; unused-private-member,
+    ; protected-access,
     ; do not show TODO, FIXME comments
     fixme,
 
