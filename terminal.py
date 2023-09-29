@@ -52,7 +52,7 @@ def get_luk_symbols_num():
 			return luk_symbols_number
 
 
-def Main():
+def main():
 	private_key = input(_("Enter. Private key"))
 	landmark_phrase = input(_("Enter. Landmark phrase"))
 

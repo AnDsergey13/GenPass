@@ -19,6 +19,6 @@ if USE_USER_INTERFACE:
 		# Other
 		print("Unknown operating system")
 else:
-	terminal.Main()
+	terminal.main()
 
 # TODO: Переместить код в функцию __main__()
