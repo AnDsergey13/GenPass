@@ -47,7 +47,7 @@ def getNumLUKsymbols():
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = input(_("Enter. LUK-file. Default is 5000"))
 
-		numberLUKsymbols = processingNumLUK(numberLUKsymbols, _)
+		numberLUKsymbols = processingNumLUK(numberLUKsymbols)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
 
@@ -71,7 +71,7 @@ def Main():
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
 	if not gp.isLUKfile():
-		numberLUKsymbols = getNumLUKsymbols(_)
+		numberLUKsymbols = getNumLUKsymbols()
 		gp.createLUK(numberLUKsymbols)
 
 	# If you do not change the hash to all capital letters,
