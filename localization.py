@@ -33,8 +33,8 @@ class LanguageManager:
 			print("Записи с таким ключом, не существует. Введите другой")
 			return None
 
-	# TODO выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
-	# И вынести его в отдельный метод или декоратор
+	# TODO: выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
+	# и вынести его в отдельный метод или декоратор
 	@staticmethod
 	def add_key_in_all_lang(new_key: str):
 		""" Добавляет новый ключ во все json файлы """

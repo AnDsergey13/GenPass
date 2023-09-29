@@ -62,7 +62,7 @@ def createLUKstring(lenString):
 
 
 def createLUK(lenLUK):
-	# TODO #11: Вынесці ў асобны метад config.get_full_luk_path()
+	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	name_file = "LUK"
 	path = cf.get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
@@ -81,7 +81,7 @@ def getHashString(string):
 def getHashLUK():
 	# Get a hash string from the file
 	# Получаем хеш строки из файла
-	# TODO #11: Вынесці ў асобны метад config.get_full_luk_path()
+	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	name_file = "LUK"
 	path = cf.get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:

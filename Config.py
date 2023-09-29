@@ -1,9 +1,8 @@
 import System
 
 
-# TODO
-# Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
-# 	https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
+# TODO: Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
+# https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
 # нужна ли генерация html документации? https://youtu.be/BWIrhgCAae0
 
 def in_key(func):
@@ -42,8 +41,7 @@ class ConfigFile:
 	@staticmethod
 	def set_file_name(new_name):
 		"""Изменяем название конфигурационного файла"""
-		# TODO
-		# Сделать проверку корректности введённого имени
+		# TODO: Сделать проверку корректности введённого имени
 		__class__.settings_file_name = new_name
 
 	@staticmethod
@@ -107,8 +105,7 @@ class ConfigFile:
 		else:
 			print(f"Указанный путь {standart_path} - не корректен! Оставляем пустые значения")
 
-	# TODO
-	# Сделать проверку try/except для типа вводимого сообщения
+	# TODO: Сделать проверку try/except для типа вводимого сообщения
 	@staticmethod
 	def __get_basic_language(language=""):
 		""" """
