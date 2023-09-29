@@ -28,12 +28,12 @@ def get_language_os():
 
 def get_current_os():
 	# Использовать case?
-	OS = sysconfig.get_platform()
-	if OS == "linux-x86_64":  # Linux
+	os_ = sysconfig.get_platform()
+	if os_ == "linux-x86_64":  # Linux
 		return TYPE_OS[0]
-	elif OS == "linux-aarch64":  # Android
+	elif os_ == "linux-aarch64":  # Android
 		return TYPE_OS[1]
-	elif OS == "win-amd64":  # Windows
+	elif os_ == "win-amd64":  # Windows
 		return TYPE_OS[2]
 	else:  # Other
 		return TYPE_OS[3]
