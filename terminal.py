@@ -69,8 +69,8 @@ def Main():
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
 	if not gp.is_luk_file():
-		numberLUKsymbols = getNumLUKsymbols()
-		gp.create_luk(numberLUKsymbols)
+		luk_symbols_number = getNumLUKsymbols()
+		gp.create_luk(luk_symbols_number)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
 	# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
