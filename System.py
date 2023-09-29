@@ -14,16 +14,16 @@ def getLanguageOS():
 		return "en_US"
 
 
-def getLocalization():
-	""" !!!!! переделать!!!! на json формат"""
-	localization = []
-	with open(f"locale/{getLanguageOS()}", 'r', encoding="utf-8") as f:
-		for line in f.readlines():
-			# [:-1] Cut a new line symbol. He's not needed
-			# [:-1] Отрезаем символ новой строки. Он не нужен
-			localization.append(line[:-1])
-
-	return localization
+# def getLocalization():
+# 	""" !!!!! переделать!!!! на json формат"""
+# 	localization = []
+# 	with open(f"locale/{getLanguageOS()}", 'r', encoding="utf-8") as f:
+# 		for line in f.readlines():
+# 			# [:-1] Cut a new line symbol. He's not needed
+# 			# [:-1] Отрезаем символ новой строки. Он не нужен
+# 			localization.append(line[:-1])
+#
+# 	return localization
 
 
 def getCurrentOS():
