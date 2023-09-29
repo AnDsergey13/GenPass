@@ -80,10 +80,10 @@ def get_hash_luk():
 		return get_hash_string(f.read())
 
 
-def convert_to_string(listUnicode):
+def convert_to_string(unicode_list):
 	string = ""
 	step = 8
-	for elementList in listUnicode:
+	for elementList in unicode_list:
 		# With an XOR operation, symbols outside 33 and 127 may appear. To avoid this, we make two cycles with autocorrect number
 		# При операции XOR, могут появляться символы за пределами 33 и 127. Чтобы это избежать, делаем два цикла с автокоррекцией числа
 		while elementList < 33:
