@@ -6,7 +6,7 @@ import system
 # создаём конфигурационный файл, если он отсутствует
 config.create_file()
 
-USE_USER_INTERFACE = config.get_value_by_key("use_GUI")
+USE_USER_INTERFACE = config.get_value_by_key("use_gui")
 CURRENT_OS = system.getCurrentOS()
 
 if USE_USER_INTERFACE:
