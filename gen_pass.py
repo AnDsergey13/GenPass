@@ -65,7 +65,7 @@ def is_luk_file():
 	return system.is_file("LUK", get_value_by_key("path_LUK"))
 
 
-def getHashString(string):
+def get_hash_string(string):
 	hashObject = hashlib.sha256(bytes(string, 'utf-8'))
 	return hashObject.hexdigest()
 
@@ -77,7 +77,7 @@ def getHashLUK():
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:
-		return getHashString(f.read())
+		return get_hash_string(f.read())
 
 
 def convertToString(listUnicode):

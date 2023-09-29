@@ -249,8 +249,8 @@ class UIGP:
 		privateKey = self.getPrivateKey()
 		landmarkPhrase = self.getLandmarkPhrase()
 
-		encryptedPrivateKey = gp.getHashString(privateKey)
-		encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
+		encryptedPrivateKey = gp.get_hash_string(privateKey)
+		encryptedLandmarkPhrase = gp.get_hash_string(landmarkPhrase)
 
 		UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
 		UnicodeLandmarkPhrase = gp.convert_to_unicode(encryptedLandmarkPhrase)
