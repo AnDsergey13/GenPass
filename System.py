@@ -49,7 +49,7 @@ def is_file(name_file, path_file=""):
 	""" """
 	# TODO: Спрасціць логіку, зрабіўшы значэнне па змаўчанні
 	if path_file == "":
-		path_file = get_standart_path()
+		path_file = get_standard_path()
 
 	# Проверить. Будет ли косая черта работать для Windows
 	# TODO: os.separator?
@@ -63,7 +63,7 @@ def is_path(path):
 	return os.path.isdir(path)
 
 
-def get_standart_path():
+def get_standard_path():
 	""" """
 	return os.getcwd()
 

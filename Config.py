@@ -98,7 +98,7 @@ class ConfigFile:
 		__class__.change_value_by_key("use_GUI", __class__.__get_basic_GUI_settings())
 		__class__.change_value_by_key("LANG", __class__.__get_basic_language())
 
-		standart_path = System.get_standart_path()
+		standart_path = System.get_standard_path()
 		if System.is_path(standart_path):
 			__class__.change_value_by_key("path_LUK", standart_path)
 			__class__.change_value_by_key("path_Database", standart_path)
