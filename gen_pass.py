@@ -5,7 +5,7 @@ from config import get_value_by_key
 import system
 
 
-def convertToUnicode(string):
+def convert_to_unicode(string):
 	result = []
 	for letter in string:
 		result.append(ord(letter))

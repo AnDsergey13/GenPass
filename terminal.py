@@ -61,8 +61,8 @@ def Main():
 
 	# Invert the elements, since during the XOR operation, the same keys should not turn into zero. And when the keys were swapped, the same password was not created.
 	# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращаться в ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
-	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
-	UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
+	UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
+	UnicodeLandmarkPhrase = gp.convert_to_unicode(encryptedLandmarkPhrase)
 
 	A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
@@ -76,7 +76,7 @@ def Main():
 	# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
 	hashLUK = gp.getHashLUK().upper()
 
-	B = gp.convertToUnicode(hashLUK)
+	B = gp.convert_to_unicode(hashLUK)
 
 	result = gp.convertToString(gp.encryptionXOR(A, B))
 	print(result)

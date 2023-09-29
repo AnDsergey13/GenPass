@@ -252,8 +252,8 @@ class UIGP:
 		encryptedPrivateKey = gp.getHashString(privateKey)
 		encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
 
-		UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
-		UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
+		UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
+		UnicodeLandmarkPhrase = gp.convert_to_unicode(encryptedLandmarkPhrase)
 
 		A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
@@ -264,7 +264,7 @@ class UIGP:
 
 		if gp.isLUKfile():
 			hashLUK = gp.getHashLUK().upper()
-			B = gp.convertToUnicode(hashLUK)
+			B = gp.convert_to_unicode(hashLUK)
 			result = gp.convertToString(gp.encryptionXOR(A, B))
 			self.copyPassInClipboard(result)
 
