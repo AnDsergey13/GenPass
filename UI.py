@@ -4,11 +4,12 @@ from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
 import GenPass as gp
+from localization import LanguageManager
 
 
 class UIGP:
-	def __init__(self, localization):
-		self.localization = localization
+	def __init__(self):
+		self.get_localized_text = LanguageManager.get_text
 		self.privateKey = ""
 		self.landmarkPhrase = ""
 		self.password = ""
@@ -88,14 +89,14 @@ class UIGP:
 		# PrivateKey
 		lbl_PK = QLabel(self.w)
 		lbl_PK.move(left_offset_from_window, y_lbl_1)
-		lbl_PK.setText(self.localization[0])
+		lbl_PK.setText(self.get_localized_text("Enter. Private key"))
 
 		self.edt_PK = QLineEdit(self.w)
 		self.edt_PK.resize(300, h_components)
 		self.edt_PK.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
 		self.edt_PK.textChanged[str].connect(self.setPrivateKey)
 
-		cb_PK = QCheckBox(self.localization[7], self.w)
+		cb_PK = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_PK.setChecked(True)
 		cb_PK.move(left_offset_from_window + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
 		cb_PK.stateChanged.connect(self.setVisiblePrivateKey)
@@ -104,14 +105,14 @@ class UIGP:
 		y_lbl_2 = y_lbl_1 + dist_y_between_lbl
 		lbl_LP = QLabel(self.w)
 		lbl_LP.move(left_offset_from_window, y_lbl_2)
-		lbl_LP.setText(self.localization[1])
+		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
 
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, h_components)
 		self.edt_LP.move(left_offset_from_window, y_lbl_2 + y_offset_from_lbl)
 		self.edt_LP.textChanged[str].connect(self.setLandmarkPhrase)
 
-		cb_LP = QCheckBox(self.localization[7], self.w)
+		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
 		cb_LP.move(left_offset_from_window + x_offset_cb, y_lbl_2 + y_offset_from_lbl)
 		cb_LP.stateChanged.connect(self.setVisibleLandmarkPhrase)
@@ -120,7 +121,7 @@ class UIGP:
 		y_lbl_3 = y_lbl_2 + dist_y_between_lbl
 		lbl_LUK = QLabel(self.w)
 		lbl_LUK.move(left_offset_from_window, y_lbl_3)
-		lbl_LUK.setText(self.localization[6])
+		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
 
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, h_components)
@@ -130,7 +131,7 @@ class UIGP:
 		self.setVisibleEdtLUK()
 
 		x_offset_btn = 270
-		btn_Gen = QPushButton(self.localization[10], self.w)
+		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(w_btn + 50, h_components)
 		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
 		btn_Gen.clicked.connect(self.createNewLUKfile)
@@ -142,12 +143,12 @@ class UIGP:
 		self.lbl_message.resize(435, h_components)
 		self.lbl_message.move(left_offset_from_window, y_btn - y_offset_from_btn)
 
-		btn_Create = QPushButton(self.localization[8], self.w)
+		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(w_btn, h_components)
 		btn_Create.move(left_offset_from_window, y_btn)
 		btn_Create.clicked.connect(self.createPassword)
 
-		btn_Clear = QPushButton(self.localization[9], self.w)
+		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
 		btn_Clear.resize(w_btn + 100, h_components)
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
 		btn_Clear.clicked.connect(self.clearAll)
@@ -172,8 +173,8 @@ class UIGP:
 		msg = QMessageBox()
 		# msg.setText("The document has been modified.")
 
-		msg.setWindowTitle(self.localization[13])
-		msg.setText(self.localization[14])
+		msg.setWindowTitle(self.get_localized_text("Danger"))
+		msg.setText(self.get_localized_text("Attention. LUK-file. Overwrite"))
 		msg.setIcon(QMessageBox.Warning)
 		msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
 		msg.setDefaultButton(QMessageBox.Cancel)
@@ -199,7 +200,7 @@ class UIGP:
 
 		try:
 			if int(string) < 1001:
-				message = self.localization[4].partition('.')[2]
+				message = self.get_localized_text("Err. LUK-file. Greater than 1000").partition('.')[2]
 				self.lbl_message.setText(message)
 
 				# The signal that the data entered did not pass conditions
@@ -211,7 +212,7 @@ class UIGP:
 			elif int(string) >= 1000000:
 				# If the number is more than a million
 				# Если число больше миллиона
-				message = self.localization[12].partition('.')[2]
+				message = self.get_localized_text("Err. LUK-file. Less than 1000000").partition('.')[2]
 				self.lbl_message.setText(message)
 
 				# The signal that the data entered did not pass conditions
@@ -220,7 +221,7 @@ class UIGP:
 		except:
 			# Input Error. Symbols should not be used
 			# Ошибка ввода. Не должны использоваться символы
-			message = self.localization[5].partition('.')[2]
+			message = self.get_localized_text("Err. Invalid input").partition('.')[2]
 			self.lbl_message.setText(message)
 
 			# The signal that the data entered did not pass conditions
@@ -265,7 +266,7 @@ class UIGP:
 		clipboard = QApplication.clipboard()
 		clipboard.setText(password)
 		# Вывод сообщения. Пароль успешно создан и скопирован
-		self.lbl_message.setText(self.localization[11])
+		self.lbl_message.setText(self.get_localized_text("Password copied"))
 
 	def clearAll(self):
 		# Clearing the clipboard
