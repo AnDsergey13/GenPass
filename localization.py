@@ -1,4 +1,4 @@
-from Config import ConfigFile as cf
+from Config import get_value_by_key
 import System
 
 
@@ -7,7 +7,8 @@ language_folder = "locale/"
 
 def __get_language_from_config_file():
 	"""TODO: Write docstring"""
-	return cf.get_value_by_key("LANG")
+	# TODO: Перамясціць ў config?
+	return get_value_by_key("LANG")
 
 
 def __get_localization_file(name_file):
