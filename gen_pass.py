@@ -52,12 +52,12 @@ def create_luk_string(string_len):
 	return string
 
 
-def createLUK(lenLUK):
+def createLUK(luk_len):
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
-		f.write(create_luk_string(lenLUK))
+		f.write(create_luk_string(luk_len))
 
 
 def isLUKfile():
