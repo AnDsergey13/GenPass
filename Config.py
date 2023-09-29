@@ -8,16 +8,13 @@ import System
 def in_key(func):
 	def wrapper(key, *args):
 		""" Проверяем, содержится ли введённый ключ в файле конфигураций"""
-		data = System.get_data_from_file(json_file_name=ConfigFile.get_file_name())
+		data = System.get_data_from_file(json_file_name=get_file_name())
 		if key in data:
 			return func(key, *args)
 		else:
 			print(f"Параметр KEY, указан не верно! Допустимые значения = {list(data.keys())}")
 	return wrapper
 
-
-class ConfigFile:
-	""" """
 
 	settings_file_name = "Config.json"
 
