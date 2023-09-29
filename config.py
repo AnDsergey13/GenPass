@@ -115,10 +115,10 @@ def __get_basic_language(language=""):
 	elif not __check_language_in_list(language, system.get_file_names()):
 		# Проверяем введённый язык на правильность ввода
 		# И если он не правильный, то автоматически выбираем язык по умолчанию
-		languageOS = system.getLanguageOS()
+		language_os = system.getLanguageOS()
 		# TODO: Прадугледзець лакалізацыю
-		print(f"Указанного языка не существует. Выбран {languageOS} по умолчанию")
-		return languageOS
+		print(f"Указанного языка не существует. Выбран {language_os} по умолчанию")
+		return language_os
 	else:
 		# Если указанный язык был введён правильно, то возвращаем его для дальнейших операций
 		return language
