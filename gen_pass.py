@@ -40,7 +40,7 @@ def encryption_xor(number, key):
 	return result
 
 
-def createLUKstring(lenString):
+def create_luk_string(lenString):
 	string = ""
 	s = secrets.SystemRandom()
 	for _ in range(lenString):
@@ -56,7 +56,7 @@ def createLUK(lenLUK):
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
-		f.write(createLUKstring(lenLUK))
+		f.write(create_luk_string(lenLUK))
 
 
 def isLUKfile():
