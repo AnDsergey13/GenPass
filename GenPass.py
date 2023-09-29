@@ -1,7 +1,7 @@
 import hashlib
 import secrets
 
-from Config import ConfigFile as cf
+from Config import get_value_by_key
 import System
 
 
@@ -64,14 +64,14 @@ def createLUKstring(lenString):
 def createLUK(lenLUK):
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	name_file = "LUK"
-	path = cf.get_value_by_key("path_LUK")
+	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
 		f.write(createLUKstring(lenLUK))
 
 
 def isLUKfile():
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
-	return System.is_file("LUK", cf.get_value_by_key("path_LUK"))
+	return System.is_file("LUK", get_value_by_key("path_LUK"))
 
 
 def getHashString(string):
@@ -84,7 +84,7 @@ def getHashLUK():
 	# Получаем хеш строки из файла
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	name_file = "LUK"
-	path = cf.get_value_by_key("path_LUK")
+	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:
 		return getHashString(f.read())
 
