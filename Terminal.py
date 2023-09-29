@@ -1,7 +1,5 @@
 import GenPass as gp
 from localization import LanguageManager as lm
-import System
-from Config import ConfigFile as cf
 
 
 def processingNumLUK(number, _):
@@ -71,7 +69,7 @@ def Main():
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
-	if not System.is_file("LUK", cf.get_value_by_key("path_LUK")):
+	if not gp.isLUKfile():
 		numberLUKsymbols = getNumLUKsymbols(_)
 		gp.createLUK(numberLUKsymbols)
 
