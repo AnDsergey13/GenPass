@@ -42,6 +42,7 @@ def encryption_xor(number, key):
 
 def create_luk_string(string_len):
 	string = ""
+	# TODO: пераіменаваць s
 	s = secrets.SystemRandom()
 	for _ in range(string_len):
 		string += str(chr(s.randint(33, 126)))
