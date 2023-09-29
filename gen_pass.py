@@ -66,8 +66,8 @@ def is_luk_file():
 
 
 def get_hash_string(string):
-	hashObject = hashlib.sha256(bytes(string, 'utf-8'))
-	return hashObject.hexdigest()
+	hash_object = hashlib.sha256(bytes(string, 'utf-8'))
+	return hash_object.hexdigest()
 
 
 def getHashLUK():
