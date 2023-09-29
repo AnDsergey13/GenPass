@@ -17,7 +17,7 @@ def _in_key(func):
 	return wrapper
 
 
-settings_file_name = "Config.json"
+_settings_file_name = "Config.json"
 
 template_for_creating_file = {
 	"use_GUI": None,
@@ -34,14 +34,14 @@ def __get_template():
 
 def get_file_name():
 	"""Получаем название конфигурационного файла"""
-	return settings_file_name
+	return _settings_file_name
 
 
 def set_file_name(new_name):
 	"""Изменяем название конфигурационного файла"""
 	# TODO: Сделать проверку корректности введённого имени
-	global settings_file_name
-	settings_file_name = new_name
+	global _settings_file_name
+	_settings_file_name = new_name
 
 
 def __check_language_in_list(language, list_of_languages):
