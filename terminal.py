@@ -59,8 +59,8 @@ def Main():
 	encryptedPrivateKey = gp.getHashString(privateKey)
 	encryptedLandmarkPhrase = gp.getHashString(landmarkPhrase)
 
-	# Invert the elements, since during the XOR operation, the same keys should not turn zero. And when the keys were swapped, the same password was not created.
-	# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращатся ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
+	# Invert the elements, since during the XOR operation, the same keys should not turn into zero. And when the keys were swapped, the same password was not created.
+	# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращаться в ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
 	UnicodePrivateKey = gp.convertToUnicode(encryptedPrivateKey)[::-1]
 	UnicodeLandmarkPhrase = gp.convertToUnicode(encryptedLandmarkPhrase)
 
