@@ -21,4 +21,4 @@ if USE_USER_INTERFACE:
 else:
 	terminal.Main()
 
-# TODO #XX: Переамясціць код у функцыю __main__()
+# TODO: Переместить код в функцию __main__()

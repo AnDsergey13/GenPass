@@ -6,14 +6,14 @@ language_folder = "locale/"
 
 
 def __get_language_from_config_file():
-	"""TODO: Write docstring"""
-	# TODO: Перамясціць ў config?
+	"""TODO: Написать docstring"""
+	# TODO: Переместить в config?
 	return get_value_by_key("LANG")
 
 
 def __get_localization_file(name_file):
-	"""TODO: Write docstring"""
-	# FIXME: Здаецца тут няпраўда, бо вяртаюцца даныя, а не файл
+	"""TODO: Написать docstring"""
+	# FIXME: Кажется здесь неправда, так как возвращаются данные, а не файл
 	full_name = language_folder + name_file + ".json"
 	return system.get_data_from_file(json_file_name=full_name)
 
@@ -34,7 +34,7 @@ def get_text(key):
 		return None
 
 
-# TODO: выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
+# TODO: Выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
 # и вынести его в отдельный метод или декоратор
 def add_key_in_all_lang(new_key: str):
 	""" Добавляет новый ключ во все json файлы """

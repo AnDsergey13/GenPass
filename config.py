@@ -12,7 +12,7 @@ def _in_key(func):
 		if key in data:
 			return func(key, *args)
 		else:
-			# TODO: Прадугледзець лакалізацыю
+			# TODO: Предусмотреть локализацию
 			print(f"Параметр KEY, указан не верно! Допустимые значения = {list(data.keys())}")
 	return wrapper
 
@@ -102,7 +102,7 @@ def __write_down_basic_settings():
 		change_value_by_key("path_LUK", standard_path)
 		change_value_by_key("path_Database", standard_path)
 	else:
-		# TODO: Прадугледзець лакалізацыю
+		# TODO: Предусмотреть локализацию
 		print(f"Указанный путь {standard_path} - не корректен! Оставляем пустые значения")
 
 
@@ -116,7 +116,7 @@ def __get_basic_language(language=""):
 		# Проверяем введённый язык на правильность ввода
 		# И если он не правильный, то автоматически выбираем язык по умолчанию
 		language_os = system.getLanguageOS()
-		# TODO: Прадугледзець лакалізацыю
+		# TODO: Предусмотреть локализацию
 		print(f"Указанного языка не существует. Выбран {language_os} по умолчанию")
 		return language_os
 	else:
@@ -131,7 +131,7 @@ def _get_basic_gui_settings(use_gui=False):
 		convert_use_gui = bool(use_gui)
 	except (ValueError, TypeError) as err:
 		print(err)
-		# TODO: Прадугледзець лакалізацыю
+		# TODO: Предусмотреть локализацию
 		print(f"GUI. Config. Установлено значение по умолчанию = {default_value}")
 		return default_value
 	else:

@@ -47,14 +47,14 @@ def getNameUser():
 
 def is_file(name_file, path_file=""):
 	""" """
-	# TODO: Спрасціць логіку, зрабіўшы значэнне па змаўчанні
+	# TODO: Упростить логику, используя значение по умолчанию
 	if path_file == "":
 		path_file = get_standard_path()
 
 	# Проверить. Будет ли косая черта работать для Windows
 	# TODO: os.separator?
 	full_path_with_name = path_file + "/" + name_file
-	# TODO: Розніца паміж os.path.isfile і os.path.exists?
+	# TODO: Разница между os.path.isfile и os.path.exists?
 	return os.path.isfile(full_path_with_name)
 
 

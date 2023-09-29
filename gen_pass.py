@@ -42,7 +42,7 @@ def encryption_xor(number, key):
 
 def create_luk_string(string_len):
 	string = ""
-	# TODO: пераіменаваць s
+	# TODO: переименовать переменную s
 	s = secrets.SystemRandom()
 	for _ in range(string_len):
 		string += str(chr(s.randint(33, 126)))
@@ -53,7 +53,7 @@ def create_luk_string(string_len):
 
 
 def create_luk(luk_len):
-	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
+	# TODO: Вынести в отдельный метод config.get_full_luk_path()
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
@@ -61,7 +61,7 @@ def create_luk(luk_len):
 
 
 def is_luk_file():
-	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
+	# TODO: Вынести в отдельный метод config.get_full_luk_path()
 	return system.is_file("LUK", get_value_by_key("path_LUK"))
 
 
@@ -73,7 +73,7 @@ def get_hash_string(string):
 def get_hash_luk():
 	# Get a hash string from the file
 	# Получаем хеш строки из файла
-	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
+	# TODO: Вынести в отдельный метод config.get_full_luk_path()
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
 	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:

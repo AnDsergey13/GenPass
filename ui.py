@@ -64,7 +64,7 @@ class UIGP:
 		self.w.resize(width, height)
 		self.w.move(pos_x, pos_y)
 		self.w.setWindowTitle('GenPass')
-		# TODO #XX: Замяніць на QApplication.windowIcon
+		# TODO: Заменить на QApplication.windowIcon
 		# https://doc.qt.io/qt-6/qwidget.html#windowIcon-prop
 		self.w.setWindowIcon(QIcon('icon/Panel.png'))
 
@@ -163,7 +163,7 @@ class UIGP:
 			self.edt_LUK.setEnabled(True)
 
 	def deleteLUKfile(self):
-		# TODO #XX: Перанесці з гэтага модуля?
+		# TODO: Перенести из этого модуля?
 		import os
 		os.remove("LUK")
 
