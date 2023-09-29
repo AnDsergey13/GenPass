@@ -124,11 +124,11 @@ def __get_basic_language(language=""):
 		return language
 
 
-def _get_basic_gui_settings(use_GUI=False):
+def _get_basic_gui_settings(use_gui=False):
 	""" """
 	default_value = False
 	try:
-		convert_use_GUI = bool(use_GUI)
+		convert_use_GUI = bool(use_gui)
 	except (ValueError, TypeError) as err:
 		print(err)
 		# TODO: Прадугледзець лакалізацыю
