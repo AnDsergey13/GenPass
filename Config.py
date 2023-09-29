@@ -25,22 +25,27 @@ template_for_creating_file = {
 	"path_Database": ""
 }
 
+
 def __get_template():
 	"""Получаем шаблон для создания конфигурационного файла"""
 	return template_for_creating_file
 
+
 def get_file_name():
 	"""Получаем название конфигурационного файла"""
 	return settings_file_name
+
 
 def set_file_name(new_name):
 	"""Изменяем название конфигурационного файла"""
 	# TODO: Сделать проверку корректности введённого имени
 	settings_file_name = new_name
 
+
 def __check_language_in_list(language, list_of_languages):
 	"""Существует ли указанный язык в списке языков"""
 	return language in list_of_languages
+
 
 @in_key
 def get_value_by_key(key):
@@ -54,6 +59,7 @@ def get_value_by_key(key):
 	# Получаем данные
 	data = System.get_data_from_file(json_file_name=get_file_name())
 	return data[key]
+
 
 @in_key
 def change_value_by_key(key, new_value):
@@ -69,6 +75,7 @@ def change_value_by_key(key, new_value):
 	# Записываем в файл конфигурации
 	System.set_data_to_file(data=data, json_file_name=get_file_name())
 
+
 def create_file():
 	""" Создаёт конфигурационный файл с отсутствующими настройками"""
 
@@ -82,6 +89,7 @@ def create_file():
 		# Устанавливаем значения по умолчанию
 		__write_down_basic_settings()
 
+
 def __write_down_basic_settings():
 	""" """
 	change_value_by_key("use_GUI", __get_basic_GUI_settings())
@@ -93,6 +101,7 @@ def __write_down_basic_settings():
 		change_value_by_key("path_Database", standart_path)
 	else:
 		print(f"Указанный путь {standart_path} - не корректен! Оставляем пустые значения")
+
 
 # TODO: Сделать проверку try/except для типа вводимого сообщения
 def __get_basic_language(language=""):
@@ -109,6 +118,7 @@ def __get_basic_language(language=""):
 	else:
 		# Если указанный язык был введён правильно, то возвращаем его для дальнейших операций
 		return language
+
 
 def __get_basic_GUI_settings(use_GUI=False):
 	""" """
