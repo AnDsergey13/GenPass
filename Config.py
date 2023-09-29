@@ -95,12 +95,12 @@ def __write_down_basic_settings():
 	change_value_by_key("use_GUI", __get_basic_GUI_settings())
 	change_value_by_key("LANG", __get_basic_language())
 
-	standart_path = System.get_standard_path()
-	if System.is_path(standart_path):
-		change_value_by_key("path_LUK", standart_path)
-		change_value_by_key("path_Database", standart_path)
+	standard_path = System.get_standard_path()
+	if System.is_path(standard_path):
+		change_value_by_key("path_LUK", standard_path)
+		change_value_by_key("path_Database", standard_path)
 	else:
-		print(f"Указанный путь {standart_path} - не корректен! Оставляем пустые значения")
+		print(f"Указанный путь {standard_path} - не корректен! Оставляем пустые значения")
 
 
 # TODO: Сделать проверку try/except для типа вводимого сообщения
