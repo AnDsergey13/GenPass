@@ -260,7 +260,7 @@ class UIGP:
 		if not gp.isLUKfile():
 			numberLUKsymbols = self.getNumSymbolsLUK()
 			if numberLUKsymbols != -1:
-				gp.createLUK(numberLUKsymbols)
+				gp.create_luk(numberLUKsymbols)
 
 		if gp.isLUKfile():
 			hashLUK = gp.getHashLUK().upper()
