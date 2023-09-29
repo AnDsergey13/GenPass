@@ -53,10 +53,10 @@ def getNumLUKsymbols():
 
 
 def Main():
-	privateKey = input(_("Enter. Private key"))
+	private_key = input(_("Enter. Private key"))
 	landmarkPhrase = input(_("Enter. Landmark phrase"))
 
-	encryptedPrivateKey = gp.get_hash_string(privateKey)
+	encryptedPrivateKey = gp.get_hash_string(private_key)
 	encryptedLandmarkPhrase = gp.get_hash_string(landmarkPhrase)
 
 	# Invert the elements, since during the XOR operation, the same keys should not turn into zero. And when the keys were swapped, the same password was not created.
