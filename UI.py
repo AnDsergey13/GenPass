@@ -161,6 +161,7 @@ class UIGP:
 		else:
 			self.edt_LUK.setEnabled(True)
 
+	# TODO #XX: Перанесці з гэтага модуля?
 	def deleteLUKfile(self):
 		import os
 		os.remove("LUK")
