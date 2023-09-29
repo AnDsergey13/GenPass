@@ -128,11 +128,11 @@ def _get_basic_gui_settings(use_gui=False):
 	""" """
 	default_value = False
 	try:
-		convert_use_GUI = bool(use_gui)
+		convert_use_gui = bool(use_gui)
 	except (ValueError, TypeError) as err:
 		print(err)
 		# TODO: Прадугледзець лакалізацыю
 		print(f"GUI. Config. Установлено значение по умолчанию = {default_value}")
 		return default_value
 	else:
-		return convert_use_GUI
+		return convert_use_gui
