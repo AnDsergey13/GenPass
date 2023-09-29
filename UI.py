@@ -168,7 +168,13 @@ class UIGP:
 		os.remove("LUK")
 
 	def createNewLUKfile(self):
-		# msg = QMessageBox.question(self.w, 'PyQt5 message', "Do you like PyQt5?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+		# msg = QMessageBox.question(
+		# 	self.w,
+		# 	'PyQt5 message',
+		# 	"Do you like PyQt5?",
+		# 	QMessageBox.Yes | QMessageBox.No,
+		# 	QMessageBox.No
+		# )
 
 		msg = QMessageBox()
 		# msg.setText("The document has been modified.")
