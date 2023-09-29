@@ -67,7 +67,7 @@ def change_value_by_key(key, new_value):
 	""" Изменяем данные в файле по ключу
 
 		Пример вызова.
-		ConfigFile.change_value_by_key("path_LUK", "/home/Work/Python/")
+		change_value_by_key("path_LUK", "/home/Work/Python/")
 	"""
 	# Получаем данные
 	data = System.get_data_from_file(json_file_name=get_file_name())
