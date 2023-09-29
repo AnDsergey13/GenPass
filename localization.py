@@ -6,12 +6,12 @@ language_folder = "locale/"
 
 
 def __get_language_from_config_file():
-	""" """
+	"""TODO: Write docstring"""
 	return cf.get_value_by_key("LANG")
 
 
 def __get_localization_file(name_file):
-	""" """
+	"""TODO: Write docstring"""
 	full_name = language_folder + name_file + ".json"
 	return System.get_data_from_file(json_file_name=full_name)
 
