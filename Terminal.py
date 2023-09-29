@@ -14,7 +14,7 @@ def processingNumLUK(number):
 			# Input Error. The values must be greater than 1000
 			# Ошибка ввода. Значения должны быть больше 1000
 			print(_("Err. LUK-file. Greater than 1000"))
-			# print(localization[3])
+			# print(localization[3]) - выдаліць?
 
 			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
