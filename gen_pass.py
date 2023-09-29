@@ -12,7 +12,7 @@ def convert_to_unicode(string):
 	return result
 
 
-def encryptionXOR(number, key):
+def encryption_xor(number, key):
 	# Due to the fact that the ZIP function cuts off the resulting list if two incoming list of different lengths are long, and we do not need this, we write their implementation.
 	# В связи с тем, что функция zip обрезает результирующий список, если два входящих списка разной длинны, а нам такого не надо, то пишем свою реализацию.
 

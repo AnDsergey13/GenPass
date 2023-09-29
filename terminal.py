@@ -64,7 +64,7 @@ def Main():
 	UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
 	UnicodeLandmarkPhrase = gp.convert_to_unicode(encryptedLandmarkPhrase)
 
-	A = gp.encryptionXOR(UnicodeLandmarkPhrase, UnicodePrivateKey)
+	A = gp.encryption_xor(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
@@ -78,5 +78,5 @@ def Main():
 
 	B = gp.convert_to_unicode(hashLUK)
 
-	result = gp.convertToString(gp.encryptionXOR(A, B))
+	result = gp.convertToString(gp.encryption_xor(A, B))
 	print(result)
