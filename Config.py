@@ -39,6 +39,7 @@ def get_file_name():
 def set_file_name(new_name):
 	"""Изменяем название конфигурационного файла"""
 	# TODO: Сделать проверку корректности введённого имени
+	global settings_file_name
 	settings_file_name = new_name
 
 
