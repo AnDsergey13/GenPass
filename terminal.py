@@ -2,7 +2,7 @@ import gen_pass as gp
 from localization import get_text as _
 
 
-def processingNumLUK(number):
+def processing_num_luk(number):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
 	if number == "":
@@ -47,7 +47,7 @@ def getNumLUKsymbols():
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		luk_symbols_number = input(_("Enter. LUK-file. Default is 5000"))
 
-		luk_symbols_number = processingNumLUK(luk_symbols_number)
+		luk_symbols_number = processing_num_luk(luk_symbols_number)
 		if luk_symbols_number != -1:
 			return luk_symbols_number
 
