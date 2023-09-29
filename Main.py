@@ -1,12 +1,12 @@
 import Terminal
 import UI as ui
-from Config import ConfigFile as cf
+import Config
 import System
 
 # создаём конфигурационный файл, если он отсутствует
-cf.create_file()
+Config.create_file()
 
-USE_USER_INTERFACE = cf.get_value_by_key("use_GUI")
+USE_USER_INTERFACE = Config.get_value_by_key("use_GUI")
 CURRENT_OS = System.getCurrentOS()
 
 if USE_USER_INTERFACE:
