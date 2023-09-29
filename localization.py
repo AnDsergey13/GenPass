@@ -12,6 +12,7 @@ def __get_language_from_config_file():
 
 def __get_localization_file(name_file):
 	"""TODO: Write docstring"""
+	# FIXME: Здаецца тут няпраўда, бо вяртаюцца даныя, а не файл
 	full_name = language_folder + name_file + ".json"
 	return System.get_data_from_file(json_file_name=full_name)
 
