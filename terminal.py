@@ -62,9 +62,9 @@ def Main():
 	# Invert the elements, since during the XOR operation, the same keys should not turn into zero. And when the keys were swapped, the same password was not created.
 	# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращаться в ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
 	unicode_private_key = gp.convert_to_unicode(encrypted_private_key)[::-1]
-	UnicodeLandmarkPhrase = gp.convert_to_unicode(encrypted_landmark_phrase)
+	unicode_landmark_phrase = gp.convert_to_unicode(encrypted_landmark_phrase)
 
-	A = gp.encryption_xor(UnicodeLandmarkPhrase, unicode_private_key)
+	A = gp.encryption_xor(unicode_landmark_phrase, unicode_private_key)
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
