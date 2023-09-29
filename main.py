@@ -7,7 +7,7 @@ import system
 config.create_file()
 
 USE_USER_INTERFACE = config.get_value_by_key("use_gui")
-CURRENT_OS = system.getCurrentOS()
+CURRENT_OS = system.get_current_os()
 
 if USE_USER_INTERFACE:
 	if CURRENT_OS == "Linux" or CURRENT_OS == "Windows":

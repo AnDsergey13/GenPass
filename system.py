@@ -26,7 +26,7 @@ def get_language_os():
 # 	return localization
 
 
-def getCurrentOS():
+def get_current_os():
 	# Использовать case?
 	OS = sysconfig.get_platform()
 	if OS == "linux-x86_64":  # Linux
