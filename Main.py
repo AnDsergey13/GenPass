@@ -20,3 +20,5 @@ if USE_USER_INTERFACE:
 		print("Unknown operating system")
 else:
 	Terminal.Main()
+
+# TODO #XX: Переамясціць код у функцыю __main__()
