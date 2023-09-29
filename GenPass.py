@@ -70,6 +70,7 @@ def createLUK(lenLUK):
 
 
 def isLUKfile():
+	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	return System.is_file("LUK", cf.get_value_by_key("path_LUK"))
 
 
