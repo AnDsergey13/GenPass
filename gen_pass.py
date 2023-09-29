@@ -40,10 +40,10 @@ def encryption_xor(number, key):
 	return result
 
 
-def create_luk_string(lenString):
+def create_luk_string(string_len):
 	string = ""
 	s = secrets.SystemRandom()
-	for _ in range(lenString):
+	for _ in range(string_len):
 		string += str(chr(s.randint(33, 126)))
 		# Symbol separator
 		# Символ разделитель
