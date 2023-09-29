@@ -30,12 +30,12 @@ def encryption_xor(number, key):
 	# Block XOR. With an XOR operation, elements from the B list can end, if the length A and B are different. Therefore, zucing the brute force of the list of the list in, until the list is over. That is, with Len (a) <Len (b), the list will be repeatedly applied.
 	# Блок XOR. При операции XOR, элементы из списка В, могут закончится, если длина А и В, различны. Поэтому зацикливаем перебор элементов списка В, до тех пор, пока список А не закончится. То есть, при len(A) < len(B), список В будет многократно применятся.
 	result = []
-	indexB = 0
+	index_b = 0
 	for elementA in a:
-		if indexB > len(b) - 1:
-			indexB = 0
-		result.append(elementA ^ b[indexB])
-		indexB += 1
+		if index_b > len(b) - 1:
+			index_b = 0
+		result.append(elementA ^ b[index_b])
+		index_b += 1
 
 	return result
 
