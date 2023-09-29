@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtGui
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
@@ -63,7 +63,9 @@ class UIGP:
 		self.w.resize(width, height)
 		self.w.move(pos_x, pos_y)
 		self.w.setWindowTitle('GenPass')
-		self.w.setWindowIcon(QtGui.QIcon('icon/Panel.png'))
+		# TODO #XX: Замяніць на QApplication.windowIcon
+		# https://doc.qt.io/qt-6/qwidget.html#windowIcon-prop
+		self.w.setWindowIcon(QIcon('icon/Panel.png'))
 
 		self.createComponents()
 
