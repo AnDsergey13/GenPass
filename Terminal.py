@@ -1,8 +1,8 @@
 import GenPass as gp
-from localization import LanguageManager as lm
+from localization import get_text as _
 
 
-def processingNumLUK(number, _):
+def processingNumLUK(number):
 	# If you press Enter, the default values are set to 5000.
 	# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
 	if number == "":
@@ -41,7 +41,7 @@ def processingNumLUK(number, _):
 		return -1
 
 
-def getNumLUKsymbols(_):
+def getNumLUKsymbols():
 	while True:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
@@ -53,7 +53,6 @@ def getNumLUKsymbols(_):
 
 
 def Main():
-	_ = lm.get_text
 	privateKey = input(_("Enter. Private key"))
 	landmarkPhrase = input(_("Enter. Landmark phrase"))
 

@@ -4,12 +4,12 @@ from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QCheckBox, QLabel, QLineEdit, QMessageBox, QPushButton, QWidget
 
 import GenPass as gp
-from localization import LanguageManager
+from localization import get_text
 
 
 class UIGP:
 	def __init__(self):
-		self.get_localized_text = LanguageManager.get_text
+		self.get_localized_text = get_text
 		self.privateKey = ""
 		self.landmarkPhrase = ""
 		self.password = ""
