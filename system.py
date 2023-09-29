@@ -7,7 +7,7 @@ TYPE_OS = ["Linux", "Android", "Windows", "Other"]
 
 
 # FIXME: Переделать ниже
-def getLanguageOS():
+def get_language_os():
 	if locale.getlocale()[0] == "ru_RU":
 		return "ru_RU"
 	else:

@@ -111,11 +111,11 @@ def __get_basic_language(language=""):
 	""" """
 	if language == "":
 		# Если предпочтительный язык не был введён, то выбираем язык текущей операционной системы
-		return system.getLanguageOS()
+		return system.get_language_os()
 	elif not __check_language_in_list(language, system.get_file_names()):
 		# Проверяем введённый язык на правильность ввода
 		# И если он не правильный, то автоматически выбираем язык по умолчанию
-		language_os = system.getLanguageOS()
+		language_os = system.get_language_os()
 		# TODO: Предусмотреть локализацию
 		print(f"Указанного языка не существует. Выбран {language_os} по умолчанию")
 		return language_os
