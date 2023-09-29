@@ -1,4 +1,4 @@
-import System
+import system
 
 
 # TODO: Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
@@ -8,7 +8,7 @@ import System
 def in_key(func):
 	def wrapper(key, *args):
 		""" Проверяем, содержится ли введённый ключ в файле конфигураций"""
-		data = System.get_data_from_file(json_file_name=get_file_name())
+		data = system.get_data_from_file(json_file_name=get_file_name())
 		if key in data:
 			return func(key, *args)
 		else:
@@ -59,7 +59,7 @@ def get_value_by_key(key):
 		/home/user/GenPass/Database.json
 	"""
 	# Получаем данные
-	data = System.get_data_from_file(json_file_name=get_file_name())
+	data = system.get_data_from_file(json_file_name=get_file_name())
 	return data[key]
 
 
@@ -71,22 +71,22 @@ def change_value_by_key(key, new_value):
 		change_value_by_key("path_LUK", "/home/Work/Python/")
 	"""
 	# Получаем данные
-	data = System.get_data_from_file(json_file_name=get_file_name())
+	data = system.get_data_from_file(json_file_name=get_file_name())
 	# Изменяем на новые
 	data[key] = new_value
 	# Записываем в файл конфигурации
-	System.set_data_to_file(data=data, json_file_name=get_file_name())
+	system.set_data_to_file(data=data, json_file_name=get_file_name())
 
 
 def create_file():
 	""" Создаёт конфигурационный файл с отсутствующими настройками"""
 
 	# Проверка сделана с целью защиты от перезаписи файла при повторном запуске функции
-	if not System.is_file(get_file_name()):
+	if not system.is_file(get_file_name()):
 		# Получаем шаблон
 		data = __get_template()
 		# Создаём новый конфигурационный файл по шаблону
-		System.set_data_to_file(data=data, json_file_name=get_file_name())
+		system.set_data_to_file(data=data, json_file_name=get_file_name())
 
 		# Устанавливаем значения по умолчанию
 		__write_down_basic_settings()
@@ -97,8 +97,8 @@ def __write_down_basic_settings():
 	change_value_by_key("use_GUI", __get_basic_GUI_settings())
 	change_value_by_key("LANG", __get_basic_language())
 
-	standard_path = System.get_standard_path()
-	if System.is_path(standard_path):
+	standard_path = system.get_standard_path()
+	if system.is_path(standard_path):
 		change_value_by_key("path_LUK", standard_path)
 		change_value_by_key("path_Database", standard_path)
 	else:
@@ -111,11 +111,11 @@ def __get_basic_language(language=""):
 	""" """
 	if language == "":
 		# Если предпочтительный язык не был введён, то выбираем язык текущей операционной системы
-		return System.getLanguageOS()
-	elif not __check_language_in_list(language, System.get_file_names()):
+		return system.getLanguageOS()
+	elif not __check_language_in_list(language, system.get_file_names()):
 		# Проверяем введённый язык на правильность ввода
 		# И если он не правильный, то автоматически выбираем язык по умолчанию
-		languageOS = System.getLanguageOS()
+		languageOS = system.getLanguageOS()
 		# TODO: Прадугледзець лакалізацыю
 		print(f"Указанного языка не существует. Выбран {languageOS} по умолчанию")
 		return languageOS

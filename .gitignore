@@ -7,6 +7,6 @@ temp
 .venv/
 temp/
 *.db
-Config.json
+config.json
 
 .idea/

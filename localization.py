@@ -1,5 +1,5 @@
-from Config import get_value_by_key
-import System
+from config import get_value_by_key
+import system
 
 
 language_folder = "locale/"
@@ -15,7 +15,7 @@ def __get_localization_file(name_file):
 	"""TODO: Write docstring"""
 	# FIXME: Здаецца тут няпраўда, бо вяртаюцца даныя, а не файл
 	full_name = language_folder + name_file + ".json"
-	return System.get_data_from_file(json_file_name=full_name)
+	return system.get_data_from_file(json_file_name=full_name)
 
 
 def get_text(key):
@@ -38,34 +38,34 @@ def get_text(key):
 # и вынести его в отдельный метод или декоратор
 def add_key_in_all_lang(new_key: str):
 	""" Добавляет новый ключ во все json файлы """
-	list_file_names = System.get_file_names(remove_extensions=False)
+	list_file_names = system.get_file_names(remove_extensions=False)
 
 	# Перебираем каждый json файл в папке
 	for name_file in list_file_names:
 		full_name = language_folder + name_file
 		# Получаем данные из файла
-		data = System.get_data_from_file(json_file_name=full_name)
+		data = system.get_data_from_file(json_file_name=full_name)
 		if new_key not in data:
 			# Записываем пустое значение под новым ключом
 			data[new_key] = ""
 			# Сохраняем изменения
-			System.set_data_to_file(data=data, json_file_name=full_name)
+			system.set_data_to_file(data=data, json_file_name=full_name)
 		else:
 			print("Запись с таким ключом, уже существует. Введите другой")
 
 
 def del_key_in_all_lang(key: str):
 	""" Удаляет ключ во всех json файлах """
-	list_file_names = System.get_file_names(remove_extensions=False)
+	list_file_names = system.get_file_names(remove_extensions=False)
 
 	# Перебираем каждый json файл в папке
 	for name_file in list_file_names:
 		full_name = language_folder + name_file
 		# Получаем данные из файла
-		data = System.get_data_from_file(json_file_name=full_name)
+		data = system.get_data_from_file(json_file_name=full_name)
 		if key in data:
 			del data[key]
 			# Сохраняем изменения
-			System.set_data_to_file(data=data, json_file_name=full_name)
+			system.set_data_to_file(data=data, json_file_name=full_name)
 		else:
 			print("Записи с таким ключом, не существует. Введите другой")

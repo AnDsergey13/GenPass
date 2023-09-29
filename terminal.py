@@ -1,4 +1,4 @@
-import GenPass as gp
+import gen_pass as gp
 from localization import get_text as _
 
 

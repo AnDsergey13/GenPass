@@ -1,13 +1,13 @@
-import Terminal
-import UI as ui
-import Config
-import System
+import terminal
+import ui
+import config
+import system
 
 # создаём конфигурационный файл, если он отсутствует
-Config.create_file()
+config.create_file()
 
-USE_USER_INTERFACE = Config.get_value_by_key("use_GUI")
-CURRENT_OS = System.getCurrentOS()
+USE_USER_INTERFACE = config.get_value_by_key("use_GUI")
+CURRENT_OS = system.getCurrentOS()
 
 if USE_USER_INTERFACE:
 	if CURRENT_OS == "Linux" or CURRENT_OS == "Windows":
@@ -19,6 +19,6 @@ if USE_USER_INTERFACE:
 		# Other
 		print("Unknown operating system")
 else:
-	Terminal.Main()
+	terminal.Main()
 
 # TODO #XX: Переамясціць код у функцыю __main__()

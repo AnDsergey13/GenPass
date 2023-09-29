@@ -1,8 +1,8 @@
 import hashlib
 import secrets
 
-from Config import get_value_by_key
-import System
+from config import get_value_by_key
+import system
 
 
 def convertToUnicode(string):
@@ -61,7 +61,7 @@ def createLUK(lenLUK):
 
 def isLUKfile():
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
-	return System.is_file("LUK", get_value_by_key("path_LUK"))
+	return system.is_file("LUK", get_value_by_key("path_LUK"))
 
 
 def getHashString(string):
