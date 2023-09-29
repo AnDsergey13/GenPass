@@ -5,7 +5,7 @@ import system
 # https://stackoverflow.com/questions/27214065/how-to-docstring-in-python-for-multiple-languages
 # нужна ли генерация html документации? https://youtu.be/BWIrhgCAae0
 
-def in_key(func):
+def _in_key(func):
 	def wrapper(key, *args):
 		""" Проверяем, содержится ли введённый ключ в файле конфигураций"""
 		data = system.get_data_from_file(json_file_name=get_file_name())
@@ -49,7 +49,7 @@ def __check_language_in_list(language, list_of_languages):
 	return language in list_of_languages
 
 
-@in_key
+@_in_key
 def get_value_by_key(key):
 	""" Извлекаем данные из файла, по ключу
 
@@ -63,7 +63,7 @@ def get_value_by_key(key):
 	return data[key]
 
 
-@in_key
+@_in_key
 def change_value_by_key(key, new_value):
 	""" Изменяем данные в файле по ключу
 
