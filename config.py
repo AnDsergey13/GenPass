@@ -94,7 +94,7 @@ def create_file():
 
 def __write_down_basic_settings():
 	""" """
-	change_value_by_key("use_GUI", __get_basic_GUI_settings())
+	change_value_by_key("use_GUI", _get_basic_gui_settings())
 	change_value_by_key("LANG", __get_basic_language())
 
 	standard_path = system.get_standard_path()
@@ -124,7 +124,7 @@ def __get_basic_language(language=""):
 		return language
 
 
-def __get_basic_GUI_settings(use_GUI=False):
+def _get_basic_gui_settings(use_GUI=False):
 	""" """
 	default_value = False
 	try:
