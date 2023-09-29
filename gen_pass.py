@@ -18,20 +18,20 @@ def encryption_xor(number, key):
 
 	# This code block defines which of the incoming lists is longer, and writes in and the longest. This check is necessary to simplify the XOR block.
 	# Данный блок кода определяет какой из входящих списков длиннее, и записывает в А самый длинный. Это проверка необходима для упрощения блока XOR
-	A = []
+	a = []
 	B = []
 	if len(number) > len(key) or len(number) == len(key):
-		A = number
+		a = number
 		B = key
 	else:
-		A = key
+		a = key
 		B = number
 
 	# Block XOR. With an XOR operation, elements from the B list can end, if the length A and B are different. Therefore, zucing the brute force of the list of the list in, until the list is over. That is, with Len (a) <Len (b), the list will be repeatedly applied.
 	# Блок XOR. При операции XOR, элементы из списка В, могут закончится, если длина А и В, различны. Поэтому зацикливаем перебор элементов списка В, до тех пор, пока список А не закончится. То есть, при len(A) < len(B), список В будет многократно применятся.
 	result = []
 	indexB = 0
-	for elementA in A:
+	for elementA in a:
 		if indexB > len(B) - 1:
 			indexB = 0
 		result.append(elementA ^ B[indexB])
