@@ -60,7 +60,7 @@ def create_luk(luk_len):
 		f.write(create_luk_string(luk_len))
 
 
-def isLUKfile():
+def is_luk_file():
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
 	return system.is_file("LUK", get_value_by_key("path_LUK"))
 

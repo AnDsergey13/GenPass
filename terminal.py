@@ -68,7 +68,7 @@ def Main():
 
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
-	if not gp.isLUKfile():
+	if not gp.is_luk_file():
 		numberLUKsymbols = getNumLUKsymbols()
 		gp.create_luk(numberLUKsymbols)
 

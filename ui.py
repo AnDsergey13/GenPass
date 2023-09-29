@@ -55,7 +55,7 @@ class UIGP:
 			self.edt_LP.setEchoMode(QLineEdit.Normal)
 
 	def updateCheckLUKfile(self):
-		self.isVisibleEdtLUK = gp.isLUKfile()
+		self.isVisibleEdtLUK = gp.is_luk_file()
 
 	def createWindow(self, width=450, height=450, pos_x=300, pos_y=300):
 		app = QApplication(sys.argv)
@@ -257,12 +257,12 @@ class UIGP:
 
 		A = gp.encryption_xor(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
-		if not gp.isLUKfile():
+		if not gp.is_luk_file():
 			numberLUKsymbols = self.getNumSymbolsLUK()
 			if numberLUKsymbols != -1:
 				gp.create_luk(numberLUKsymbols)
 
-		if gp.isLUKfile():
+		if gp.is_luk_file():
 			hashLUK = gp.getHashLUK().upper()
 			B = gp.convert_to_unicode(hashLUK)
 			result = gp.convertToString(gp.encryption_xor(A, B))
