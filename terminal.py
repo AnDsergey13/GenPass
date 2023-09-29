@@ -76,7 +76,7 @@ def Main():
 	# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
 	hashLUK = gp.get_hash_luk().upper()
 
-	B = gp.convert_to_unicode(hashLUK)
+	b = gp.convert_to_unicode(hashLUK)
 
-	result = gp.convert_to_string(gp.encryption_xor(a, B))
+	result = gp.convert_to_string(gp.encryption_xor(a, b))
 	print(result)
