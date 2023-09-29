@@ -263,7 +263,7 @@ class UIGP:
 				gp.create_luk(numberLUKsymbols)
 
 		if gp.is_luk_file():
-			hashLUK = gp.getHashLUK().upper()
+			hashLUK = gp.get_hash_luk().upper()
 			B = gp.convert_to_unicode(hashLUK)
 			result = gp.convertToString(gp.encryption_xor(A, B))
 			self.copyPassInClipboard(result)

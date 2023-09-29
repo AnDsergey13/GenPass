@@ -70,7 +70,7 @@ def get_hash_string(string):
 	return hash_object.hexdigest()
 
 
-def getHashLUK():
+def get_hash_luk():
 	# Get a hash string from the file
 	# Получаем хеш строки из файла
 	# TODO #XX: Вынесці ў асобны метад config.get_full_luk_path()
