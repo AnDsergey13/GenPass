@@ -80,7 +80,7 @@ def get_hash_luk():
 		return get_hash_string(f.read())
 
 
-def convertToString(listUnicode):
+def convert_to_string(listUnicode):
 	string = ""
 	step = 8
 	for elementList in listUnicode:

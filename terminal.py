@@ -78,5 +78,5 @@ def Main():
 
 	B = gp.convert_to_unicode(hashLUK)
 
-	result = gp.convertToString(gp.encryption_xor(A, B))
+	result = gp.convert_to_string(gp.encryption_xor(A, B))
 	print(result)
