@@ -39,7 +39,7 @@ def get_current_os():
 		return TYPE_OS[3]
 
 
-def getNameUser():
+def get_name_user():
 	return None
 
 # FIXME: Переделать выше
