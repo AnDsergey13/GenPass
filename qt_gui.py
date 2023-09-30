@@ -252,10 +252,10 @@ class UIGP:
 		encrypted_private_key = gp.get_hash_string(private_key)
 		encrypted_landmark_phrase = gp.get_hash_string(landmark_phrase)
 
-		UnicodePrivateKey = gp.convert_to_unicode(encrypted_private_key)[::-1]
+		unicode_private_key = gp.convert_to_unicode(encrypted_private_key)[::-1]
 		UnicodeLandmarkPhrase = gp.convert_to_unicode(encrypted_landmark_phrase)
 
-		A = gp.encryption_xor(UnicodeLandmarkPhrase, UnicodePrivateKey)
+		A = gp.encryption_xor(UnicodeLandmarkPhrase, unicode_private_key)
 
 		if not gp.is_luk_file():
 			numberLUKsymbols = self.get_num_symbols_luk()
