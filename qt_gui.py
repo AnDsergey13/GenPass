@@ -151,7 +151,7 @@ class UIGP:
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
 		btn_Clear.resize(w_btn + 100, h_components)
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
-		btn_Clear.clicked.connect(self.clearAll)
+		btn_Clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
 		return self.isVisibleEdtLUK
@@ -274,7 +274,7 @@ class UIGP:
 		# Вывод сообщения. Пароль успешно создан и скопирован
 		self.lbl_message.setText(self.get_localized_text("Password copied"))
 
-	def clearAll(self):
+	def clear_all(self):
 		# Clearing the clipboard
 		# Очистка буфера
 		clipboard = QApplication.clipboard()
