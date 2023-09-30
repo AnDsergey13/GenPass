@@ -102,23 +102,23 @@ class UIGP:
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
-		y_lbl_2 = y_label_1 + distance_y_between_labels
+		y_label_2 = y_label_1 + distance_y_between_labels
 		lbl_LP = QLabel(self.w)
-		lbl_LP.move(offset_from_left_window_border, y_lbl_2)
+		lbl_LP.move(offset_from_left_window_border, y_label_2)
 		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
 
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, components_height)
-		self.edt_LP.move(offset_from_left_window_border, y_lbl_2 + y_offset_from_label)
+		self.edt_LP.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
 		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
-		cb_LP.move(offset_from_left_window_border + x_offset_check_box, y_lbl_2 + y_offset_from_label)
+		cb_LP.move(offset_from_left_window_border + x_offset_check_box, y_label_2 + y_offset_from_label)
 		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
-		y_lbl_3 = y_lbl_2 + distance_y_between_labels
+		y_lbl_3 = y_label_2 + distance_y_between_labels
 		lbl_LUK = QLabel(self.w)
 		lbl_LUK.move(offset_from_left_window_border, y_lbl_3)
 		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
