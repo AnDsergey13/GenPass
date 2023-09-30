@@ -68,13 +68,13 @@ class UIGP:
 		# https://doc.qt.io/qt-6/qwidget.html#windowIcon-prop
 		self.w.setWindowIcon(QIcon('icon/Panel.png'))
 
-		self.createComponents()
+		self.create_components()
 
 		self.w.show()
 		sys.exit(app.exec())
 
 
-	def createComponents(self):
+	def create_components(self):
 		h_components = 32
 		w_btn = 100
 		left_offset_from_window = 15
