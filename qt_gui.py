@@ -42,7 +42,7 @@ class UIGP:
 		return self.numberSymbolsLUK
 
 
-	def setVisiblePrivateKey(self, value):
+	def set_visible_private_key(self, value):
 		if value == 0:
 			self.edt_PK.setEchoMode(QLineEdit.Password)
 		else:
@@ -99,7 +99,7 @@ class UIGP:
 		cb_PK = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_PK.setChecked(True)
 		cb_PK.move(left_offset_from_window + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
-		cb_PK.stateChanged.connect(self.setVisiblePrivateKey)
+		cb_PK.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
 		y_lbl_2 = y_lbl_1 + dist_y_between_lbl
