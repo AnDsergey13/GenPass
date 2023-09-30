@@ -146,7 +146,7 @@ class UIGP:
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(w_btn, h_components)
 		btn_Create.move(left_offset_from_window, y_btn)
-		btn_Create.clicked.connect(self.createPassword)
+		btn_Create.clicked.connect(self.create_password)
 
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
 		btn_Clear.resize(w_btn + 100, h_components)
@@ -245,7 +245,7 @@ class UIGP:
 		else:
 			return -1
 
-	def createPassword(self):
+	def create_password(self):
 		privateKey = self.get_private_key()
 		landmarkPhrase = self.get_landmark_phrase()
 
