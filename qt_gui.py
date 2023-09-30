@@ -14,7 +14,7 @@ class UIGP:
 		self.private_key = ""
 		self.landmark_phrase = ""
 		self.password = ""
-		self.numberSymbolsLUK = ""
+		self.luk_symbols_number = ""
 
 		self.update_check_luk_file()
 
@@ -37,10 +37,10 @@ class UIGP:
 	# Number symbols LUK
 	def set_luk_symbols_number(self, number):
 		# print("LUK = ", number)
-		self.numberSymbolsLUK = number
+		self.luk_symbols_number = number
 
 	def get_luk_symbols_number(self):
-		return self.numberSymbolsLUK
+		return self.luk_symbols_number
 
 	# Input visibility
 	def set_visible_private_key(self, value):
