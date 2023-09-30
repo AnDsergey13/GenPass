@@ -87,9 +87,9 @@ class UIGP:
 		y_btn = 400
 
 		# PrivateKey
-		lbl_PK = QLabel(self.w)
-		lbl_PK.move(left_offset_from_window, y_lbl_1)
-		lbl_PK.setText(self.get_localized_text("Enter. Private key"))
+		label_private_key = QLabel(self.w)
+		label_private_key.move(left_offset_from_window, y_lbl_1)
+		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
 		self.edt_PK = QLineEdit(self.w)
 		self.edt_PK.resize(300, h_components)
