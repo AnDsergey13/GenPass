@@ -140,10 +140,10 @@ class UIGP:
 
 
 		# Bottom buttons
-		y_offset_from_btn = 45
+		y_offset_from_button = 45
 		self.label_message = QLabel(self.w)
 		self.label_message.resize(435, components_height)
-		self.label_message.move(offset_from_left_window_border, y_button - y_offset_from_btn)
+		self.label_message.move(offset_from_left_window_border, y_button - y_offset_from_button)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(buttons_width, components_height)
