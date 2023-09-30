@@ -121,9 +121,9 @@ class UIGP:
 
 		# LUK-file
 		y_lbl_3 = y_label_2 + distance_y_between_labels
-		lbl_LUK = QLabel(self.w)
-		lbl_LUK.move(offset_from_left_window_border, y_lbl_3)
-		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
+		label_luk = QLabel(self.w)
+		label_luk.move(offset_from_left_window_border, y_lbl_3)
+		label_luk.setText(self.get_localized_text("Enter. Size LUK-file"))
 
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, components_height)
