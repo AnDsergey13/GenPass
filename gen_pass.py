@@ -32,10 +32,10 @@ def encryption_xor(number, key):
 	# Блок XOR. При операции XOR, элементы из списка В, могут закончится, если длина А и В, различны. Поэтому зацикливаем перебор элементов списка В, до тех пор, пока список А не закончится. То есть, при len(A) < len(B), список В будет многократно применятся.
 	result = []
 	index_b = 0
-	for elementA in a:
+	for element_a in a:
 		if index_b > len(b) - 1:
 			index_b = 0
-		result.append(elementA ^ b[index_b])
+		result.append(element_a ^ b[index_b])
 		index_b += 1
 
 	return result
