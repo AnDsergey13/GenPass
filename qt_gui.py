@@ -150,10 +150,10 @@ class UIGP:
 		button_create.move(offset_from_left_window_border, y_button)
 		button_create.clicked.connect(self.create_password)
 
-		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
-		btn_Clear.resize(buttons_width + 100, components_height)
-		btn_Clear.move(offset_from_left_window_border + buttons_width + 100, y_button)
-		btn_Clear.clicked.connect(self.clear_all)
+		button_clear = QPushButton(self.get_localized_text("Clear"), self.w)
+		button_clear.resize(buttons_width + 100, components_height)
+		button_clear.move(offset_from_left_window_border + buttons_width + 100, y_button)
+		button_clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
 		return self.isVisibleEdtLUK
