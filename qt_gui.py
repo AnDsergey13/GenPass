@@ -255,7 +255,7 @@ class UIGP:
 		unicode_private_key = gp.convert_to_unicode(encrypted_private_key)[::-1]
 		unicode_landmark_phrase = gp.convert_to_unicode(encrypted_landmark_phrase)
 
-		A = gp.encryption_xor(unicode_landmark_phrase, unicode_private_key)
+		a = gp.encryption_xor(unicode_landmark_phrase, unicode_private_key)
 
 		if not gp.is_luk_file():
 			numberLUKsymbols = self.get_num_symbols_luk()
@@ -265,7 +265,7 @@ class UIGP:
 		if gp.is_luk_file():
 			hashLUK = gp.get_hash_luk().upper()
 			B = gp.convert_to_unicode(hashLUK)
-			result = gp.convert_to_string(gp.encryption_xor(A, B))
+			result = gp.convert_to_string(gp.encryption_xor(a, B))
 			self.copy_password_in_clipboard(result)
 
 	def copy_password_in_clipboard(self, password):
