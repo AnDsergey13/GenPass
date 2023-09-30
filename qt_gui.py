@@ -132,10 +132,10 @@ class UIGP:
 
 		self.set_visible_edt_luk()
 
-		x_offset_btn = 270
+		x_offset_button = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(buttons_width + 50, components_height)
-		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_label_3 + y_offset_from_label)
+		btn_Gen.move(offset_from_left_window_border + x_offset_button, y_label_3 + y_offset_from_label)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
 
