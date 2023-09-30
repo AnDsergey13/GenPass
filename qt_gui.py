@@ -26,7 +26,7 @@ class UIGP:
 		return self.privateKey
 
 	# Landmark phrase
-	def setLandmarkPhrase(self, string):
+	def set_landmark_phrase(self, string):
 		# print("LP = ", string)
 		self.landmarkPhrase = string
 
@@ -110,7 +110,7 @@ class UIGP:
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, h_components)
 		self.edt_LP.move(left_offset_from_window, y_lbl_2 + y_offset_from_lbl)
-		self.edt_LP.textChanged[str].connect(self.setLandmarkPhrase)
+		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
