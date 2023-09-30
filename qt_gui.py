@@ -96,10 +96,10 @@ class UIGP:
 		self.edt_PK.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
 		self.edt_PK.textChanged[str].connect(self.set_private_key)
 
-		cb_PK = QCheckBox(self.get_localized_text("Visible"), self.w)
-		cb_PK.setChecked(True)
-		cb_PK.move(left_offset_from_window + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
-		cb_PK.stateChanged.connect(self.set_visible_private_key)
+		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
+		check_box_private_key.setChecked(True)
+		check_box_private_key.move(left_offset_from_window + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
+		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
 		y_lbl_2 = y_lbl_1 + dist_y_between_lbl
