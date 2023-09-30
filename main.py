@@ -12,7 +12,7 @@ CURRENT_OS = system.get_current_os()
 if USE_USER_INTERFACE:
 	if CURRENT_OS == "Linux" or CURRENT_OS == "Windows":
 		ui = qt_gui.UIGP()
-		ui.createWindow()
+		ui.create_window()
 	elif CURRENT_OS == "Android":
 		pass
 	else:

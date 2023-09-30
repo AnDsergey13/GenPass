@@ -57,7 +57,7 @@ class UIGP:
 	def update_check_luk_file(self):
 		self.isVisibleEdtLUK = gp.is_luk_file()
 
-	def createWindow(self, width=450, height=450, pos_x=300, pos_y=300):
+	def create_window(self, width=450, height=450, pos_x=300, pos_y=300):
 		app = QApplication(sys.argv)
 
 		self.w = QWidget()
