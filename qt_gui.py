@@ -264,8 +264,8 @@ class UIGP:
 
 		if gp.is_luk_file():
 			luk_hash = gp.get_hash_luk().upper()
-			B = gp.convert_to_unicode(luk_hash)
-			result = gp.convert_to_string(gp.encryption_xor(a, B))
+			b = gp.convert_to_unicode(luk_hash)
+			result = gp.convert_to_string(gp.encryption_xor(a, b))
 			self.copy_password_in_clipboard(result)
 
 	def copy_password_in_clipboard(self, password):
