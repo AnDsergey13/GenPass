@@ -18,6 +18,7 @@ def encryption_xor(number, key):
 
 	# This code block defines which of the incoming lists is longer, and writes in and the longest. This check is necessary to simplify the XOR block.
 	# Данный блок кода определяет какой из входящих списков длиннее, и записывает в А самый длинный. Это проверка необходима для упрощения блока XOR
+	# FIXME: Для чего эти инициализации пустыми списками?
 	a = []
 	b = []
 	if len(number) > len(key) or len(number) == len(key):
