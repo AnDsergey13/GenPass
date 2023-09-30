@@ -258,9 +258,9 @@ class UIGP:
 		a = gp.encryption_xor(unicode_landmark_phrase, unicode_private_key)
 
 		if not gp.is_luk_file():
-			numberLUKsymbols = self.get_num_symbols_luk()
-			if numberLUKsymbols != -1:
-				gp.create_luk(numberLUKsymbols)
+			luk_symbols_number = self.get_num_symbols_luk()
+			if luk_symbols_number != -1:
+				gp.create_luk(luk_symbols_number)
 
 		if gp.is_luk_file():
 			hashLUK = gp.get_hash_luk().upper()
