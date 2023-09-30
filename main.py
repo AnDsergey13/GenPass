@@ -1,5 +1,5 @@
 import terminal
-import ui
+import qt_gui
 import config
 import system
 
@@ -11,7 +11,7 @@ CURRENT_OS = system.get_current_os()
 
 if USE_USER_INTERFACE:
 	if CURRENT_OS == "Linux" or CURRENT_OS == "Windows":
-		ui = ui.UIGP()
+		ui = qt_gui.UIGP()
 		ui.createWindow()
 	elif CURRENT_OS == "Android":
 		pass
