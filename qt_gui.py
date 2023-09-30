@@ -246,10 +246,10 @@ class UIGP:
 			return -1
 
 	def create_password(self):
-		privateKey = self.get_private_key()
+		private_key = self.get_private_key()
 		landmarkPhrase = self.get_landmark_phrase()
 
-		encryptedPrivateKey = gp.get_hash_string(privateKey)
+		encryptedPrivateKey = gp.get_hash_string(private_key)
 		encryptedLandmarkPhrase = gp.get_hash_string(landmarkPhrase)
 
 		UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
