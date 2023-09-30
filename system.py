@@ -86,3 +86,8 @@ def set_data_to_file(data, json_file_name):
 	"""Перезаписываем данные в json файл"""
 	with open(json_file_name, "w", encoding="UTF-8") as file:
 		json.dump(data, file, ensure_ascii=False)
+
+
+def delete_luk_file():
+	# TODO: Переписать?
+	os.remove("LUK")

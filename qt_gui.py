@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QApplication, QCheckBox, QLabel, QLineEdit, QMessage
 
 import gen_pass as gp
 from localization import get_text
+from system import delete_luk_file
 
 
 class UIGP:
@@ -163,11 +164,6 @@ class UIGP:
 		else:
 			self.line_edit_luk.setEnabled(True)
 
-	def delete_luk_file(self):
-		# TODO: Перенести из этого модуля?
-		import os
-		os.remove("LUK")
-
 	def create_new_luk_file(self):
 		# msg = QMessageBox.question(
 		# 	self.window,
@@ -191,7 +187,7 @@ class UIGP:
 		print(QMessageBox.Yes, QMessageBox.No)
 		if msg == QMessageBox.Yes:
 			print("yes")
-			self.delete_luk_file()
+			delete_luk_file()
 			self.update_check_luk_file()
 			self.set_visible_edt_luk()
 		else:
