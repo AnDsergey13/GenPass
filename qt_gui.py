@@ -249,10 +249,10 @@ class UIGP:
 		private_key = self.get_private_key()
 		landmark_phrase = self.get_landmark_phrase()
 
-		encryptedPrivateKey = gp.get_hash_string(private_key)
+		encrypted_private_key = gp.get_hash_string(private_key)
 		encryptedLandmarkPhrase = gp.get_hash_string(landmark_phrase)
 
-		UnicodePrivateKey = gp.convert_to_unicode(encryptedPrivateKey)[::-1]
+		UnicodePrivateKey = gp.convert_to_unicode(encrypted_private_key)[::-1]
 		UnicodeLandmarkPhrase = gp.convert_to_unicode(encryptedLandmarkPhrase)
 
 		A = gp.encryption_xor(UnicodeLandmarkPhrase, UnicodePrivateKey)
