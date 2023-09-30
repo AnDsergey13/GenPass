@@ -55,7 +55,7 @@ class UIGP:
 			self.edt_LP.setEchoMode(QLineEdit.Normal)
 
 	def update_check_luk_file(self):
-		self.isVisibleEdtLUK = gp.is_luk_file()
+		self.is_visible_edit_luk = gp.is_luk_file()
 
 	def create_window(self, width=450, height=450, pos_x=300, pos_y=300):
 		app = QApplication(sys.argv)
@@ -156,7 +156,7 @@ class UIGP:
 		button_clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
-		return self.isVisibleEdtLUK
+		return self.is_visible_edit_luk
 
 	def set_visible_edt_luk(self):
 		if self.get_availability_luk_file():
