@@ -78,7 +78,7 @@ class UIGP:
 		components_height = 32
 		buttons_width = 100
 		offset_from_left_window_border = 15
-		y_lbl_1 = 15
+		y_label_1 = 15
 
 		y_offset_from_lbl = 30
 		dist_y_between_lbl = 95
@@ -88,21 +88,21 @@ class UIGP:
 
 		# PrivateKey
 		label_private_key = QLabel(self.w)
-		label_private_key.move(offset_from_left_window_border, y_lbl_1)
+		label_private_key.move(offset_from_left_window_border, y_label_1)
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
 		self.line_edit_private_key = QLineEdit(self.w)
 		self.line_edit_private_key.resize(300, components_height)
-		self.line_edit_private_key.move(offset_from_left_window_border, y_lbl_1 + y_offset_from_lbl)
+		self.line_edit_private_key.move(offset_from_left_window_border, y_label_1 + y_offset_from_lbl)
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
 		check_box_private_key.setChecked(True)
-		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
+		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_label_1 + y_offset_from_lbl)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
-		y_lbl_2 = y_lbl_1 + dist_y_between_lbl
+		y_lbl_2 = y_label_1 + dist_y_between_lbl
 		lbl_LP = QLabel(self.w)
 		lbl_LP.move(offset_from_left_window_border, y_lbl_2)
 		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
