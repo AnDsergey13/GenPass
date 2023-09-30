@@ -162,7 +162,7 @@ class UIGP:
 		else:
 			self.edt_LUK.setEnabled(True)
 
-	def deleteLUKfile(self):
+	def delete_luk_file(self):
 		# TODO: Перенести из этого модуля?
 		import os
 		os.remove("LUK")
@@ -190,7 +190,7 @@ class UIGP:
 		print(QMessageBox.Yes, QMessageBox.No)
 		if msg == QMessageBox.Yes:
 			print("yes")
-			self.deleteLUKfile()
+			self.delete_luk_file()
 			self.update_check_luk_file()
 			self.set_visible_edt_luk()
 		else:
