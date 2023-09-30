@@ -141,9 +141,9 @@ class UIGP:
 
 		# Bottom buttons
 		y_offset_from_btn = 45
-		self.lbl_message = QLabel(self.w)
-		self.lbl_message.resize(435, components_height)
-		self.lbl_message.move(offset_from_left_window_border, y_button - y_offset_from_btn)
+		self.label_message = QLabel(self.w)
+		self.label_message.resize(435, components_height)
+		self.label_message.move(offset_from_left_window_border, y_button - y_offset_from_btn)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(buttons_width, components_height)
@@ -209,7 +209,7 @@ class UIGP:
 		try:
 			if int(string) < 1001:
 				message = self.get_localized_text("Err. LUK-file. Greater than 1000").partition('.')[2]
-				self.lbl_message.setText(message)
+				self.label_message.setText(message)
 
 				# The signal that the data entered did not pass conditions
 				# Сигнал о том, что вводимые данные не прошли условия
@@ -221,7 +221,7 @@ class UIGP:
 				# If the number is more than a million
 				# Если число больше миллиона
 				message = self.get_localized_text("Err. LUK-file. Less than 1000000").partition('.')[2]
-				self.lbl_message.setText(message)
+				self.label_message.setText(message)
 
 				# The signal that the data entered did not pass conditions
 				# Сигнал о том, что вводимые данные не прошли условия
@@ -230,7 +230,7 @@ class UIGP:
 			# Input Error. Symbols should not be used
 			# Ошибка ввода. Не должны использоваться символы
 			message = self.get_localized_text("Err. Invalid input").partition('.')[2]
-			self.lbl_message.setText(message)
+			self.label_message.setText(message)
 
 			# The signal that the data entered did not pass conditions
 			# Сигнал о том, что вводимые данные не прошли условия
@@ -274,7 +274,7 @@ class UIGP:
 		clipboard = QApplication.clipboard()
 		clipboard.setText(password)
 		# Вывод сообщения. Пароль успешно создан и скопирован
-		self.lbl_message.setText(self.get_localized_text("Password copied"))
+		self.label_message.setText(self.get_localized_text("Password copied"))
 
 	def clear_all(self):
 		# Clearing the clipboard
@@ -287,4 +287,4 @@ class UIGP:
 		self.edt_PK.clear()
 		self.edt_LP.clear()
 		self.line_edit_luk.clear()
-		self.lbl_message.clear()
+		self.label_message.clear()
