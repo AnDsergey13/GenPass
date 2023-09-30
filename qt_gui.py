@@ -22,7 +22,7 @@ class UIGP:
 		# print("PK = ", string)
 		self.privateKey = string
 
-	def getPrivateKey(self):
+	def get_private_key(self):
 		return self.privateKey
 
 	# Landmark phrase
@@ -246,7 +246,7 @@ class UIGP:
 			return -1
 
 	def createPassword(self):
-		privateKey = self.getPrivateKey()
+		privateKey = self.get_private_key()
 		landmarkPhrase = self.getLandmarkPhrase()
 
 		encryptedPrivateKey = gp.get_hash_string(privateKey)
