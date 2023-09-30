@@ -266,9 +266,9 @@ class UIGP:
 			hashLUK = gp.get_hash_luk().upper()
 			B = gp.convert_to_unicode(hashLUK)
 			result = gp.convert_to_string(gp.encryption_xor(A, B))
-			self.copyPassInClipboard(result)
+			self.copy_password_in_clipboard(result)
 
-	def copyPassInClipboard(self, password):
+	def copy_password_in_clipboard(self, password):
 		clipboard = QApplication.clipboard()
 		clipboard.setText(password)
 		# Вывод сообщения. Пароль успешно создан и скопирован
