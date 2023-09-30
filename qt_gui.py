@@ -12,7 +12,7 @@ class UIGP:
 	def __init__(self):
 		self.get_localized_text = get_text
 		self.private_key = ""
-		self.landmarkPhrase = ""
+		self.landmark_phrase = ""
 		self.password = ""
 		self.numberSymbolsLUK = ""
 
@@ -29,10 +29,10 @@ class UIGP:
 	# Landmark phrase
 	def set_landmark_phrase(self, string):
 		# print("LP = ", string)
-		self.landmarkPhrase = string
+		self.landmark_phrase = string
 
 	def get_landmark_phrase(self):
-		return self.landmarkPhrase
+		return self.landmark_phrase
 
 	# Number symbols LUK
 	def set_luk_symbols_number(self, number):
