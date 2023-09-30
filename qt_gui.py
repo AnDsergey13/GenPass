@@ -86,6 +86,8 @@ class UIGP:
 
 		y_button = 400
 
+		# TODO: Maybe use with expression and tuple for typical actions?
+
 		# PrivateKey
 		label_private_key = QLabel(self.w)
 		label_private_key.move(offset_from_left_window_border, y_label_1)
