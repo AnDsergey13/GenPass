@@ -11,7 +11,7 @@ class UIGP:
 	"""TODO: Написать docstring"""
 	def __init__(self):
 		self.get_localized_text = get_text
-		self.privateKey = ""
+		self.private_key = ""
 		self.landmarkPhrase = ""
 		self.password = ""
 		self.numberSymbolsLUK = ""
@@ -21,10 +21,10 @@ class UIGP:
 	# Private key
 	def set_private_key(self, string):
 		# print("PK = ", string)
-		self.privateKey = string
+		self.private_key = string
 
 	def get_private_key(self):
-		return self.privateKey
+		return self.private_key
 
 	# Landmark phrase
 	def set_landmark_phrase(self, string):
