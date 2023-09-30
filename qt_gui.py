@@ -8,6 +8,7 @@ from localization import get_text
 
 
 class UIGP:
+	"""TODO: Написать docstring"""
 	def __init__(self):
 		self.get_localized_text = get_text
 		self.privateKey = ""
@@ -41,7 +42,7 @@ class UIGP:
 	def get_luk_symbols_number(self):
 		return self.numberSymbolsLUK
 
-
+	# Input visibility
 	def set_visible_private_key(self, value):
 		if value == 0:
 			self.line_edit_private_key.setEchoMode(QLineEdit.Password)
@@ -73,7 +74,6 @@ class UIGP:
 		self.window.show()
 		sys.exit(app.exec())
 
-
 	def create_components(self):
 		components_height = 32
 		buttons_width = 100
@@ -88,7 +88,7 @@ class UIGP:
 
 		# TODO: Maybe use with expression and tuple for typical actions?
 
-		# PrivateKey
+		# Private Key
 		label_private_key = QLabel(self.window)
 		label_private_key.move(offset_from_left_window_border, y_label_1)
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
@@ -103,7 +103,7 @@ class UIGP:
 		check_box_private_key.move(offset_from_left_window_border + x_offset_check_box, y_label_1 + y_offset_from_label)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
-		# LandmarkPhrase
+		# Landmark Phrase
 		y_label_2 = y_label_1 + distance_y_between_labels
 		label_landmark_phrase = QLabel(self.window)
 		label_landmark_phrase.move(offset_from_left_window_border, y_label_2)
@@ -137,7 +137,6 @@ class UIGP:
 		button_generate.resize(buttons_width + 50, components_height)
 		button_generate.move(offset_from_left_window_border + x_offset_button, y_label_3 + y_offset_from_label)
 		button_generate.clicked.connect(self.create_new_luk_file)
-
 
 		# Bottom buttons
 		y_offset_from_button = 45
@@ -197,7 +196,6 @@ class UIGP:
 			self.set_visible_edt_luk()
 		else:
 			print("no")
-
 
 	def processing_num_luk(self, string):
 		# If you press Enter, the default values are set to 5000.
