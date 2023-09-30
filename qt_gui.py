@@ -77,7 +77,7 @@ class UIGP:
 	def create_components(self):
 		components_height = 32
 		buttons_width = 100
-		left_offset_from_window = 15
+		offset_from_left_window_border = 15
 		y_lbl_1 = 15
 
 		y_offset_from_lbl = 30
@@ -88,44 +88,44 @@ class UIGP:
 
 		# PrivateKey
 		label_private_key = QLabel(self.w)
-		label_private_key.move(left_offset_from_window, y_lbl_1)
+		label_private_key.move(offset_from_left_window_border, y_lbl_1)
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
 		self.line_edit_private_key = QLineEdit(self.w)
 		self.line_edit_private_key.resize(300, components_height)
-		self.line_edit_private_key.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
+		self.line_edit_private_key.move(offset_from_left_window_border, y_lbl_1 + y_offset_from_lbl)
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
 		check_box_private_key.setChecked(True)
-		check_box_private_key.move(left_offset_from_window + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
+		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_lbl_1 + y_offset_from_lbl)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
 		y_lbl_2 = y_lbl_1 + dist_y_between_lbl
 		lbl_LP = QLabel(self.w)
-		lbl_LP.move(left_offset_from_window, y_lbl_2)
+		lbl_LP.move(offset_from_left_window_border, y_lbl_2)
 		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
 
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, components_height)
-		self.edt_LP.move(left_offset_from_window, y_lbl_2 + y_offset_from_lbl)
+		self.edt_LP.move(offset_from_left_window_border, y_lbl_2 + y_offset_from_lbl)
 		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
-		cb_LP.move(left_offset_from_window + x_offset_cb, y_lbl_2 + y_offset_from_lbl)
+		cb_LP.move(offset_from_left_window_border + x_offset_cb, y_lbl_2 + y_offset_from_lbl)
 		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
 		y_lbl_3 = y_lbl_2 + dist_y_between_lbl
 		lbl_LUK = QLabel(self.w)
-		lbl_LUK.move(left_offset_from_window, y_lbl_3)
+		lbl_LUK.move(offset_from_left_window_border, y_lbl_3)
 		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
 
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, components_height)
-		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
+		self.edt_LUK.move(offset_from_left_window_border, y_lbl_3 + y_offset_from_lbl)
 		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.set_visible_edt_luk()
@@ -133,7 +133,7 @@ class UIGP:
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(buttons_width + 50, components_height)
-		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
+		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
 
@@ -141,16 +141,16 @@ class UIGP:
 		y_offset_from_btn = 45
 		self.lbl_message = QLabel(self.w)
 		self.lbl_message.resize(435, components_height)
-		self.lbl_message.move(left_offset_from_window, y_btn - y_offset_from_btn)
+		self.lbl_message.move(offset_from_left_window_border, y_btn - y_offset_from_btn)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(buttons_width, components_height)
-		btn_Create.move(left_offset_from_window, y_btn)
+		btn_Create.move(offset_from_left_window_border, y_btn)
 		btn_Create.clicked.connect(self.create_password)
 
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
 		btn_Clear.resize(buttons_width + 100, components_height)
-		btn_Clear.move(left_offset_from_window + buttons_width + 100, y_btn)
+		btn_Clear.move(offset_from_left_window_border + buttons_width + 100, y_btn)
 		btn_Clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
