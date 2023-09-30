@@ -112,10 +112,10 @@ class UIGP:
 		self.line_edit_landmark_phrase.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
 		self.line_edit_landmark_phrase.textChanged[str].connect(self.set_landmark_phrase)
 
-		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
-		cb_LP.setChecked(True)
-		cb_LP.move(offset_from_left_window_border + x_offset_check_box, y_label_2 + y_offset_from_label)
-		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
+		check_box_landmark_phrase = QCheckBox(self.get_localized_text("Visible"), self.w)
+		check_box_landmark_phrase.setChecked(True)
+		check_box_landmark_phrase.move(offset_from_left_window_border + x_offset_check_box, y_label_2 + y_offset_from_label)
+		check_box_landmark_phrase.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
 		y_lbl_3 = y_label_2 + distance_y_between_labels
