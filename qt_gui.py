@@ -125,10 +125,10 @@ class UIGP:
 		label_luk.move(offset_from_left_window_border, y_label_3)
 		label_luk.setText(self.get_localized_text("Enter. Size LUK-file"))
 
-		self.edt_LUK = QLineEdit(self.w)
-		self.edt_LUK.resize(200, components_height)
-		self.edt_LUK.move(offset_from_left_window_border, y_label_3 + y_offset_from_label)
-		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
+		self.line_edit_luk = QLineEdit(self.w)
+		self.line_edit_luk.resize(200, components_height)
+		self.line_edit_luk.move(offset_from_left_window_border, y_label_3 + y_offset_from_label)
+		self.line_edit_luk.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.set_visible_edt_luk()
 
@@ -160,9 +160,9 @@ class UIGP:
 
 	def set_visible_edt_luk(self):
 		if self.get_availability_luk_file():
-			self.edt_LUK.setEnabled(False)
+			self.line_edit_luk.setEnabled(False)
 		else:
-			self.edt_LUK.setEnabled(True)
+			self.line_edit_luk.setEnabled(True)
 
 	def delete_luk_file(self):
 		# TODO: Перенести из этого модуля?
@@ -286,5 +286,5 @@ class UIGP:
 		# Очистка компонентов
 		self.edt_PK.clear()
 		self.edt_LP.clear()
-		self.edt_LUK.clear()
+		self.line_edit_luk.clear()
 		self.lbl_message.clear()
