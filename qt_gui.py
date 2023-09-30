@@ -34,7 +34,7 @@ class UIGP:
 		return self.landmarkPhrase
 
 	# Number symbols LUK
-	def setNumberSymbolsLUK(self, number):
+	def set_luk_symbols_number(self, number):
 		# print("LUK = ", number)
 		self.numberSymbolsLUK = number
 
@@ -126,7 +126,7 @@ class UIGP:
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, h_components)
 		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
-		self.edt_LUK.textChanged[str].connect(self.setNumberSymbolsLUK)
+		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.setVisibleEdtLUK()
 
