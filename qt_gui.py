@@ -15,7 +15,7 @@ class UIGP:
 		self.password = ""
 		self.numberSymbolsLUK = ""
 
-		self.updateCheckLUKfile()
+		self.update_check_luk_file()
 
 	# Private key
 	def set_private_key(self, string):
@@ -54,7 +54,7 @@ class UIGP:
 		else:
 			self.edt_LP.setEchoMode(QLineEdit.Normal)
 
-	def updateCheckLUKfile(self):
+	def update_check_luk_file(self):
 		self.isVisibleEdtLUK = gp.is_luk_file()
 
 	def createWindow(self, width=450, height=450, pos_x=300, pos_y=300):
@@ -191,7 +191,7 @@ class UIGP:
 		if msg == QMessageBox.Yes:
 			print("yes")
 			self.deleteLUKfile()
-			self.updateCheckLUKfile()
+			self.update_check_luk_file()
 			self.setVisibleEdtLUK()
 		else:
 			print("no")
