@@ -57,8 +57,8 @@ def create_luk(luk_len):
 	# TODO: Вынести в отдельный метод config.get_full_luk_path()
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
-	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as f:
-		f.write(create_luk_string(luk_len))
+	with open(f"{path}/{name_file}", 'w', encoding="utf-8") as file:
+		file.write(create_luk_string(luk_len))
 
 
 def is_luk_file():
@@ -77,8 +77,8 @@ def get_hash_luk():
 	# TODO: Вынести в отдельный метод config.get_full_luk_path()
 	name_file = "LUK"
 	path = get_value_by_key("path_LUK")
-	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as f:
-		return get_hash_string(f.read())
+	with open(f"{path}/{name_file}", 'r', encoding="utf-8") as file:
+		return get_hash_string(file.read())
 
 
 def convert_to_string(unicode_list):
