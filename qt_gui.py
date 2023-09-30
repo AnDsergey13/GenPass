@@ -120,14 +120,14 @@ class UIGP:
 		check_box_landmark_phrase.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
-		y_lbl_3 = y_label_2 + distance_y_between_labels
+		y_label_3 = y_label_2 + distance_y_between_labels
 		label_luk = QLabel(self.w)
-		label_luk.move(offset_from_left_window_border, y_lbl_3)
+		label_luk.move(offset_from_left_window_border, y_label_3)
 		label_luk.setText(self.get_localized_text("Enter. Size LUK-file"))
 
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, components_height)
-		self.edt_LUK.move(offset_from_left_window_border, y_lbl_3 + y_offset_from_label)
+		self.edt_LUK.move(offset_from_left_window_border, y_label_3 + y_offset_from_label)
 		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.set_visible_edt_luk()
@@ -135,7 +135,7 @@ class UIGP:
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(buttons_width + 50, components_height)
-		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_lbl_3 + y_offset_from_label)
+		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_label_3 + y_offset_from_label)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
 
