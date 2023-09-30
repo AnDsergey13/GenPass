@@ -80,7 +80,7 @@ class UIGP:
 		offset_from_left_window_border = 15
 		y_label_1 = 15
 
-		y_offset_from_lbl = 30
+		y_offset_from_label = 30
 		dist_y_between_lbl = 95
 		x_offset_cb = 315
 
@@ -93,12 +93,12 @@ class UIGP:
 
 		self.line_edit_private_key = QLineEdit(self.w)
 		self.line_edit_private_key.resize(300, components_height)
-		self.line_edit_private_key.move(offset_from_left_window_border, y_label_1 + y_offset_from_lbl)
+		self.line_edit_private_key.move(offset_from_left_window_border, y_label_1 + y_offset_from_label)
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
 		check_box_private_key.setChecked(True)
-		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_label_1 + y_offset_from_lbl)
+		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_label_1 + y_offset_from_label)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
@@ -109,12 +109,12 @@ class UIGP:
 
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, components_height)
-		self.edt_LP.move(offset_from_left_window_border, y_lbl_2 + y_offset_from_lbl)
+		self.edt_LP.move(offset_from_left_window_border, y_lbl_2 + y_offset_from_label)
 		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
-		cb_LP.move(offset_from_left_window_border + x_offset_cb, y_lbl_2 + y_offset_from_lbl)
+		cb_LP.move(offset_from_left_window_border + x_offset_cb, y_lbl_2 + y_offset_from_label)
 		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
@@ -125,7 +125,7 @@ class UIGP:
 
 		self.edt_LUK = QLineEdit(self.w)
 		self.edt_LUK.resize(200, components_height)
-		self.edt_LUK.move(offset_from_left_window_border, y_lbl_3 + y_offset_from_lbl)
+		self.edt_LUK.move(offset_from_left_window_border, y_lbl_3 + y_offset_from_label)
 		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.set_visible_edt_luk()
@@ -133,7 +133,7 @@ class UIGP:
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(buttons_width + 50, components_height)
-		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
+		btn_Gen.move(offset_from_left_window_border + x_offset_btn, y_lbl_3 + y_offset_from_label)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
 
