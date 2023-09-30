@@ -50,9 +50,9 @@ class UIGP:
 
 	def set_visible_landmark_phrase(self, value):
 		if value == 0:
-			self.edt_LP.setEchoMode(QLineEdit.Password)
+			self.line_edit_landmark_phrase.setEchoMode(QLineEdit.Password)
 		else:
-			self.edt_LP.setEchoMode(QLineEdit.Normal)
+			self.line_edit_landmark_phrase.setEchoMode(QLineEdit.Normal)
 
 	def update_check_luk_file(self):
 		self.is_visible_edit_luk = gp.is_luk_file()
@@ -285,6 +285,6 @@ class UIGP:
 		# Cleaning components
 		# Очистка компонентов
 		self.line_edit_private_key.clear()
-		self.edt_LP.clear()
+		self.line_edit_landmark_phrase.clear()
 		self.line_edit_luk.clear()
 		self.label_message.clear()
