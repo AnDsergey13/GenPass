@@ -84,7 +84,7 @@ class UIGP:
 		distance_y_between_labels = 95
 		x_offset_check_box = 315
 
-		y_btn = 400
+		y_button = 400
 
 		# PrivateKey
 		label_private_key = QLabel(self.w)
@@ -141,16 +141,16 @@ class UIGP:
 		y_offset_from_btn = 45
 		self.lbl_message = QLabel(self.w)
 		self.lbl_message.resize(435, components_height)
-		self.lbl_message.move(offset_from_left_window_border, y_btn - y_offset_from_btn)
+		self.lbl_message.move(offset_from_left_window_border, y_button - y_offset_from_btn)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
 		btn_Create.resize(buttons_width, components_height)
-		btn_Create.move(offset_from_left_window_border, y_btn)
+		btn_Create.move(offset_from_left_window_border, y_button)
 		btn_Create.clicked.connect(self.create_password)
 
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
 		btn_Clear.resize(buttons_width + 100, components_height)
-		btn_Clear.move(offset_from_left_window_border + buttons_width + 100, y_btn)
+		btn_Clear.move(offset_from_left_window_border + buttons_width + 100, y_button)
 		btn_Clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
