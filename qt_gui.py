@@ -44,9 +44,9 @@ class UIGP:
 
 	def set_visible_private_key(self, value):
 		if value == 0:
-			self.edt_PK.setEchoMode(QLineEdit.Password)
+			self.line_edit_private_key.setEchoMode(QLineEdit.Password)
 		else:
-			self.edt_PK.setEchoMode(QLineEdit.Normal)
+			self.line_edit_private_key.setEchoMode(QLineEdit.Normal)
 
 	def set_visible_landmark_phrase(self, value):
 		if value == 0:
@@ -284,7 +284,7 @@ class UIGP:
 
 		# Cleaning components
 		# Очистка компонентов
-		self.edt_PK.clear()
+		self.line_edit_private_key.clear()
 		self.edt_LP.clear()
 		self.line_edit_luk.clear()
 		self.label_message.clear()
