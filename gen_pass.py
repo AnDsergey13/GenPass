@@ -84,13 +84,13 @@ def get_hash_luk():
 def convert_to_string(unicode_list):
 	string = ""
 	step = 8
-	for elementList in unicode_list:
+	for element_list in unicode_list:
 		# With an XOR operation, symbols outside 33 and 127 may appear. To avoid this, we make two cycles with autocorrect number
 		# При операции XOR, могут появляться символы за пределами 33 и 127. Чтобы это избежать, делаем два цикла с автокоррекцией числа
-		while elementList < 33:
-			elementList += step
-		while elementList > 127:
-			elementList -= step
+		while element_list < 33:
+			element_list += step
+		while element_list > 127:
+			element_list -= step
 
-		string += chr(elementList)
+		string += chr(element_list)
 	return string
