@@ -153,11 +153,11 @@ class UIGP:
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
 		btn_Clear.clicked.connect(self.clearAll)
 
-	def getAvailabilityLUKfile(self):
+	def get_availability_luk_file(self):
 		return self.isVisibleEdtLUK
 
 	def setVisibleEdtLUK(self):
-		if self.getAvailabilityLUKfile():
+		if self.get_availability_luk_file():
 			self.edt_LUK.setEnabled(False)
 		else:
 			self.edt_LUK.setEnabled(True)
