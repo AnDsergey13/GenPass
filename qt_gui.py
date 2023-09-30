@@ -82,7 +82,7 @@ class UIGP:
 
 		y_offset_from_label = 30
 		distance_y_between_labels = 95
-		x_offset_cb = 315
+		x_offset_check_box = 315
 
 		y_btn = 400
 
@@ -98,7 +98,7 @@ class UIGP:
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
 		check_box_private_key.setChecked(True)
-		check_box_private_key.move(offset_from_left_window_border + x_offset_cb, y_label_1 + y_offset_from_label)
+		check_box_private_key.move(offset_from_left_window_border + x_offset_check_box, y_label_1 + y_offset_from_label)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
@@ -114,7 +114,7 @@ class UIGP:
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
-		cb_LP.move(offset_from_left_window_border + x_offset_cb, y_lbl_2 + y_offset_from_label)
+		cb_LP.move(offset_from_left_window_border + x_offset_check_box, y_lbl_2 + y_offset_from_label)
 		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
