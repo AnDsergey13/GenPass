@@ -81,7 +81,7 @@ class UIGP:
 		y_label_1 = 15
 
 		y_offset_from_label = 30
-		dist_y_between_lbl = 95
+		distance_y_between_labels = 95
 		x_offset_cb = 315
 
 		y_btn = 400
@@ -102,7 +102,7 @@ class UIGP:
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
-		y_lbl_2 = y_label_1 + dist_y_between_lbl
+		y_lbl_2 = y_label_1 + distance_y_between_labels
 		lbl_LP = QLabel(self.w)
 		lbl_LP.move(offset_from_left_window_border, y_lbl_2)
 		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
@@ -118,7 +118,7 @@ class UIGP:
 		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
-		y_lbl_3 = y_lbl_2 + dist_y_between_lbl
+		y_lbl_3 = y_lbl_2 + distance_y_between_labels
 		lbl_LUK = QLabel(self.w)
 		lbl_LUK.move(offset_from_left_window_border, y_lbl_3)
 		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
