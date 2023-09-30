@@ -128,7 +128,7 @@ class UIGP:
 		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
 		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
-		self.setVisibleEdtLUK()
+		self.set_visible_edt_luk()
 
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
@@ -156,7 +156,7 @@ class UIGP:
 	def get_availability_luk_file(self):
 		return self.isVisibleEdtLUK
 
-	def setVisibleEdtLUK(self):
+	def set_visible_edt_luk(self):
 		if self.get_availability_luk_file():
 			self.edt_LUK.setEnabled(False)
 		else:
@@ -192,7 +192,7 @@ class UIGP:
 			print("yes")
 			self.deleteLUKfile()
 			self.update_check_luk_file()
-			self.setVisibleEdtLUK()
+			self.set_visible_edt_luk()
 		else:
 			print("no")
 
