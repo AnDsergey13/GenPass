@@ -18,7 +18,7 @@ class UIGP:
 		self.updateCheckLUKfile()
 
 	# Private key
-	def setPrivateKey(self, string):
+	def set_private_key(self, string):
 		# print("PK = ", string)
 		self.privateKey = string
 
@@ -94,7 +94,7 @@ class UIGP:
 		self.edt_PK = QLineEdit(self.w)
 		self.edt_PK.resize(300, h_components)
 		self.edt_PK.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
-		self.edt_PK.textChanged[str].connect(self.setPrivateKey)
+		self.edt_PK.textChanged[str].connect(self.set_private_key)
 
 		cb_PK = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_PK.setChecked(True)
