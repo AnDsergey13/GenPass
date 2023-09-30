@@ -103,9 +103,9 @@ class UIGP:
 
 		# LandmarkPhrase
 		y_label_2 = y_label_1 + distance_y_between_labels
-		lbl_LP = QLabel(self.w)
-		lbl_LP.move(offset_from_left_window_border, y_label_2)
-		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
+		label_landmark_phrase = QLabel(self.w)
+		label_landmark_phrase.move(offset_from_left_window_border, y_label_2)
+		label_landmark_phrase.setText(self.get_localized_text("Enter. Landmark phrase"))
 
 		self.edt_LP = QLineEdit(self.w)
 		self.edt_LP.resize(300, components_height)
