@@ -30,7 +30,7 @@ class UIGP:
 		# print("LP = ", string)
 		self.landmarkPhrase = string
 
-	def getLandmarkPhrase(self):
+	def get_landmark_phrase(self):
 		return self.landmarkPhrase
 
 	# Number symbols LUK
@@ -247,7 +247,7 @@ class UIGP:
 
 	def createPassword(self):
 		privateKey = self.get_private_key()
-		landmarkPhrase = self.getLandmarkPhrase()
+		landmarkPhrase = self.get_landmark_phrase()
 
 		encryptedPrivateKey = gp.get_hash_string(privateKey)
 		encryptedLandmarkPhrase = gp.get_hash_string(landmarkPhrase)
