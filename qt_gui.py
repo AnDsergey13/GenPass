@@ -91,10 +91,10 @@ class UIGP:
 		label_private_key.move(left_offset_from_window, y_lbl_1)
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
-		self.edt_PK = QLineEdit(self.w)
-		self.edt_PK.resize(300, h_components)
-		self.edt_PK.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
-		self.edt_PK.textChanged[str].connect(self.set_private_key)
+		self.line_edit_private_key = QLineEdit(self.w)
+		self.line_edit_private_key.resize(300, h_components)
+		self.line_edit_private_key.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
+		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
 		check_box_private_key.setChecked(True)
