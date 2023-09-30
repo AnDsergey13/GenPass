@@ -48,7 +48,7 @@ class UIGP:
 		else:
 			self.edt_PK.setEchoMode(QLineEdit.Normal)
 
-	def setVisibleLandmarkPhrase(self, value):
+	def set_visible_landmark_phrase(self, value):
 		if value == 0:
 			self.edt_LP.setEchoMode(QLineEdit.Password)
 		else:
@@ -115,7 +115,7 @@ class UIGP:
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
 		cb_LP.move(left_offset_from_window + x_offset_cb, y_lbl_2 + y_offset_from_lbl)
-		cb_LP.stateChanged.connect(self.setVisibleLandmarkPhrase)
+		cb_LP.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
 		y_lbl_3 = y_lbl_2 + dist_y_between_lbl
