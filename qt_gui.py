@@ -234,7 +234,7 @@ class UIGP:
 			# Сигнал о том, что вводимые данные не прошли условия
 			return -1
 
-	def getNumSymbolsLUK(self):
+	def get_num_symbols_luk(self):
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = self.get_luk_symbols_number()
@@ -258,7 +258,7 @@ class UIGP:
 		A = gp.encryption_xor(UnicodeLandmarkPhrase, UnicodePrivateKey)
 
 		if not gp.is_luk_file():
-			numberLUKsymbols = self.getNumSymbolsLUK()
+			numberLUKsymbols = self.get_num_symbols_luk()
 			if numberLUKsymbols != -1:
 				gp.create_luk(numberLUKsymbols)
 
