@@ -134,7 +134,7 @@ class UIGP:
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
 		btn_Gen.resize(w_btn + 50, h_components)
 		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
-		btn_Gen.clicked.connect(self.createNewLUKfile)
+		btn_Gen.clicked.connect(self.create_new_luk_file)
 
 
 		# Bottom buttons
@@ -167,7 +167,7 @@ class UIGP:
 		import os
 		os.remove("LUK")
 
-	def createNewLUKfile(self):
+	def create_new_luk_file(self):
 		# msg = QMessageBox.question(
 		# 	self.w,
 		# 	'PyQt5 message',
