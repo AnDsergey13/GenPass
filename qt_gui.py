@@ -76,7 +76,7 @@ class UIGP:
 
 	def create_components(self):
 		components_height = 32
-		w_btn = 100
+		buttons_width = 100
 		left_offset_from_window = 15
 		y_lbl_1 = 15
 
@@ -132,7 +132,7 @@ class UIGP:
 
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
-		btn_Gen.resize(w_btn + 50, components_height)
+		btn_Gen.resize(buttons_width + 50, components_height)
 		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
@@ -144,13 +144,13 @@ class UIGP:
 		self.lbl_message.move(left_offset_from_window, y_btn - y_offset_from_btn)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
-		btn_Create.resize(w_btn, components_height)
+		btn_Create.resize(buttons_width, components_height)
 		btn_Create.move(left_offset_from_window, y_btn)
 		btn_Create.clicked.connect(self.create_password)
 
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
-		btn_Clear.resize(w_btn + 100, components_height)
-		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
+		btn_Clear.resize(buttons_width + 100, components_height)
+		btn_Clear.move(left_offset_from_window + buttons_width + 100, y_btn)
 		btn_Clear.clicked.connect(self.clear_all)
 
 	def get_availability_luk_file(self):
