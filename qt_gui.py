@@ -197,7 +197,7 @@ class UIGP:
 			print("no")
 
 
-	def processingNumLUK(self, string):
+	def processing_num_luk(self, string):
 		# If you press Enter, the default values are set to 5000.
 		# Если нажать Enter, то устанавливаются значения по умолчанию равным 5000.
 		if string == "":
@@ -239,7 +239,7 @@ class UIGP:
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
 		numberLUKsymbols = self.get_luk_symbols_number()
 
-		numberLUKsymbols = self.processingNumLUK(numberLUKsymbols)
+		numberLUKsymbols = self.processing_num_luk(numberLUKsymbols)
 		if numberLUKsymbols != -1:
 			return numberLUKsymbols
 		else:
