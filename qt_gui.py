@@ -75,7 +75,7 @@ class UIGP:
 
 
 	def create_components(self):
-		h_components = 32
+		components_height = 32
 		w_btn = 100
 		left_offset_from_window = 15
 		y_lbl_1 = 15
@@ -92,7 +92,7 @@ class UIGP:
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
 		self.line_edit_private_key = QLineEdit(self.w)
-		self.line_edit_private_key.resize(300, h_components)
+		self.line_edit_private_key.resize(300, components_height)
 		self.line_edit_private_key.move(left_offset_from_window, y_lbl_1 + y_offset_from_lbl)
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
@@ -108,7 +108,7 @@ class UIGP:
 		lbl_LP.setText(self.get_localized_text("Enter. Landmark phrase"))
 
 		self.edt_LP = QLineEdit(self.w)
-		self.edt_LP.resize(300, h_components)
+		self.edt_LP.resize(300, components_height)
 		self.edt_LP.move(left_offset_from_window, y_lbl_2 + y_offset_from_lbl)
 		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
 
@@ -124,7 +124,7 @@ class UIGP:
 		lbl_LUK.setText(self.get_localized_text("Enter. Size LUK-file"))
 
 		self.edt_LUK = QLineEdit(self.w)
-		self.edt_LUK.resize(200, h_components)
+		self.edt_LUK.resize(200, components_height)
 		self.edt_LUK.move(left_offset_from_window, y_lbl_3 + y_offset_from_lbl)
 		self.edt_LUK.textChanged[str].connect(self.set_luk_symbols_number)
 
@@ -132,7 +132,7 @@ class UIGP:
 
 		x_offset_btn = 270
 		btn_Gen = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
-		btn_Gen.resize(w_btn + 50, h_components)
+		btn_Gen.resize(w_btn + 50, components_height)
 		btn_Gen.move(left_offset_from_window + x_offset_btn, y_lbl_3 + y_offset_from_lbl)
 		btn_Gen.clicked.connect(self.create_new_luk_file)
 
@@ -140,16 +140,16 @@ class UIGP:
 		# Bottom buttons
 		y_offset_from_btn = 45
 		self.lbl_message = QLabel(self.w)
-		self.lbl_message.resize(435, h_components)
+		self.lbl_message.resize(435, components_height)
 		self.lbl_message.move(left_offset_from_window, y_btn - y_offset_from_btn)
 
 		btn_Create = QPushButton(self.get_localized_text("Create"), self.w)
-		btn_Create.resize(w_btn, h_components)
+		btn_Create.resize(w_btn, components_height)
 		btn_Create.move(left_offset_from_window, y_btn)
 		btn_Create.clicked.connect(self.create_password)
 
 		btn_Clear = QPushButton(self.get_localized_text("Clear"), self.w)
-		btn_Clear.resize(w_btn + 100, h_components)
+		btn_Clear.resize(w_btn + 100, components_height)
 		btn_Clear.move(left_offset_from_window + w_btn + 100, y_btn)
 		btn_Clear.clicked.connect(self.clear_all)
 
