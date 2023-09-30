@@ -107,10 +107,10 @@ class UIGP:
 		label_landmark_phrase.move(offset_from_left_window_border, y_label_2)
 		label_landmark_phrase.setText(self.get_localized_text("Enter. Landmark phrase"))
 
-		self.edt_LP = QLineEdit(self.w)
-		self.edt_LP.resize(300, components_height)
-		self.edt_LP.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
-		self.edt_LP.textChanged[str].connect(self.set_landmark_phrase)
+		self.line_edit_landmark_phrase = QLineEdit(self.w)
+		self.line_edit_landmark_phrase.resize(300, components_height)
+		self.line_edit_landmark_phrase.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
+		self.line_edit_landmark_phrase.textChanged[str].connect(self.set_landmark_phrase)
 
 		cb_LP = QCheckBox(self.get_localized_text("Visible"), self.w)
 		cb_LP.setChecked(True)
