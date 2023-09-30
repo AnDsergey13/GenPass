@@ -5,13 +5,15 @@ disable =
     ; missing-class-docstring,
     missing-function-docstring,
     empty-docstring,
-    invalid-name,
+    ; invalid-name,
     ; import-error,
     ; using OOP incorrectly
     ; unused-private-member,
     ; protected-access,
     ; do not show TODO, FIXME comments
     fixme,
+    no-else-return,
+    ; inconsistent-return-statements,
 
 [Format]
 indent-string = \t
