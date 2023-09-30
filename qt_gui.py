@@ -60,17 +60,17 @@ class UIGP:
 	def create_window(self, width=450, height=450, pos_x=300, pos_y=300):
 		app = QApplication(sys.argv)
 
-		self.w = QWidget()
-		self.w.resize(width, height)
-		self.w.move(pos_x, pos_y)
-		self.w.setWindowTitle('GenPass')
+		self.window = QWidget()
+		self.window.resize(width, height)
+		self.window.move(pos_x, pos_y)
+		self.window.setWindowTitle('GenPass')
 		# TODO: Заменить на QApplication.windowIcon
 		# https://doc.qt.io/qt-6/qwidget.html#windowIcon-prop
-		self.w.setWindowIcon(QIcon('icon/Panel.png'))
+		self.window.setWindowIcon(QIcon('icon/Panel.png'))
 
 		self.create_components()
 
-		self.w.show()
+		self.window.show()
 		sys.exit(app.exec())
 
 
@@ -89,43 +89,43 @@ class UIGP:
 		# TODO: Maybe use with expression and tuple for typical actions?
 
 		# PrivateKey
-		label_private_key = QLabel(self.w)
+		label_private_key = QLabel(self.window)
 		label_private_key.move(offset_from_left_window_border, y_label_1)
 		label_private_key.setText(self.get_localized_text("Enter. Private key"))
 
-		self.line_edit_private_key = QLineEdit(self.w)
+		self.line_edit_private_key = QLineEdit(self.window)
 		self.line_edit_private_key.resize(300, components_height)
 		self.line_edit_private_key.move(offset_from_left_window_border, y_label_1 + y_offset_from_label)
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
-		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.w)
+		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.window)
 		check_box_private_key.setChecked(True)
 		check_box_private_key.move(offset_from_left_window_border + x_offset_check_box, y_label_1 + y_offset_from_label)
 		check_box_private_key.stateChanged.connect(self.set_visible_private_key)
 
 		# LandmarkPhrase
 		y_label_2 = y_label_1 + distance_y_between_labels
-		label_landmark_phrase = QLabel(self.w)
+		label_landmark_phrase = QLabel(self.window)
 		label_landmark_phrase.move(offset_from_left_window_border, y_label_2)
 		label_landmark_phrase.setText(self.get_localized_text("Enter. Landmark phrase"))
 
-		self.line_edit_landmark_phrase = QLineEdit(self.w)
+		self.line_edit_landmark_phrase = QLineEdit(self.window)
 		self.line_edit_landmark_phrase.resize(300, components_height)
 		self.line_edit_landmark_phrase.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
 		self.line_edit_landmark_phrase.textChanged[str].connect(self.set_landmark_phrase)
 
-		check_box_landmark_phrase = QCheckBox(self.get_localized_text("Visible"), self.w)
+		check_box_landmark_phrase = QCheckBox(self.get_localized_text("Visible"), self.window)
 		check_box_landmark_phrase.setChecked(True)
 		check_box_landmark_phrase.move(offset_from_left_window_border + x_offset_check_box, y_label_2 + y_offset_from_label)
 		check_box_landmark_phrase.stateChanged.connect(self.set_visible_landmark_phrase)
 
 		# LUK-file
 		y_label_3 = y_label_2 + distance_y_between_labels
-		label_luk = QLabel(self.w)
+		label_luk = QLabel(self.window)
 		label_luk.move(offset_from_left_window_border, y_label_3)
 		label_luk.setText(self.get_localized_text("Enter. Size LUK-file"))
 
-		self.line_edit_luk = QLineEdit(self.w)
+		self.line_edit_luk = QLineEdit(self.window)
 		self.line_edit_luk.resize(200, components_height)
 		self.line_edit_luk.move(offset_from_left_window_border, y_label_3 + y_offset_from_label)
 		self.line_edit_luk.textChanged[str].connect(self.set_luk_symbols_number)
@@ -133,7 +133,7 @@ class UIGP:
 		self.set_visible_edt_luk()
 
 		x_offset_button = 270
-		button_generate = QPushButton(self.get_localized_text("Create. LUK-file"), self.w)
+		button_generate = QPushButton(self.get_localized_text("Create. LUK-file"), self.window)
 		button_generate.resize(buttons_width + 50, components_height)
 		button_generate.move(offset_from_left_window_border + x_offset_button, y_label_3 + y_offset_from_label)
 		button_generate.clicked.connect(self.create_new_luk_file)
@@ -141,16 +141,16 @@ class UIGP:
 
 		# Bottom buttons
 		y_offset_from_button = 45
-		self.label_message = QLabel(self.w)
+		self.label_message = QLabel(self.window)
 		self.label_message.resize(435, components_height)
 		self.label_message.move(offset_from_left_window_border, y_button - y_offset_from_button)
 
-		button_create = QPushButton(self.get_localized_text("Create"), self.w)
+		button_create = QPushButton(self.get_localized_text("Create"), self.window)
 		button_create.resize(buttons_width, components_height)
 		button_create.move(offset_from_left_window_border, y_button)
 		button_create.clicked.connect(self.create_password)
 
-		button_clear = QPushButton(self.get_localized_text("Clear"), self.w)
+		button_clear = QPushButton(self.get_localized_text("Clear"), self.window)
 		button_clear.resize(buttons_width + 100, components_height)
 		button_clear.move(offset_from_left_window_border + buttons_width + 100, y_button)
 		button_clear.clicked.connect(self.clear_all)
@@ -171,7 +171,7 @@ class UIGP:
 
 	def create_new_luk_file(self):
 		# msg = QMessageBox.question(
-		# 	self.w,
+		# 	self.window,
 		# 	'PyQt5 message',
 		# 	"Do you like PyQt5?",
 		# 	QMessageBox.Yes | QMessageBox.No,
