@@ -1,3 +1,6 @@
+[Output]
+output-format = colorized
+
 [Main]
 disable =
     line-too-long,
