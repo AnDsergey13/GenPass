@@ -248,20 +248,28 @@ class UIGP:
 		encrypted_private_key = gp.get_hash_string(private_key)
 		encrypted_landmark_phrase = gp.get_hash_string(landmark_phrase)
 
+		# Invert the elements, since during the XOR operation, the same keys should not turn into zero. And when the keys were swapped, the same password was not created.
+		# Инвертируем элементы, так как при операции XOR, одинаковые ключи не должны превращаться в ноль. И при перестановке ключей местами, не создавался одинаковый пароль.
 		unicode_private_key = gp.convert_to_unicode(encrypted_private_key)[::-1]
 		unicode_landmark_phrase = gp.convert_to_unicode(encrypted_landmark_phrase)
 
 		a = gp.encryption_xor(unicode_landmark_phrase, unicode_private_key)
 
+		# In the absence of a LUK-file, we generate the number of characters and create it
+		# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
 		if not gp.is_luk_file():
 			luk_symbols_number = self.get_num_symbols_luk()
 			if luk_symbols_number != -1:
 				gp.create_luk(luk_symbols_number)
 
+		# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
+		# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
 		if gp.is_luk_file():
 			luk_hash = gp.get_hash_luk().upper()
+
 			b = gp.convert_to_unicode(luk_hash)
 			result = gp.convert_to_string(gp.encryption_xor(a, b))
+
 			self.copy_password_in_clipboard(result)
 
 	def copy_password_in_clipboard(self, password):
