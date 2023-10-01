@@ -41,7 +41,7 @@ def processing_num_luk(number):
 		return -1
 
 
-def get_luk_symbols_num():
+def get_luk_symbols_number():
 	while True:
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
@@ -66,7 +66,7 @@ def create_password(private_key, landmark_phrase):
 	# In the absence of a LUK-file, we generate the number of characters and create it
 	# При отсутствии ЛУК-файла, генерируем количество символов и создаём его
 	if not gp.is_luk_file():
-		luk_symbols_number = get_luk_symbols_num()
+		luk_symbols_number = get_luk_symbols_number()
 		gp.create_luk(luk_symbols_number)
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
