@@ -40,7 +40,7 @@ class UIGP:
 		# print("LUK = ", number)
 		self.luk_symbols_number = number
 
-	def get_luk_symbols_number(self):
+	def get_luk_symbols_number_ui(self):
 		return self.luk_symbols_number
 
 	# Input visibility
@@ -233,7 +233,7 @@ class UIGP:
 	def get_num_symbols_luk(self):
 		# The greater the number of characters specified, the greater the entropy of the LUK-file
 		# Чем больше указано количество символов, тем больше энтропия ЛУК-файла
-		luk_symbols_number = self.get_luk_symbols_number()
+		luk_symbols_number = self.get_luk_symbols_number_ui()
 
 		luk_symbols_number = self.processing_num_luk(luk_symbols_number)
 		if luk_symbols_number != -1:
