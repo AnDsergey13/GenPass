@@ -236,10 +236,7 @@ class UIGP:
 		luk_symbols_number = self.get_luk_symbols_number_ui()
 
 		luk_symbols_number = self.processing_num_luk(luk_symbols_number)
-		if luk_symbols_number != -1:
-			return luk_symbols_number
-		else:
-			return -1
+		return luk_symbols_number
 
 	def create_password(self):
 		private_key = self.get_private_key()
