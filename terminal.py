@@ -52,10 +52,7 @@ def get_luk_symbols_num():
 			return luk_symbols_number
 
 
-def main():
-	private_key = input(_("Enter. Private key"))
-	landmark_phrase = input(_("Enter. Landmark phrase"))
-
+def create_password(private_key, landmark_phrase):
 	encrypted_private_key = gp.get_hash_string(private_key)
 	encrypted_landmark_phrase = gp.get_hash_string(landmark_phrase)
 
@@ -79,4 +76,11 @@ def main():
 	b = gp.convert_to_unicode(hash_luk)
 
 	result = gp.convert_to_string(gp.encryption_xor(a, b))
-	print(result)
+	return result
+
+
+def main():
+	private_key = input(_("Enter. Private key"))
+	landmark_phrase = input(_("Enter. Landmark phrase"))
+	password = create_password(private_key, landmark_phrase)
+	print(password)
