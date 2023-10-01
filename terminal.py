@@ -71,9 +71,9 @@ def create_password(private_key, landmark_phrase):
 
 	# If you do not change the hash to all capital letters, then the final password will be without capital letters (why?). Which reduces the complexity of the password itself.
 	# Если не изменять Хеш на все заглавные буквы, то конечный пароль будет без заглавных букв (почему?). Что уменьшает сложность самого пароля.
-	hash_luk = gp.get_hash_luk().upper()
+	luk_hash = gp.get_hash_luk().upper()
 
-	b = gp.convert_to_unicode(hash_luk)
+	b = gp.convert_to_unicode(luk_hash)
 
 	result = gp.convert_to_string(gp.encryption_xor(a, b))
 	return result
