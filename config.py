@@ -17,7 +17,7 @@ def _in_key(func):
 	return wrapper
 
 
-_settings_file_name = "Config.json"
+_settings_file_name = "config.json"
 
 template_for_creating_file = {
 	"use_gui": None,
