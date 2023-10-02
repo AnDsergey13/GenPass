@@ -1,5 +1,9 @@
 Done:
 
+- Separate work with system
+- Create config system
+- Use linters in project
+- Create localization system
 - Transit Qt GUI on new localization system
 - Repair and launch Qt GUI
 - Remove unnecessary decorators
@@ -13,7 +17,7 @@ Current:
 - Tune scopes of all methods (private, public) [WIP]
 - Fix all linters messages [WIP]
 - Fix all TODO and FIXME comments
-- Correct name all entities [WIP]
+- Correct name of all entities [WIP]
 
 For the near future:
 
