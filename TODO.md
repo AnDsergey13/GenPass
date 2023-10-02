@@ -8,11 +8,12 @@ Done:
 - Repair and launch Qt GUI
 - Remove unnecessary decorators
 - Learn how to correct rename file in Git
+- Fix all linters messages
+    - Correct typo 'zucing' in gen_pass
 
 Current:
 
 - Fix all linters messages
-    - Correct typo 'zucing' in gen_pass
     - Simplify comparations in processing_num_luk()
     - Fix R1710: 'inconsistent-return-statements' pylint message
     - Avoid global variables
