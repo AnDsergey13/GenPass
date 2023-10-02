@@ -1,6 +1,6 @@
 Done:
 
-- Separate work with system
+- Separate work with operating system
 - Create config system
 - Use linters in project
 - Create localization system
