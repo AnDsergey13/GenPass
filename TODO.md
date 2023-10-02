@@ -43,6 +43,9 @@ For the long future:
     - Divide god class UIGP
     - Rename UIGP class
     - Avoid duplicate code
+        - Components (QLabel + QLineEdit + QCheckBox) for Private Key and for Landmark Phrase are the same
+        - There are two methods with 'get_luk_symbols_number()' name
+        - Code for password generation
     - Initialize all attributes inside \_\_init\_\_
 - Port project on Android
 - Pack project into apk
