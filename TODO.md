@@ -15,7 +15,6 @@ Done:
 Current:
 
 - Fix all linters messages
-    - Fix [unsubscriptable-object / E1136][1] pylint message in Qt GUI
     - Simplify comparations in processing_num_luk()
     - Fix R1710: 'inconsistent-return-statements' pylint message
     - Avoid global variables
@@ -63,6 +62,9 @@ For the long future:
         - There are two methods with 'get_luk_symbols_number()' name
         - Code for password generation
     - Initialize all attributes inside \_\_init\_\_
+    - Fix [unsubscriptable-object / E1136][1] pylint message in Qt GUI.
+        It's false positive, so I've just suppressed it.
+        But it need to be fixed because of update to new Qt 6.
 - Port project on Android
 - Pack project into apk
 - Pack project into executable file
