@@ -14,6 +14,7 @@ Done:
 Current:
 
 - Fix all linters messages
+    - Fix [unsubscriptable-object / E1136][1] pylint message in Qt GUI
     - Simplify comparations in processing_num_luk()
     - Fix R1710: 'inconsistent-return-statements' pylint message
     - Avoid global variables
@@ -49,3 +50,5 @@ For the long future:
 - Learn how to work with Kivy framework
 - Develop GUI on Kivy
 - Develop TUI
+
+[1]: <https://pylint.pycqa.org/en/latest/user_guide/messages/error/unsubscriptable-object.html> (unsubscriptable-object / E1136)
