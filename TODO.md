@@ -11,13 +11,21 @@ Done:
 
 Current:
 
-- Fix typos [WIP]
+- Fix all linters messages
+    - Correct typo 'zucing' in gen_pass
+    - Simplify comparations in processing_num_luk()
+    - Fix R1710: 'inconsistent-return-statements' pylint message
+    - Avoid global variables
+    - Fix R1714: 'consider-using-in' pylint message
+    - Make linters detect virtual environment
+    - Split long lines into shorters
 - Document whole project: docstrings, comments, review, README
     - Document algorithm of creating password
-- Tune scopes of all methods (private, public) [WIP]
-- Fix all linters messages [WIP]
+    - Update ReadMe
+- Tune scopes of all entities (private, public) [WIP]
 - Fix all TODO and FIXME comments
 - Correct name of all entities [WIP]
+    - Fix one letter names
 
 For the near future:
 
@@ -29,6 +37,11 @@ For the long future:
 
 - Learn how to work with Qt framework [WIP]
 - Refactor Qt GUI [WIP]
+    - Don't use bare 'except'
+    - Divide god class UIGP
+    - Rename UIGP class
+    - Avoid duplicate code
+    - Initialize all attributes inside \_\_init\_\_
 - Port project on Android
 - Pack project into apk
 - Pack project into executable file
