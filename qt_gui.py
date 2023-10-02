@@ -10,6 +10,7 @@ from system import delete_luk_file
 
 class UIGP:
 	"""TODO: Написать docstring"""
+	# FIXME: pylint: disable = too-many-instance-attributes, too-many-locals, too-many-statements, attribute-defined-outside-init
 	def __init__(self):
 		self.get_localized_text = get_text
 		self.private_key = ""
@@ -97,6 +98,7 @@ class UIGP:
 		self.line_edit_private_key = QLineEdit(self.window)
 		self.line_edit_private_key.resize(300, components_height)
 		self.line_edit_private_key.move(offset_from_left_window_border, y_label_1 + y_offset_from_label)
+		# FIXME: pylint: disable-next = unsubscriptable-object
 		self.line_edit_private_key.textChanged[str].connect(self.set_private_key)
 
 		check_box_private_key = QCheckBox(self.get_localized_text("Visible"), self.window)
@@ -113,6 +115,7 @@ class UIGP:
 		self.line_edit_landmark_phrase = QLineEdit(self.window)
 		self.line_edit_landmark_phrase.resize(300, components_height)
 		self.line_edit_landmark_phrase.move(offset_from_left_window_border, y_label_2 + y_offset_from_label)
+		# FIXME: pylint: disable-next = unsubscriptable-object
 		self.line_edit_landmark_phrase.textChanged[str].connect(self.set_landmark_phrase)
 
 		check_box_landmark_phrase = QCheckBox(self.get_localized_text("Visible"), self.window)
@@ -129,6 +132,7 @@ class UIGP:
 		self.line_edit_luk = QLineEdit(self.window)
 		self.line_edit_luk.resize(200, components_height)
 		self.line_edit_luk.move(offset_from_left_window_border, y_label_3 + y_offset_from_label)
+		# FIXME: pylint: disable-next = unsubscriptable-object
 		self.line_edit_luk.textChanged[str].connect(self.set_luk_symbols_number)
 
 		self.set_visible_edt_luk()
@@ -239,6 +243,7 @@ class UIGP:
 		return luk_symbols_number
 
 	def create_password(self):
+		# FIXME: pylint: disable = duplicate-code
 		private_key = self.get_private_key()
 		landmark_phrase = self.get_landmark_phrase()
 
