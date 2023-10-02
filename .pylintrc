@@ -2,6 +2,10 @@
 output-format = colorized
 
 [Main]
+init-hook =
+    try: import pylint_venv
+    except ImportError: pass;print("fail")
+    else: pylint_venv.inithook(force_venv_activation=True); print("ok")
 disable =
     ; https://pylint.pycqa.org/en/latest/faq.html#which-messages-should-i-disable-to-avoid-duplicates-if-i-use-other-popular-linters
     ; to avoid duplicates with flake8:pycodestyle
