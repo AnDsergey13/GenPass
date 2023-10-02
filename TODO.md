@@ -10,6 +10,7 @@ Done:
 - Learn how to correct rename file in Git
 - Fix all linters messages
     - Correct typo 'zucing' in gen_pass
+    - Make linters detect virtual environment
 
 Current:
 
@@ -19,7 +20,6 @@ Current:
     - Fix R1710: 'inconsistent-return-statements' pylint message
     - Avoid global variables
     - Fix R1714: 'consider-using-in' pylint message
-    - Make linters detect virtual environment
     - Split long lines into shorters
 - Document whole project: docstrings, comments, review, README
     - Document algorithm of creating password
