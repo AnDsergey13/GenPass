@@ -19,8 +19,8 @@ For the near future:
 - Move project on python 3.12
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
-    - Fix R1710: 'inconsistent-return-statements' pylint message
-    - Avoid global variables
+    - Fix R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements) pylint message
+    - Avoid global variables. Fix W0603: Using the global statement (global-statement) pylint message
     - Fix R1714: 'consider-using-in' pylint message
     - Split long lines into shorters. Fix C0301: 'line-too-long' pylint message
 - Document whole project: docstrings, comments, review, README
@@ -54,10 +54,10 @@ For the long future:
 - Move Qt GUI from Qt 5 to Qt 6
 - Learn how to work with Qt framework
 - Refactor Qt GUI
-    - Don't use bare 'except'. Fix W0702 'bare-except' pylint message
+    - Don't use bare 'except'. Fix W0702: No exception type(s) specified (bare-except) pylint message
     - Divide god class UIGP
-        qt_gui.py: too-many-instance-attributes, too-many-locals, too-many-statements, attribute-defined-outside-init
-    - Avoid duplicate code
+        Fix too-many-instance-attributes, too-many-locals, too-many-statements, attribute-defined-outside-init pylint messages
+    - Avoid duplicate code. Fix 'duplicate-code' pylint message
         - Components (QLabel + QLineEdit + QCheckBox) for Private Key and for Landmark Phrase are the same
         - There are two methods with 'get_luk_symbols_number()' name
         - Code for password generation
