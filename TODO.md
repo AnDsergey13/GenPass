@@ -42,6 +42,11 @@ For the near future:
     - localization:16: Кажется здесь неправда, так как возвращаются данные, а не файл
     - localization:37: Выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
     - main:24: Переместить код в функцию \_\_main\_\_()
+    - system.py:9-45: Переделать
+    - system.py:50: Упростить логику, используя значение по умолчанию
+    - system.py:55: os.separator?
+    - system.py:57: Разница между os.path.isfile и os.path.exists?
+    - system.py:92: Переписать?
 - Name all entities correctly
     - Fix one letter names (C0103: 'invalid-name' pylint message)
         - gen_pass:42: переименовать переменную s
@@ -61,11 +66,13 @@ For the long future:
         - Components (QLabel + QLineEdit + QCheckBox) for Private Key and for Landmark Phrase are the same
         - There are two methods with 'get_luk_symbols_number()' name
         - Code for password generation
+    - qt_gui.py:91: Maybe use with expression and tuple for typical actions?
     - Rename UIGP class
     - Initialize all attributes inside \_\_init\_\_
     - Fix E1136: 'unsubscriptable-object' pylint message in Qt GUI.
         It's false positive, so I've just suppressed it.
         But it need to be fixed because of update to new Qt 6.
+    - qt_gui.py:70: Заменить на QApplication.windowIcon
 - Port project on Android
 - Pack project into apk
 - Pack project into executable file (Win, Linux)
