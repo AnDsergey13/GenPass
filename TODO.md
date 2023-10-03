@@ -16,6 +16,7 @@ Current:
 
 For the near future:
 
+- Use ruff
 - Move project on python 3.12
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
