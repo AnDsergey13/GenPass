@@ -29,7 +29,7 @@ Current:
         - config:4: Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
     - Document algorithm of creating password
     - Update ReadMe
-- Tune scopes of all entities (private, public) [WIP]
+- Tune scopes of all entities (private, public)
 - Fix all TODO and FIXME comments (W0511: 'fixme') pylint message
     - Update localization. config: Предусмотреть локализацию
     - config:42: Сделать проверку корректности введённого имени
@@ -39,7 +39,7 @@ Current:
     - localization:16: Кажется здесь неправда, так как возвращаются данные, а не файл
     - localization:37: Выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
     - main:24: Переместить код в функцию \_\_main\_\_()
-- Name all entities correctly [WIP]
+- Name all entities correctly
     - Fix one letter names (C0103: 'invalid-name' pylint message)
         - gen_pass:42: переименовать переменную s
 
@@ -47,12 +47,12 @@ For the near future:
 
 - Make linters check only new code
 - Launch linters during commit and during push using git hooks and pre-commit framework
-- Isolate work with password in one module [WIP]
+- Isolate work with password in one module
 
 For the long future:
 
-- Learn how to work with Qt framework [WIP]
-- Refactor Qt GUI [WIP]
+- Learn how to work with Qt framework
+- Refactor Qt GUI
     - Don't use bare 'except'. Fix W0702 'bare-except' pylint message
     - Divide god class UIGP
         qt_gui.py: too-many-instance-attributes, too-many-locals, too-many-statements, attribute-defined-outside-init
