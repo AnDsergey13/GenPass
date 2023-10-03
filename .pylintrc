@@ -2,15 +2,18 @@
 output-format = colorized
 
 [Main]
+; Virtual environment
 init-hook =
     try: import pylint_venv
     except ImportError: pass;print("fail")
     else: pylint_venv.inithook(force_venv_activation=True); print("ok")
+; C extentions
 extension-pkg-allow-list = PyQt5
 disable =
+
     ; https://pylint.pycqa.org/en/latest/faq.html#which-messages-should-i-disable-to-avoid-duplicates-if-i-use-other-popular-linters
 
-    ; to avoid duplicates with flake8:pycodestyle
+    ; Duplicates with flake8:pycodestyle
     ; bad-indentation,
     ; bare-except,
     ; line-too-long,
@@ -23,37 +26,47 @@ disable =
     ; unneeded-not,
     ; wrong-import-position,
 
-    ; to avoid duplicates with flake8:pyflakes
+    ; Duplicates with flake8:pyflakes
     ; undefined-variable,
     ; unused-import,
     ; unused-variable,
 
+    ; Do not show TODO, FIXME comments
+    fixme,
+
+    ; Docstrings (7 + 0 + 35 + 4)
     missing-module-docstring,
     ; missing-class-docstring,
     missing-function-docstring,
     empty-docstring,
 
-    ; invalid-name,
+    ; Long lines (22)
     line-too-long,
 
+    ; Short names (9)
+    invalid-name,
+
+    ; if, else, return (9 + 3)
+    no-else-return,
+    inconsistent-return-statements,
+
+    ; (1)
     consider-using-in,
 
+    ; Global variables (2)
     invalid-name,
     global-statement,
 
+    ; Exceptions (1)
     bare-except,
 
+    ; Imports (0)
     ; import-error,
 
-    ; using OOP incorrectly
+    ; Using OOP incorrectly (0 + 0)
     ; unused-private-member,
     ; protected-access,
 
-    ; do not show TODO, FIXME comments
-    fixme,
-
-    no-else-return,
-    ; inconsistent-return-statements,
-
 [Format]
+; Using tabs instead spaces
 indent-string = \t
