@@ -14,10 +14,16 @@ Done:
 
 Current:
 
+- Move project on python 3.12
+    - Upgrade python
+    - Make python 3.12 default
+    - Move pipx
+    - Move venv / PyQt
+    - Move linters
+
 For the near future:
 
 - Use ruff
-- Move project on python 3.12
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
     - Fix R1714: 'consider-using-in' pylint message
