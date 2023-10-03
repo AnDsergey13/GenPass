@@ -24,6 +24,10 @@ Current:
 For the near future:
 
 - Use ruff
+    - [x] Get ruff
+    - [x] Enable ruff
+    - [ ] Learn ruff
+    - [ ] Tune ruff
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
     - Fix R1714: 'consider-using-in' pylint message
