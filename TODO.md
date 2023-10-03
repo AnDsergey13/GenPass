@@ -12,15 +12,14 @@ Done:
     - Correct typo 'zucing' in gen_pass
 - Make linters detect virtual environment
 - Move Qt GUI from Qt 5 to Qt 6
-
-Current:
-
-- Move project on python 3.12
+- Move project on python 3.12 - not possible because of Qt
     - [x] Upgrade python
     - [x] Make python 3.12 default
-    - [ ] Move pipx
-    - [ ] Move venv / PyQt
-    - [ ] Move linters
+    - [x] Move pipx
+    - [x] Move venv / PyQt - fail
+    - [x] Move linters
+
+Current:
 
 For the near future:
 
