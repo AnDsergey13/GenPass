@@ -57,11 +57,11 @@ For the long future:
     - Don't use bare 'except'. Fix W0702 'bare-except' pylint message
     - Divide god class UIGP
         qt_gui.py: too-many-instance-attributes, too-many-locals, too-many-statements, attribute-defined-outside-init
-    - Rename UIGP class
     - Avoid duplicate code
         - Components (QLabel + QLineEdit + QCheckBox) for Private Key and for Landmark Phrase are the same
         - There are two methods with 'get_luk_symbols_number()' name
         - Code for password generation
+    - Rename UIGP class
     - Initialize all attributes inside \_\_init\_\_
     - Fix E1136: 'unsubscriptable-object' pylint message in Qt GUI.
         It's false positive, so I've just suppressed it.
