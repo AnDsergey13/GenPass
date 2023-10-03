@@ -8,5 +8,5 @@ temp
 *.kra~
 *.png~
 
-LUK
+*LUK*
 config.json
