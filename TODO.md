@@ -11,6 +11,7 @@ Done:
 - Fix all linters messages
     - Correct typo 'zucing' in gen_pass
 - Make linters detect virtual environment
+- Move Qt GUI from Qt 5 to Qt 6
 
 Current:
 
@@ -66,7 +67,6 @@ For the near future:
 
 For the long future:
 
-- Move Qt GUI from Qt 5 to Qt 6
 - Learn how to work with Qt framework
 - Refactor Qt GUI
     - Don't use bare 'except'. Fix W0702: No exception type(s) specified (bare-except) pylint message
