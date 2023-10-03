@@ -1,7 +1,7 @@
 import sys
-from PyQt5.QtGui import QIcon
+from PyQt6.QtGui import QIcon
 # from PyQt5.QtCore import *
-from PyQt5.QtWidgets import QApplication, QCheckBox, QLabel, QLineEdit, QMessageBox, QPushButton, QWidget
+from PyQt6.QtWidgets import QApplication, QCheckBox, QLabel, QLineEdit, QMessageBox, QPushButton, QWidget
 
 import gen_pass as gp
 from localization import get_text
