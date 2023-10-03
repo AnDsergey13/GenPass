@@ -12,4 +12,6 @@ ignore =
     E501,
     ; ignore too many blank lines
     ; E303,
+    E722,
+    B001,
 max-line-length = 100
