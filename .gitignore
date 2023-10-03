@@ -1,12 +1,12 @@
-__pycache__
-LUK
+__pycache__/
+.venv/
+.idea/
+
 temp
+*.db
+
 *.kra~
 *.png~
 
-.venv/
-temp/
-*.db
+LUK
 config.json
-
-.idea/
