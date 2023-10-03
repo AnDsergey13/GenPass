@@ -63,6 +63,10 @@ For the near future:
 - Make linters check only new code
 - Launch linters during commit and during push using git hooks and pre-commit framework
 - Isolate work with password in one module
+- Переработка модуля gen_pass
+	- Проверить количественное распределение автокоррекционных чисел(step = 8). То есть, при автокореекции числа, какие символы чаще всего используются.
+		- Написать гениратор
+	- В случае сильного смещения, проверить, как это влияет на безопасность??
 
 For the long future:
 
@@ -90,3 +94,8 @@ For the long future:
 - Learn how to work with Kivy framework
 - Develop GUI on Kivy
 - Develop TUI
+- Переработка LUK файла
+	- Использовать зашифованный контейнер, вместо открытого файла?
+		- Где будет храниться ключ от контейнера?
+			- Ввод пароля от пользователя? Не слишком ли сложно?
+	- Передача(генерация?) между устройствами, с помощью QR кода
