@@ -68,6 +68,8 @@ For the long future:
 - Port project on Android
 - Pack project into apk
 - Pack project into executable file (Win, Linux)
+- Learn how to work with beeware framework
+- Develop GUI on beeware
 - Learn how to work with Kivy framework
 - Develop GUI on Kivy
 - Develop TUI
