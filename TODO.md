@@ -14,6 +14,8 @@ Done:
 
 Current:
 
+For the near future:
+
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
     - Fix R1710: 'inconsistent-return-statements' pylint message
@@ -42,9 +44,6 @@ Current:
 - Name all entities correctly
     - Fix one letter names (C0103: 'invalid-name' pylint message)
         - gen_pass:42: переименовать переменную s
-
-For the near future:
-
 - Make linters check only new code
 - Launch linters during commit and during push using git hooks and pre-commit framework
 - Isolate work with password in one module
