@@ -5,8 +5,8 @@ output-format = colorized
 ; Virtual environment
 init-hook =
     try: import pylint_venv
-    except ImportError: pass;print("fail")
-    else: pylint_venv.inithook(force_venv_activation=True); print("ok")
+    except ImportError: pass
+    else: pylint_venv.inithook(force_venv_activation=True)
 ; C extentions
 extension-pkg-allow-list = PyQt5
 disable =
