@@ -61,7 +61,7 @@ For the long future:
         - There are two methods with 'get_luk_symbols_number()' name
         - Code for password generation
     - Initialize all attributes inside \_\_init\_\_
-    - Fix [unsubscriptable-object / E1136][1] pylint message in Qt GUI.
+    - Fix E1136: 'unsubscriptable-object' pylint message in Qt GUI.
         It's false positive, so I've just suppressed it.
         But it need to be fixed because of update to new Qt 6.
 - Port project on Android
@@ -72,5 +72,3 @@ For the long future:
 - Learn how to work with Kivy framework
 - Develop GUI on Kivy
 - Develop TUI
-
-[1]: <https://pylint.pycqa.org/en/latest/user_guide/messages/error/unsubscriptable-object.html> (unsubscriptable-object / E1136)
