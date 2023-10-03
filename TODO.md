@@ -23,11 +23,6 @@ Current:
 
 For the near future:
 
-- Use ruff
-    - [x] Get ruff
-    - [x] Enable ruff
-    - [ ] Learn ruff
-    - [ ] Tune ruff
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
     - Fix R1714: 'consider-using-in' pylint message
@@ -46,6 +41,11 @@ For the near future:
         - config:4: Использовать многоязычный docstrings (PEP 257? Sphinx? docutils?), не в функции, а отдельным файлом
     - Document algorithm of creating password
     - Update ReadMe
+- Use ruff
+    - [x] Get ruff
+    - [x] Enable ruff
+    - [ ] Learn ruff
+    - [ ] Tune ruff
 - Tune scopes of all entities (private, public)
 - Fix all TODO and FIXME comments (W0511: 'fixme') pylint message
     - Update localization. config: Предусмотреть локализацию
