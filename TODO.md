@@ -15,11 +15,11 @@ Done:
 Current:
 
 - Move project on python 3.12
-    - Upgrade python
-    - Make python 3.12 default
-    - Move pipx
-    - Move venv / PyQt
-    - Move linters
+    - [x] Upgrade python
+    - [x] Make python 3.12 default
+    - [ ] Move pipx
+    - [ ] Move venv / PyQt
+    - [ ] Move linters
 
 For the near future:
 
