@@ -1,6 +1,9 @@
 # https://docs.astral.sh/ruff/rules/
 
 select = [ "ALL" ]
+# select = [
+
+# ]
 
 ignore = [
     # incompatible checks
