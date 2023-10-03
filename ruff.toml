@@ -3,6 +3,14 @@
 select = [ "ALL" ]
 
 ignore = [
+    # incompatible checks
+    # https://docs.astral.sh/ruff/rules/one-blank-line-before-class/
+    # https://docs.astral.sh/ruff/rules/blank-line-before-class/
+    "D203",
+    # https://docs.astral.sh/ruff/rules/multi-line-summary-first-line/
+    # https://docs.astral.sh/ruff/rules/multi-line-summary-second-line/
+    "D213",
+
     # Pyflakes (F)
     # https://docs.astral.sh/ruff/rules/#pyflakes-f
 
