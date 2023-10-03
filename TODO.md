@@ -19,11 +19,13 @@ For the near future:
 - Move project on python 3.12
 - Fix all linters messages
     - Simplify comparations in processing_num_luk()
-    - Fix R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements) pylint message
-    - Avoid global variables. Fix W0603: Using the global statement (global-statement) pylint message
     - Fix R1714: 'consider-using-in' pylint message
-    - Split long lines into shorters. Fix C0301: 'line-too-long' pylint message
+    - Split long lines into shorters. Fix C0301: Line too long (line-too-long) pylint message
     - Fix R1705: Unnecessary "else / elif" after "return" (no-else-return) pylint message
+    - Fix R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements) pylint message
+    - Do not use global variables
+        - Fix W0603: Using the global statement (global-statement) pylint message
+        - Fix C0103: Constant name doesn't conform to UPPER_CASE naming style (invalid-name) pylint message
 - Document whole project: docstrings, comments, review, README
     - Document modules, classes, functions, methods
         - Fix C0114: 'missing-module-docstring' pylint message
