@@ -10,7 +10,7 @@ Done:
 - Learn how to correct rename file in Git
 - Fix all linters messages
     - Correct typo 'zucing' in gen_pass
-    - Make linters detect virtual environment
+- Make linters detect virtual environment
 
 Current:
 
@@ -30,7 +30,7 @@ Current:
     - Document algorithm of creating password
     - Update ReadMe
 - Tune scopes of all entities (private, public) [WIP]
-- Fix all TODO and FIXME comments. Fix W0511: 'fixme' pylint message
+- Fix all TODO and FIXME comments (W0511: 'fixme') pylint message
     - Update localization. config: Предусмотреть локализацию
     - config:42: Сделать проверку корректности введённого имени
     - config:109: Сделать проверку try/except для типа вводимого сообщения
@@ -39,7 +39,7 @@ Current:
     - localization:16: Кажется здесь неправда, так как возвращаются данные, а не файл
     - localization:37: Выделить из методов add_key_in_all_lang и del_key_in_all_lang повторяющийся код
     - main:24: Переместить код в функцию \_\_main\_\_()
-- Correct name of all entities [WIP]
+- Name all entities correctly [WIP]
     - Fix one letter names (C0103: 'invalid-name' pylint message)
         - gen_pass:42: переименовать переменную s
 
@@ -67,7 +67,7 @@ For the long future:
         But it need to be fixed because of update to new Qt 6.
 - Port project on Android
 - Pack project into apk
-- Pack project into executable file
+- Pack project into executable file (Win, Linux)
 - Learn how to work with Kivy framework
 - Develop GUI on Kivy
 - Develop TUI
