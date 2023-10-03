@@ -23,6 +23,7 @@ For the near future:
     - Avoid global variables. Fix W0603: Using the global statement (global-statement) pylint message
     - Fix R1714: 'consider-using-in' pylint message
     - Split long lines into shorters. Fix C0301: 'line-too-long' pylint message
+    - Fix R1705: Unnecessary "else / elif" after "return" (no-else-return) pylint message
 - Document whole project: docstrings, comments, review, README
     - Document modules, classes, functions, methods
         - Fix C0114: 'missing-module-docstring' pylint message
