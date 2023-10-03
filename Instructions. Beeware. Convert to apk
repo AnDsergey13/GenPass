@@ -1,0 +1,36 @@
+# Источник 1 https://docs.beeware.org/en/latest/tutorial/tutorial-0.html
+# Источник 2 https://www.youtube.com/watch?v=yiY1GoLX7Gk&t=215s 
+
+python3 -m venv beeware-venv
+source beeware-venv/bin/activate
+
+Установка модулей:
+1. pip install beeware
+2. python3 -m pip install briefcase
+
+Запуск и создание приложения (briefcase):
+1. briefcase new - Создание .App
+
+Удаляем установленный шаблон из папки ../beeware-tutorial/helloworld/scr/helloworld/*
+Вставляем свой проект
+Обязательно файл запуска называем __main__.py
+Код
+	from helloworld.app import main
+
+	if __name__ == '__main__':
+		main().main_loop()
+
+где в helloworld.app
+	- helloworld - это название папки в которой лежит проект
+	- .app - это файл запуска самого проекта
+
+# Пример вида app.py файла
+# https://docs.beeware.org/en/latest/tutorial/tutorial-2.html
+
+2. cd my_app; # my_app - имя приложение которое было задано при briefcase new
+3. briefcase dev - Запуск; (пока для пк)
+4. briefcase create - Подготовить образ Ubuntu;
+5. briefcase build - Это AppImage является исполняемым файлом;
+6. briefcase run - Скомпилированное;
+7. briefcase create android - При первом запуске Портфель загружает Java JDK и Android SDK.
+8. briefcase build android - Создание .apk файла
