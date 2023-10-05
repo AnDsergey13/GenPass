@@ -61,7 +61,7 @@ disable =
     bare-except,
 
     ; Imports (0)
-    ; import-error,
+    import-error,
 
     ; Using OOP incorrectly (0 + 0)
     ; unused-private-member,
