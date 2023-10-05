@@ -4,25 +4,26 @@
 
 import toga
 
+class UIBW:
+	""" """
 
-def button_handler(widget):
-	print("hello")
-
-
-def build(app):
-	box = toga.Box()
-
-	button = toga.Button("Hello world", on_press=button_handler)
-	button.style.padding = 50
-	button.style.flex = 1
-	box.add(button)
-
-	return box
+	def __init__(self):
+		name_app = "GenPass"
+		toga.App(name_app, "org.beeware.helloworld", startup=self.__build).main_loop()
 
 
-def main():
-	return toga.App("First App", "org.beeware.helloworld", startup=build)
+	def __build(self, app):
+		box = toga.Box()
+
+		button = toga.Button("Hello world", on_press=self.button_handler)
+		button.style.padding = 50
+		button.style.flex = 1
+		box.add(button)
+
+		return box
+
+	def button_handler(self, widget):
+		print("hello")
 
 
-if __name__ == "__main__":
-	main().main_loop()
+a = UIBW()
