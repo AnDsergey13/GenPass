@@ -7,10 +7,8 @@ import toga
 class UIBW:
 	""" """
 
-	def __init__(self):
-		name_app = "GenPass"
-		toga.App(name_app, "org.beeware.helloworld", startup=self.__build).main_loop()
-
+	def __init__(self, name_app):
+		self.name_app = "GenPass"
 
 	def __build(self, app):
 		box = toga.Box()
@@ -21,6 +19,10 @@ class UIBW:
 		box.add(button)
 
 		return box
+
+	def create_window(self):
+		toga.App(self.name_app, "org.beeware.helloworld", startup=self.__build).main_loop()
+
 
 	def button_handler(self, widget):
 		print("hello")
