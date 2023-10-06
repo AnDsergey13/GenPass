@@ -1,4 +1,5 @@
 import toga
+from icecream import ic
 from colosseum import CSS
 from colosseum.dimensions import Size, Box
 from localization import get_text as _
@@ -44,6 +45,7 @@ class UIBW:
 
 	def button_handler(self, widget):
 		print("hello")
+		ic("hello")
 
 
 
