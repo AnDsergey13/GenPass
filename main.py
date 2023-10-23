@@ -16,7 +16,7 @@ if USE_USER_INTERFACE:
 	elif CURRENT_OS == "Android":
 		pass
 	else:
-		# Other
+		# Other 
 		print("Unknown operating system")
 else:
 	terminal.main()
